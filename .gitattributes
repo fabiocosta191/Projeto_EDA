@@ -1,3 +1,4 @@
+# Ignorar arquivos de documentação do Doxygen
 Doxyfile linguist-documentation
 *.dox linguist-documentation
 *.md linguist-documentation
