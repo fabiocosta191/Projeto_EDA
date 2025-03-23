@@ -27,6 +27,6 @@ Regras do trabalho em anexo [**"Projeto_EDA.pdf"**](Projeto_EDA.pdf)
 
 _____________________________________________________________________________________
 
-[**Solução mais Recente Fase 1**]("Fase 1"/a22997_Projeto_EDA_F1.zip)
+[**Solução mais Recente Fase 1**]("Fase%201"/a22997_Projeto_EDA_F1.zip)
 
 [**Solução mais Recente Fase 2**](a22997_Projeto_EDA_F1.zip)
