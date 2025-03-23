@@ -1,2 +1,27 @@
 # Projeto_EDA
 Repositório para arquivar o projeto de EDA
+
+
+|Autor  | Fábio Rafael Gomes Costa |
+|:----:|:-------:|
+|**Contato**| **a22997@alunos.ipca.pt** |
+
+_____________________________________________________________________________________
+
+Docente: Luis Ferreira
+
+Contato: lufer@ipca.pt
+
+_____________________________________________________________________________________
+
+**Unidade Curricular (UC)**: Estruturas de Dados Avançadas (EDA)
+
+**Curso**: Licenciatura em Engenharia de Sistemas Informáticos
+
+**Instituto**: Escola Superior de Tecnologia do Instituto Politécnico do Cávado e do Ave
+_____________________________________________________________________________________
+
+Este projeto é desenvolvido, no ambito da Unidade Curricular (UC) de Estruturas de Dados Avançadas (EDA),  e foca-se na análise dos conhecimentos relativos à definição e manipulação de estruturas de dados dinâmicas na linguagem de programação C. Regras do trabalho em anexo "Projeto_EDA.pdf";
+
+
+[**Solução mais Recente**](Trab_Pratico_POO_LESI_Fase2_22997_23008.zip)
