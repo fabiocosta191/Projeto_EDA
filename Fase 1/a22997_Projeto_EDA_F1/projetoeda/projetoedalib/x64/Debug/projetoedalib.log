@@ -1,3 +1,0 @@
-﻿  funcao.c
-C:\Users\fabio\Desktop\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(39,24): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-  projetoedalib.vcxproj -> C:\Users\fabio\Desktop\a22997_Projeto_EDA_F1\projetoeda\x64\Debug\projetoedalib.lib
