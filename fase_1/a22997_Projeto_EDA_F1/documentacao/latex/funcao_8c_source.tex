@@ -1,0 +1,231 @@
+\doxysection{funcao.\+c}
+\hypertarget{funcao_8c_source}{}\label{funcao_8c_source}\index{projetoedalib/funcao.c@{projetoedalib/funcao.c}}
+\mbox{\hyperlink{funcao_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{projetoedalib_2funcao_8h}{funcao.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00027}\mbox{\hyperlink{projetoeda_2funcao_8h_a0dd3787db1a292cee40267e850469704}{00027}}\ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ \mbox{\hyperlink{funcao_8c_a0dd3787db1a292cee40267e850469704}{LerLista}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro,\ \textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}],\ \textcolor{keywordtype}{int}*\ linhas,\ \textcolor{keywordtype}{int}*\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00028}00028\ \ \ \ \ FILE*\ ficheiro\ =\ fopen(nomeFicheiro,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (ficheiro\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ ficheiro"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ lista\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}];}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ maxColunas\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \textcolor{keyword}{sizeof}(linha),\ ficheiro))\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tamLinha\ =\ strlen(linha);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha[tamLinha\ -\/\ 1]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ linha[tamLinha\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{//\ Remover\ quebra\ de\ linha}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ tamLinha-\/-\/;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tamLinha\ >\ maxColunas)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ maxColunas\ =\ tamLinha;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ tamLinha;\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ matriz[y][x]\ =\ linha[x];\ \textcolor{comment}{//\ Armazena\ na\ matriz}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha[x]\ !=\ \textcolor{charliteral}{'.'})\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a}{inserirAntena}}(\&lista,\ linha[x],\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preencher\ com\ '.'\ os\ espaços\ não usados}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ tamLinha;\ x\ <\ \mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}};\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ matriz[y][x]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00064}00064\ \ \ \ \ *linhas\ =\ y;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00065}00065\ \ \ \ \ *colunas\ =\ maxColunas;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00066}00066\ \ \ \ \ fclose(ficheiro);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00078}\mbox{\hyperlink{projetoeda_2funcao_8h_a0caf0b54deb90e026d66c8ee5d718c6a}{00078}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a}{inserirAntena}}(\mbox{\hyperlink{struct_a_n_t}{ANT}}**\ lista,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ novaAntena\ =\ (\mbox{\hyperlink{struct_a_n_t}{ANT}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_a_n_t}{ANT}}));}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (novaAntena\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memória"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00084}00084\ \ \ \ \ novaAntena-\/>\mbox{\hyperlink{struct_a_n_t_a3419940d73191a069f0f2cb626622b92}{freqAntena}}\ =\ freq;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00085}00085\ \ \ \ \ novaAntena-\/>\mbox{\hyperlink{struct_a_n_t_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00086}00086\ \ \ \ \ novaAntena-\/>\mbox{\hyperlink{struct_a_n_t_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ =\ y;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00087}00087\ \ \ \ \ novaAntena-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}}\ =\ *lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00088}00088\ \ \ \ \ *lista\ =\ novaAntena;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00096}\mbox{\hyperlink{projetoeda_2funcao_8h_af957e4140e89bdf54056d6d381c35b82}{00096}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_af957e4140e89bdf54056d6d381c35b82}{apresentarLista}}(\mbox{\hyperlink{struct_a_n_t}{ANT}}*\ lista)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (lista\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Lista\ vazia\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00101}00101\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nLista\ de\ Antenas:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{while}\ (lista\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Antena:\ \%c\ |\ Coordenadas:\ (\%d,\ \%d)\(\backslash\)n"{}},\ lista-\/>\mbox{\hyperlink{struct_a_n_t_a3419940d73191a069f0f2cb626622b92}{freqAntena}},\ lista-\/>\mbox{\hyperlink{struct_a_n_t_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ lista-\/>\mbox{\hyperlink{struct_a_n_t_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ lista\ =\ lista-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00115}\mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{00115}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(\textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}],\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c\ "{}},\ matriz[i][j]);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00132}\mbox{\hyperlink{projetoeda_2funcao_8h_a79802d5e95d26d76bca730e07ce288e8}{00132}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a79802d5e95d26d76bca730e07ce288e8}{igualarMatrizes}}(\textcolor{keywordtype}{char}\ matrizNef[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}],\ \textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}],\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ memcpy(matrizNef[i],\ matriz[i],\ colunas\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00149}\mbox{\hyperlink{projetoeda_2funcao_8h_a7c100c209dce8c29abd13961c75f2fcb}{00149}}\ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ \mbox{\hyperlink{funcao_8c_a7c100c209dce8c29abd13961c75f2fcb}{matrizNefastos}}(\textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}],\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{int}\ menorx,\ menory,\ maiorx,\ maiory,\ difx,\ dify;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ lista\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ linhas;\ y++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ colunas;\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[y][x]\ !=\ \textcolor{charliteral}{'.'}\ \&\&\ matriz[y][x]\ !=\ \textcolor{charliteral}{'\#'})\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y2\ =\ 0;\ y2\ <\ linhas;\ y2++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x2\ =\ 0;\ x2\ <\ colunas;\ x2++)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[y][x]\ ==\ matriz[y2][x2]\ \&\&\ (y\ !=\ y2\ ||\ x\ !=\ x2))\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ x2)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ difx\ =\ x\ -\/\ x2;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menorx\ =\ x2\ -\/\ difx;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maiorx\ =\ x\ +\ difx;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ difx\ =\ x2\ -\/\ x;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menorx\ =\ x\ -\/\ difx;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maiorx\ =\ x2\ +\ difx;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >\ y2)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dify\ =\ y\ -\/\ y2;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menory\ =\ y2\ -\/\ dify;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maiory\ =\ y\ +\ dify;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dify\ =\ y2\ -\/\ y;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menory\ =\ y\ -\/\ dify;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maiory\ =\ y2\ +\ dify;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ x2\ \&\&\ y\ >\ y2\ ||\ x\ <\ x2\ \&\&\ y\ <\ y2)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[menory][menorx]\ ==\ \textcolor{charliteral}{'.'}\ \&\&\ menorx\ >=\ 0\ \&\&\ menory\ >=\ 0)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[menory][menorx]\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserirNefasto}}(\&lista,\ menorx,\ menory);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[maiory][maiorx]\ ==\ \textcolor{charliteral}{'.'}\ \&\&\ maiorx\ <=\ colunas\ \&\&\ maiory\ <=\ linhas)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[maiory][maiorx]\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserirNefasto}}(\&lista,\ maiorx,\ maiory);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\ >\ x2\ \&\&\ y\ <\ y2\ ||\ x<x2\ \&\&\ y>y2)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[menory][maiorx]\ ==\ \textcolor{charliteral}{'.'}\ \&\&\ menorx\ >=\ 0\ \&\&\ menory\ >=\ 0)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[menory][maiorx]\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserirNefasto}}(\&lista,\ maiorx,\ menory);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matriz[maiory][menorx]\ ==\ \textcolor{charliteral}{'.'}\ \&\&\ maiorx\ <=\ colunas\ \&\&\ maiory\ <=\ linhas)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[maiory][menorx]\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserirNefasto}}(\&lista,\ menorx,\ maiory);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00215}00215\ \ \ \ \ \textcolor{keywordflow}{return}\ lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00216}00216\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00225}\mbox{\hyperlink{projetoeda_2funcao_8h_a60d611b34c7be07e4e578482ac3749ef}{00225}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserirNefasto}}(\mbox{\hyperlink{struct_n_e_f}{NEF}}**\ lista,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00226}00226\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ novoNefasto\ =\ (\mbox{\hyperlink{struct_n_e_f}{NEF}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_n_e_f}{NEF}}));}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00227}00227\ \ \ \ \ \textcolor{keywordflow}{if}\ (novoNefasto\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memória"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00232}00232\ \ \ \ \ novoNefasto-\/>\mbox{\hyperlink{struct_n_e_f_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00233}00233\ \ \ \ \ novoNefasto-\/>\mbox{\hyperlink{struct_n_e_f_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ =\ y;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00234}00234\ \ \ \ \ novoNefasto-\/>\mbox{\hyperlink{struct_n_e_f_a613466b4b7c4b43e7bc9e48a65fcd995}{proxNef}}\ =\ *lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00235}00235\ \ \ \ \ *lista\ =\ novoNefasto;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00243}\mbox{\hyperlink{projetoeda_2funcao_8h_a909731b047c9da8b3fd53e08b9fdefe9}{00243}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a909731b047c9da8b3fd53e08b9fdefe9}{apresentarListaNef}}(\mbox{\hyperlink{struct_n_e_f}{NEF}}*\ lista)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00244}00244\ \ \ \ \ \textcolor{keywordflow}{if}\ (lista\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00245}00245\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Lista\ vazia\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00249}00249\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nLista\ de\ Nefastos:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{while}\ (lista\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00251}00251\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nefastos\ Coordenadas:\ (\%d,\ \%d)\(\backslash\)n"{}},\ lista-\/>\mbox{\hyperlink{struct_n_e_f_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ lista-\/>\mbox{\hyperlink{struct_n_e_f_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00252}00252\ \ \ \ \ \ \ \ \ lista\ =\ lista-\/>\mbox{\hyperlink{struct_n_e_f_a613466b4b7c4b43e7bc9e48a65fcd995}{proxNef}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00253}00253\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00254}00254\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00265}\mbox{\hyperlink{projetoeda_2funcao_8h_a45d5ccc3ee9341474afc44e73475d76f}{00265}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a45d5ccc3ee9341474afc44e73475d76f}{atualizarMatriz}}(\mbox{\hyperlink{struct_a_n_t}{ANT}}**\ lista,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}])}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00266}00266\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00267}00267\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ temp\ =\ *lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{while}\ (temp\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00269}00269\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>\mbox{\hyperlink{struct_a_n_t_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ ==\ x\ \&\&\ temp-\/>\mbox{\hyperlink{struct_a_n_t_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ ==\ y)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ matriz[y][x]\ =\ freq;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00275}00275\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00276}00276\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00277}00277\ \ \ \ \ \mbox{\hyperlink{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a}{inserirAntena}}(lista,\ freq,\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00278}00278\ \ \ \ \ matriz[y][x]\ =\ freq;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00289}\mbox{\hyperlink{projetoeda_2funcao_8h_a5e363afa7bf8a0d74560ec1e766a52f6}{00289}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcao_8c_a5e363afa7bf8a0d74560ec1e766a52f6}{removerAntena}}(\mbox{\hyperlink{struct_a_n_t}{ANT}}**\ lista,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}])}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00290}00290\ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00291}00291\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ temp\ =\ *lista;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00292}00292\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ anterior\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{while}\ (temp\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00294}00294\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>\mbox{\hyperlink{struct_a_n_t_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ ==\ x\ \&\&\ temp-\/>\mbox{\hyperlink{struct_a_n_t_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ ==\ y)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00296}00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (anterior\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *lista\ =\ temp-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anterior-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}}\ =\ temp-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ matriz[y][x]\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00308}00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00309}00309\ \ \ \ \ \ \ \ \ anterior\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00310}00310\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00311}00311\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{funcao_8c_source_l00312}00312\ \}}
+
+\end{DoxyCode}

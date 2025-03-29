@@ -1,0 +1,91 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{projetoeda/main.c@{projetoeda/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{projetoeda_2funcao_8h}{funcao.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00027}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{char}\ matriz[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}];\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ linhas,\ colunas;\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Ler\ Lista\ de\ antenas\ do\ arquivo}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ lista\ =\ \mbox{\hyperlink{projetoeda_2funcao_8h_a0dd3787db1a292cee40267e850469704}{LerLista}}(\textcolor{stringliteral}{"{}antenas.txt"{}},\ matriz,\ \&linhas,\ \&colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Apresentar\ a\ matriz\ e\ a\ lista\ de\ antenas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Lida\ do\ Arquivo:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_af957e4140e89bdf54056d6d381c35b82}{apresentarLista}}(lista);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Detetar\ Nefastos\ na\ matriz}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}\ matrizNef[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}];\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a79802d5e95d26d76bca730e07ce288e8}{igualarMatrizes}}(matrizNef,\ matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Com\ Nefastos:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ listaNef\ =\ \mbox{\hyperlink{projetoeda_2funcao_8h_a7c100c209dce8c29abd13961c75f2fcb}{matrizNefastos}}(matrizNef,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matrizNef,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a909731b047c9da8b3fd53e08b9fdefe9}{apresentarListaNef}}(listaNef);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Inserir\ Antena\ na\ matriz\ e\ na\ lista\ de\ antenas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Inserir\ Antena:\(\backslash\)tFrequencia:\ \(\backslash\)'C\(\backslash\)'\(\backslash\)tCoordenadas:\ (2,2)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a45d5ccc3ee9341474afc44e73475d76f}{atualizarMatriz}}(\&lista,\ \textcolor{charliteral}{'C'},\ 2,\ 2,\ matriz);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_af957e4140e89bdf54056d6d381c35b82}{apresentarLista}}(lista);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n\(\backslash\)Inserir\ Antena:\(\backslash\)tFrequencia:\ \(\backslash\)'C\(\backslash\)'\(\backslash\)tCoordenadas:\ (4,6)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a45d5ccc3ee9341474afc44e73475d76f}{atualizarMatriz}}(\&lista,\ \textcolor{charliteral}{'C'},\ 4,\ 6,\ matriz);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_af957e4140e89bdf54056d6d381c35b82}{apresentarLista}}(lista);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Detetar\ Nefastos\ na\ matriz}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{char}\ matrizNef2[\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\_LINHAS}}][\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\_COLUNAS}}];\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a79802d5e95d26d76bca730e07ce288e8}{igualarMatrizes}}(matrizNef2,\ matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00068}00068\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Com\ Nefastos\ com\ a\ adicao\ da\ frequencia\ C:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ listaNef2\ =\ \mbox{\hyperlink{projetoeda_2funcao_8h_a7c100c209dce8c29abd13961c75f2fcb}{matrizNefastos}}(matrizNef2,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matrizNef2,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a909731b047c9da8b3fd53e08b9fdefe9}{apresentarListaNef}}(listaNef2);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00072}00072\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00073}00073\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ Remover\ Antena\ da\ matriz\ e\ da\ lista\ de\ antenas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00076}00076\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Remover\ Antena:\(\backslash\)tCoordenadas:\ (2,2)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_a5e363afa7bf8a0d74560ec1e766a52f6}{removerAntena}}(\&lista,\ 2,\ 2,\ matriz);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_ac31478cd4b125ff169d04263a3ba9573}{apresentarMatriz}}(matriz,\ linhas,\ colunas);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{projetoeda_2funcao_8h_af957e4140e89bdf54056d6d381c35b82}{apresentarLista}}(lista);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ Liberar\ memória\ alocada\ para\ as\ listas\ de\ antenas\ e\ nefastos}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{struct_a_n_t}{ANT}}*\ temp;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{while}\ (lista\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ temp\ =\ lista;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ lista\ =\ lista-\/>\mbox{\hyperlink{struct_a_n_t_aa5fc87ffe6a13c79d8daba3b55b34c0e}{proxAntena}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ free(temp);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ tempNef;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (listaNef\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ tempNef\ =\ listaNef;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ listaNef\ =\ listaNef-\/>\mbox{\hyperlink{struct_n_e_f_a613466b4b7c4b43e7bc9e48a65fcd995}{proxNef}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ free(tempNef);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{struct_n_e_f}{NEF}}*\ tempNef2;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{while}\ (listaNef2\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ tempNef2\ =\ listaNef2;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ listaNef2\ =\ listaNef2-\/>\mbox{\hyperlink{struct_n_e_f_a613466b4b7c4b43e7bc9e48a65fcd995}{proxNef}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ free(tempNef2);\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00104}00104\ \}}
+
+\end{DoxyCode}

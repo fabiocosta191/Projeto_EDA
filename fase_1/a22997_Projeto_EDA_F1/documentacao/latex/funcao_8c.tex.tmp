@@ -1,0 +1,324 @@
+\doxysection{projetoedalib/funcao.c File Reference}
+\hypertarget{funcao_8c}{}\label{funcao_8c}\index{projetoedalib/funcao.c@{projetoedalib/funcao.c}}
+
+
+Implementação de funções para manipulação de antenas e nefastos.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}funcao.\+h"{}}\newline
+Include dependency graph for funcao.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_a0dd3787db1a292cee40267e850469704}{Ler\+Lista}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]}, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
+\begin{DoxyCompactList}\small\item\em Lê uma lista de antenas a partir de um arquivo e preenche uma matriz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a}{inserir\+Antena}} (\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, char freq, int x, int y)
+\begin{DoxyCompactList}\small\item\em Insere uma nova antena na lista de antenas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_af957e4140e89bdf54056d6d381c35b82}{apresentar\+Lista}} (\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Apresenta a lista de antenas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_ac31478cd4b125ff169d04263a3ba9573}{apresentar\+Matriz}} (char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]}, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Apresenta a matriz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a79802d5e95d26d76bca730e07ce288e8}{igualar\+Matrizes}} (char matriz\+Nef\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]}, char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]}, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Copia os dados de uma matriz para outra. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_a7c100c209dce8c29abd13961c75f2fcb}{matriz\+Nefastos}} (char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]}, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Detecta e insere nefastos na matriz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}{inserir\+Nefasto}} (\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, int x, int y)
+\begin{DoxyCompactList}\small\item\em Insere um nefasto na lista de nefastos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a909731b047c9da8b3fd53e08b9fdefe9}{apresentar\+Lista\+Nef}} (\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Apresenta a lista de nefastos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a45d5ccc3ee9341474afc44e73475d76f}{atualizar\+Matriz}} (\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, char freq, int x, int y, char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Atualiza a matriz e a lista de antenas com uma nova antena. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a5e363afa7bf8a0d74560ec1e766a52f6}{remover\+Antena}} (\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, int x, int y, char matriz\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}{MAX\+\_\+\+LINHAS}}\mbox{]}\mbox{[}\mbox{\hyperlink{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}{MAX\+\_\+\+COLUNAS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista e da matriz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação de funções para manipulação de antenas e nefastos. 
+
+\begin{DoxyAuthor}{Author}
+Fábio Rafael Gomes Costa @contact \href{mailto:a22997@alunos.ipca.pt}{\texttt{ a22997@alunos.\+ipca.\+pt}} @course Engenharia Sistemas Informáticos 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18/03/2025 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funcao_8c_af957e4140e89bdf54056d6d381c35b82}\index{funcao.c@{funcao.c}!apresentarLista@{apresentarLista}}
+\index{apresentarLista@{apresentarLista}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{apresentarLista()}{apresentarLista()}}
+{\footnotesize\ttfamily \label{funcao_8c_af957e4140e89bdf54056d6d381c35b82} 
+void apresentar\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Apresenta a lista de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a ser apresentada. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00096}{96}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{funcao_8c_a909731b047c9da8b3fd53e08b9fdefe9}\index{funcao.c@{funcao.c}!apresentarListaNef@{apresentarListaNef}}
+\index{apresentarListaNef@{apresentarListaNef}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{apresentarListaNef()}{apresentarListaNef()}}
+{\footnotesize\ttfamily \label{funcao_8c_a909731b047c9da8b3fd53e08b9fdefe9} 
+void apresentar\+Lista\+Nef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Apresenta a lista de nefastos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de nefastos a ser apresentada. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00243}{243}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{funcao_8c_ac31478cd4b125ff169d04263a3ba9573}\index{funcao.c@{funcao.c}!apresentarMatriz@{apresentarMatriz}}
+\index{apresentarMatriz@{apresentarMatriz}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{apresentarMatriz()}{apresentarMatriz()}}
+{\footnotesize\ttfamily \label{funcao_8c_ac31478cd4b125ff169d04263a3ba9573} 
+void apresentar\+Matriz (\begin{DoxyParamCaption}\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Apresenta a matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & Matriz a ser apresentada. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00115}{115}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{funcao_8c_a45d5ccc3ee9341474afc44e73475d76f}\index{funcao.c@{funcao.c}!atualizarMatriz@{atualizarMatriz}}
+\index{atualizarMatriz@{atualizarMatriz}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{atualizarMatriz()}{atualizarMatriz()}}
+{\footnotesize\ttfamily \label{funcao_8c_a45d5ccc3ee9341474afc44e73475d76f} 
+void atualizar\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Atualiza a matriz e a lista de antenas com uma nova antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para a lista de antenas. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em x} & Coordenada x da antena. \\
+\hline
+{\em y} & Coordenada y da antena. \\
+\hline
+{\em matriz} & Matriz a ser atualizada. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00265}{265}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{funcao_8c_a79802d5e95d26d76bca730e07ce288e8}\index{funcao.c@{funcao.c}!igualarMatrizes@{igualarMatrizes}}
+\index{igualarMatrizes@{igualarMatrizes}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{igualarMatrizes()}{igualarMatrizes()}}
+{\footnotesize\ttfamily \label{funcao_8c_a79802d5e95d26d76bca730e07ce288e8} 
+void igualar\+Matrizes (\begin{DoxyParamCaption}\item[{char}]{matriz\+Nef}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}, }\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Copia os dados de uma matriz para outra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz\+Nef} & Matriz de destino. \\
+\hline
+{\em matriz} & Matriz de origem. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00132}{132}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a}\index{funcao.c@{funcao.c}!inserirAntena@{inserirAntena}}
+\index{inserirAntena@{inserirAntena}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{inserirAntena()}{inserirAntena()}}
+{\footnotesize\ttfamily \label{funcao_8c_a0caf0b54deb90e026d66c8ee5d718c6a} 
+void inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma nova antena na lista de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para a lista de antenas. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em x} & Coordenada x da antena. \\
+\hline
+{\em y} & Coordenada y da antena. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00078}{78}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{funcao_8c_a60d611b34c7be07e4e578482ac3749ef}\index{funcao.c@{funcao.c}!inserirNefasto@{inserirNefasto}}
+\index{inserirNefasto@{inserirNefasto}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{inserirNefasto()}{inserirNefasto()}}
+{\footnotesize\ttfamily \label{funcao_8c_a60d611b34c7be07e4e578482ac3749ef} 
+void inserir\+Nefasto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Insere um nefasto na lista de nefastos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para a lista de nefastos. \\
+\hline
+{\em x} & Coordenada x do nefasto. \\
+\hline
+{\em y} & Coordenada y do nefasto. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00225}{225}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{funcao_8c_a0dd3787db1a292cee40267e850469704}\index{funcao.c@{funcao.c}!LerLista@{LerLista}}
+\index{LerLista@{LerLista}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{LerLista()}{LerLista()}}
+{\footnotesize\ttfamily \label{funcao_8c_a0dd3787db1a292cee40267e850469704} 
+\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*} Ler\+Lista (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{, }\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Lê uma lista de antenas a partir de um arquivo e preenche uma matriz. 
+
+Esta função lê um arquivo contendo dados de antenas, armazena os dados em uma matriz e cria uma lista encadeada de antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & Nome do arquivo a ser lido. \\
+\hline
+{\em matriz} & Matriz onde os dados serão armazenados. \\
+\hline
+{\em linhas} & Ponteiro para armazenar o número de linhas da matriz. \\
+\hline
+{\em colunas} & Ponteiro para armazenar o número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ANT\texorpdfstring{$\ast$}{*} Retorna a lista de antenas lida do arquivo. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00027}{27}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{funcao_8c_a7c100c209dce8c29abd13961c75f2fcb}\index{funcao.c@{funcao.c}!matrizNefastos@{matrizNefastos}}
+\index{matrizNefastos@{matrizNefastos}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{matrizNefastos()}{matrizNefastos()}}
+{\footnotesize\ttfamily \label{funcao_8c_a7c100c209dce8c29abd13961c75f2fcb} 
+\mbox{\hyperlink{struct_n_e_f}{NEF}} \texorpdfstring{$\ast$}{*} matriz\+Nefastos (\begin{DoxyParamCaption}\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Detecta e insere nefastos na matriz. 
+
+Esta função percorre a matriz e insere nefastos (\textquotesingle{}\#\textquotesingle{}) em posições específicas com base nas coordenadas das antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & Matriz onde os nefastos serão inseridos. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NEF\texorpdfstring{$\ast$}{*} Retorna a lista de nefastos detectados. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00149}{149}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{funcao_8c_a5e363afa7bf8a0d74560ec1e766a52f6}\index{funcao.c@{funcao.c}!removerAntena@{removerAntena}}
+\index{removerAntena@{removerAntena}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{removerAntena()}{removerAntena()}}
+{\footnotesize\ttfamily \label{funcao_8c_a5e363afa7bf8a0d74560ec1e766a52f6} 
+void remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_n_t}{ANT}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char}]{matriz}{\mbox{[}\+MAX\+\_\+\+LINHAS\mbox{]}\mbox{[}\+MAX\+\_\+\+COLUNAS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista e da matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para a lista de antenas. \\
+\hline
+{\em x} & Coordenada x da antena. \\
+\hline
+{\em y} & Coordenada y da antena. \\
+\hline
+{\em matriz} & Matriz a ser atualizada. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{funcao_8c_source_l00289}{289}} of file \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
