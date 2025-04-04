@@ -1,11 +1,14 @@
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=header"/>
+
 # Projeto_EDA
 Repositório para arquivar o projeto de EDA
 
+<div align="center">
 
-|Autor  | Fábio Rafael Gomes Costa |
+|Autor | Fábio Rafael Gomes Costa |
 |:----:|:-------:|
-|**Contato**| **a22997@alunos.ipca.pt** |
-
+|**Contato** | **a22997@alunos.ipca.pt** |
+</div>
 _____________________________________________________________________________________
 
 Docente: Luis Ferreira
@@ -30,3 +33,5 @@ ________________________________________________________________________________
 [**Solução mais Recente Fase 1 "Versão Corrigida"**](fase_1/versao_corrigida)
 
 [**Solução mais Recente Fase 2**](a22997_Projeto_EDA_F1.zip)
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=footer"/>
