@@ -1,8 +1,0 @@
-﻿  funcao.c
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(57,24): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(96,9): warning C4033: 'InserirAntena' deve retornar um valor
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(273,9): warning C4033: 'InserirNefasto' deve retornar um valor
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(105,1): warning C4715: 'InserirAntena': nem todos os caminhos de controle retornam um valor
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(282,1): warning C4715: 'InserirNefasto': nem todos os caminhos de controle retornam um valor
-C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\projetoedalib\funcao.c(389,1): warning C4715: 'RemoverAntena': nem todos os caminhos de controle retornam um valor
-  projetoedalib.vcxproj -> C:\Users\fabio\Desktop\fase_1\a22997_Projeto_EDA_F1\projetoeda\x64\Debug\projetoedalib.lib
