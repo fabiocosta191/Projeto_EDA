@@ -1,0 +1,72 @@
+\doxysection{funcao.\+h}
+\hypertarget{projetoedalib_2funcao_8h_source}{}\label{projetoedalib_2funcao_8h_source}\index{projetoedalib/funcao.h@{projetoedalib/funcao.h}}
+\mbox{\hyperlink{projetoedalib_2funcao_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ MAX\_LINHAS\ 100}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MAX\_COLUNAS\ 100}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{freqAntena}};\ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{struct_ant_ae4906fba945c9bbb471249069b84bed8}{proxAntena}};\ }
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{struct_ant}{Ant}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nef}{Nef}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6fd3fc1721340aa6cda6ff64130ee22d}{antena1}};\ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a8480896859f1fd5c82e65d9409a60251}{antena2}};\ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }Nef*\ \mbox{\hyperlink{struct_nef_ac7bc194eec4867eccf5ecf84c58c5eeb}{proxNef}};\ }
+\DoxyCodeLine{00057\ \}\ \mbox{\hyperlink{struct_nef}{Nef}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant_nef}{AntNef}}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{struct\ }Ant*\ \mbox{\hyperlink{struct_ant_nef_acc6bf784e10d704a24d429dce10c66fd}{lista}};\ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{struct\ }Nef*\ \mbox{\hyperlink{struct_ant_nef_a80c508e64ee6ab650bce0c1fceee5587}{listaNef}};\ }
+\DoxyCodeLine{00069\ \}\ \mbox{\hyperlink{struct_ant_nef}{AntNef}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ PROTÓTIPOS\ DE\ FUNÇÕES\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00073\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{group___antenas_ga5634cbe9bfd58f5b46a9f64e7603b776}{InserirAntena}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{group___antenas_gab005b833253ce78f9ddff1cd4b801093}{LerLista}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tipoFicheiro,\ \textcolor{keywordtype}{int}*\ linhas,\ \textcolor{keywordtype}{int}*\ colunas);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___antenas_ga908a4cd69d0e74ecd0500fc85e4c90cc}{ApresentarLista}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___antenas_ga5ef24be2defa86d485ed72d0c495088e}{ApresentarMatrizLista}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ \mbox{\hyperlink{struct_ant_nef}{AntNef}}*\ \mbox{\hyperlink{group___antenas_ga9acc7b3fcccbb825057aa9a70cfc122a}{RemoverAntena}}(\mbox{\hyperlink{struct_ant_nef}{AntNef}}*\ listaAntNef,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00137\ \mbox{\hyperlink{struct_ant_nef}{AntNef}}*\ \mbox{\hyperlink{group___antenas_gaf957d6a53e29b4504367f27beb858bb9}{AdicionarAntena}}(\mbox{\hyperlink{struct_ant_nef}{AntNef}}*\ listaAntNef,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{00138\ \ \textcolor{comment}{//\ Fim\ do\ grupo\ Antenas}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00157\ \mbox{\hyperlink{struct_nef}{Nef}}*\ \mbox{\hyperlink{group___nefastos_gabcb2df429138321bf1a982da105b7eba}{InserirNefasto}}(\mbox{\hyperlink{struct_nef}{Nef}}*\ listaNef,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ \textcolor{keywordtype}{int}\ ant1,\ \textcolor{keywordtype}{int}\ ant2,\ \mbox{\hyperlink{struct_ant}{Ant}}*\ lista);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00166\ \mbox{\hyperlink{struct_nef}{Nef}}*\ \mbox{\hyperlink{group___nefastos_ga2e4798a06d5d3c5469e10537a1a17121}{EncontrarNefastos}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___nefastos_gaa28d290058a7ad68746554223e82fbe1}{ApresentarListaNef}}(\mbox{\hyperlink{struct_nef}{Nef}}*\ listaNef);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00183\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___nefastos_ga16798ac8d9c91ea8d5e7911305d8c671}{ApresentarMatrizListaNef}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas,\ \mbox{\hyperlink{struct_nef}{Nef}}*\ listaNef);}
+\DoxyCodeLine{00184\ \ \textcolor{comment}{//\ Fim\ do\ grupo\ Nefastos}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___memoria_ga855309e2366d9e593b7cbfeec6ccafaf}{FreeLista}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___memoria_ga130620bba45fe2a728f1800b9780e9d4}{FreeListaNef}}(\mbox{\hyperlink{struct_nef}{Nef}}*\ listaNef);}
+\DoxyCodeLine{00212\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___memoria_gabe9a9c0979bb1220204c956f2b50127f}{FreeAntNef}}(\mbox{\hyperlink{struct_ant_nef}{AntNef}}*\ listaAntNef);\ \textcolor{comment}{//\ Fim\ do\ grupo\ Memoria}}
+
+\end{DoxyCode}

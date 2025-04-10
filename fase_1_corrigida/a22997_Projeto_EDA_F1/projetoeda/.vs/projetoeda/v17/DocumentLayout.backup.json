@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1AD3A98C-7E73-4F52-BB79-5596347F6DEE}|projetoedalib\\projetoedalib.vcxproj|C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AD3A98C-7E73-4F52-BB79-5596347F6DEE}|projetoedalib\\projetoedalib.vcxproj|solutionrelative:projetoedalib\\funcao.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D08F918B-7DE8-4CD7-8998-3BA6C327F4FB}|projetoeda\\projetoeda.vcxproj|C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D08F918B-7DE8-4CD7-8998-3BA6C327F4FB}|projetoeda\\projetoeda.vcxproj|solutionrelative:projetoeda\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D08F918B-7DE8-4CD7-8998-3BA6C327F4FB}|projetoeda\\projetoeda.vcxproj|C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\funcao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D08F918B-7DE8-4CD7-8998-3BA6C327F4FB}|projetoeda\\projetoeda.vcxproj|solutionrelative:projetoeda\\funcao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AD3A98C-7E73-4F52-BB79-5596347F6DEE}|projetoedalib\\projetoedalib.vcxproj|C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AD3A98C-7E73-4F52-BB79-5596347F6DEE}|projetoedalib\\projetoedalib.vcxproj|solutionrelative:projetoedalib\\funcao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "funcao.h",
+              "DocumentMoniker": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.h",
+              "RelativeDocumentMoniker": "projetoedalib\\funcao.h",
+              "ToolTip": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.h",
+              "RelativeToolTip": "projetoedalib\\funcao.h",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAANMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-01T10:26:27.454Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "funcao.h",
+              "DocumentMoniker": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\funcao.h",
+              "RelativeDocumentMoniker": "projetoeda\\funcao.h",
+              "ToolTip": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\funcao.h",
+              "RelativeToolTip": "projetoeda\\funcao.h",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAAANQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-03T23:47:30.744Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "funcao.c",
+              "DocumentMoniker": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.c",
+              "RelativeDocumentMoniker": "projetoedalib\\funcao.c",
+              "ToolTip": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoedalib\\funcao.c",
+              "RelativeToolTip": "projetoedalib\\funcao.c",
+              "ViewState": "AgIAAMQBAAAAAAAAAAAAANABAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-04-01T10:26:26.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\main.c",
+              "RelativeDocumentMoniker": "projetoeda\\main.c",
+              "ToolTip": "C:\\Users\\fabio\\Desktop\\fase_1\\versao_corrigida\\a22997_Projeto_EDA_F1\\projetoeda\\projetoeda\\main.c",
+              "RelativeToolTip": "projetoeda\\main.c",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-04-03T23:45:09.175Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

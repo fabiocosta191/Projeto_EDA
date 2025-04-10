@@ -1,0 +1,182 @@
+\doxysection{Funções de Manipulação de Nefastos}
+\hypertarget{group___nefastos}{}\label{group___nefastos}\index{Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}}
+
+
+Conjunto de funções para cálculo e manipulação de posições nefastas.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___nefastos_gabcb2df429138321bf1a982da105b7eba}{Inserir\+Nefasto}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef, int x, int y, int ant1, int ant2, \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Insere uma nova posição nefasta na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___nefastos_ga2e4798a06d5d3c5469e10537a1a17121}{Encontrar\+Nefastos}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Calcula posições nefastas entre antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___nefastos_gaa28d290058a7ad68746554223e82fbe1}{Apresentar\+Lista\+Nef}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Imprime no ecrã a lista de posições nefastas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___nefastos_ga16798ac8d9c91ea8d5e7911305d8c671}{Apresentar\+Matriz\+Lista\+Nef}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas, \mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Exibe matriz com antenas e posições nefastas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conjunto de funções para cálculo e manipulação de posições nefastas. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___nefastos_gaa28d290058a7ad68746554223e82fbe1}\index{Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}!ApresentarListaNef@{ApresentarListaNef}}
+\index{ApresentarListaNef@{ApresentarListaNef}!Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}}
+\doxysubsubsection{\texorpdfstring{ApresentarListaNef()}{ApresentarListaNef()}}
+{\footnotesize\ttfamily \label{group___nefastos_gaa28d290058a7ad68746554223e82fbe1} 
+int Apresentar\+Lista\+Nef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Nef}{}\end{DoxyParamCaption})}
+
+
+
+Imprime no ecrã a lista de posições nefastas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista de nefastos a exibir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Imprime no ecrã a lista de posições nefastas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista de posições nefastas a apresentar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___nefastos_ga16798ac8d9c91ea8d5e7911305d8c671}\index{Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}!ApresentarMatrizListaNef@{ApresentarMatrizListaNef}}
+\index{ApresentarMatrizListaNef@{ApresentarMatrizListaNef}!Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}}
+\doxysubsubsection{\texorpdfstring{ApresentarMatrizListaNef()}{ApresentarMatrizListaNef()}}
+{\footnotesize\ttfamily \label{group___nefastos_ga16798ac8d9c91ea8d5e7911305d8c671} 
+int Apresentar\+Matriz\+Lista\+Nef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{, }\item[{\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Nef}{}\end{DoxyParamCaption})}
+
+
+
+Exibe matriz com antenas e posições nefastas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas \\
+\hline
+{\em linhas} & Número de linhas da matriz \\
+\hline
+{\em colunas} & Número de colunas da matriz \\
+\hline
+{\em lista\+Nef} & Lista de posições nefastas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Exibe matriz com antenas e posições nefastas.
+
+Gera uma representação matricial mostrando antenas com sua frequência, posições nefastas com \textquotesingle{}\#\textquotesingle{} e espaços vazios com \textquotesingle{}.\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas \\
+\hline
+{\em linhas} & Número de linhas da matriz \\
+\hline
+{\em colunas} & Número de colunas da matriz \\
+\hline
+{\em lista\+Nef} & Lista de posições nefastas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___nefastos_ga2e4798a06d5d3c5469e10537a1a17121}\index{Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}!EncontrarNefastos@{EncontrarNefastos}}
+\index{EncontrarNefastos@{EncontrarNefastos}!Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}}
+\doxysubsubsection{\texorpdfstring{EncontrarNefastos()}{EncontrarNefastos()}}
+{\footnotesize\ttfamily \label{group___nefastos_ga2e4798a06d5d3c5469e10537a1a17121} 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} Encontrar\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Calcula posições nefastas entre antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a analisar \\
+\hline
+{\em linhas} & Número de linhas da área \\
+\hline
+{\em colunas} & Número de colunas da área \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de posições nefastas encontradas
+\end{DoxyReturn}
+Calcula posições nefastas entre antenas.
+
+Identifica posições onde podem ocorrer interferências entre antenas da mesma frequência seguindo padrões geométricos específicos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a analisar \\
+\hline
+{\em linhas} & Número de linhas da área de cobertura \\
+\hline
+{\em colunas} & Número de colunas da área de cobertura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nef\texorpdfstring{$\ast$}{*} Retorna uma lista de posições nefastas encontradas 
+\end{DoxyReturn}
+\Hypertarget{group___nefastos_gabcb2df429138321bf1a982da105b7eba}\index{Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}!InserirNefasto@{InserirNefasto}}
+\index{InserirNefasto@{InserirNefasto}!Funções de Manipulação de Nefastos@{Funções de Manipulação de Nefastos}}
+\doxysubsubsection{\texorpdfstring{InserirNefasto()}{InserirNefasto()}}
+{\footnotesize\ttfamily \label{group___nefastos_gabcb2df429138321bf1a982da105b7eba} 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} Inserir\+Nefasto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Nef}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{ant1}{, }\item[{int}]{ant2}{, }\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma nova posição nefasta na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista existente de nefastos \\
+\hline
+{\em x} & Coordenada x da posição nefasta \\
+\hline
+{\em y} & Coordenada y da posição nefasta \\
+\hline
+{\em ant1} & ID da primeira antena relacionada \\
+\hline
+{\em ant2} & ID da segunda antena relacionada \\
+\hline
+{\em lista} & Lista de antenas para validação \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista atualizada de nefastos
+\end{DoxyReturn}
+Verifica se a posição já existe na lista antes de inserir uma nova posição nefasta.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista de posições nefastas existente \\
+\hline
+{\em x} & Coordenada x da posição nefasta \\
+\hline
+{\em y} & Coordenada y da posição nefasta \\
+\hline
+{\em ant1} & ID da primeira antena relacionada \\
+\hline
+{\em ant2} & ID da segunda antena relacionada \\
+\hline
+{\em lista} & Lista de antenas para validação \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nef\texorpdfstring{$\ast$}{*} Retorna a lista atualizada de posições nefastas 
+\end{DoxyReturn}

@@ -1,0 +1,83 @@
+\doxysection{projetoeda/funcao.h File Reference}
+\hypertarget{projetoeda_2funcao_8h}{}\label{projetoeda_2funcao_8h}\index{projetoeda/funcao.h@{projetoeda/funcao.h}}
+
+
+Definições de estruturas e protótipos de funções para manipulação de antenas e nefastos.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ant}{Ant}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma antena. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_nef}{Nef}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma posição nefasta. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}}
+\begin{DoxyCompactList}\small\item\em Estrutura que agrupa listas de antenas e posições nefastas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc}\label{projetoeda_2funcao_8h_ab44f6d43935e7b204b295865fc8c1edc} 
+\#define {\bfseries MAX\+\_\+\+LINHAS}~100
+\begin{DoxyCompactList}\small\item\em Número máximo de linhas na matriz. \end{DoxyCompactList}\item 
+\Hypertarget{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9}\label{projetoeda_2funcao_8h_ad624bf76d9366faecf9041ef6ffffcb9} 
+\#define {\bfseries MAX\+\_\+\+COLUNAS}~100
+\begin{DoxyCompactList}\small\item\em Número máximo de colunas na matriz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{projetoeda_2funcao_8h_aac8aa3b966adc7c1ca6e25c673921ca0}\label{projetoeda_2funcao_8h_aac8aa3b966adc7c1ca6e25c673921ca0} 
+typedef struct Ant {\bfseries Ant}
+\item 
+\Hypertarget{projetoeda_2funcao_8h_a199546cc3997f8c0364254cc66ab7aa9}\label{projetoeda_2funcao_8h_a199546cc3997f8c0364254cc66ab7aa9} 
+typedef struct Nef {\bfseries Nef}
+\item 
+\Hypertarget{projetoeda_2funcao_8h_a179c4c6e076730cfa1e3fb90060977ea}\label{projetoeda_2funcao_8h_a179c4c6e076730cfa1e3fb90060977ea} 
+typedef struct Ant\+Nef {\bfseries Ant\+Nef}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_ga5634cbe9bfd58f5b46a9f64e7603b776}{Inserir\+Antena}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, char freq, int x, int y, int id)
+\begin{DoxyCompactList}\small\item\em Cria e insere uma nova antena na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_gab005b833253ce78f9ddff1cd4b801093}{Ler\+Lista}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, const char \texorpdfstring{$\ast$}{*}tipo\+Ficheiro, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
+\begin{DoxyCompactList}\small\item\em Lê um ficheiro e constrói a lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___antenas_ga908a4cd69d0e74ecd0500fc85e4c90cc}{Apresentar\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Imprime no ecrã a lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___antenas_ga5ef24be2defa86d485ed72d0c495088e}{Apresentar\+Matriz\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Exibe uma representação matricial das antenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_ga9acc7b3fcccbb825057aa9a70cfc122a}{Remover\+Antena}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef, int x, int y)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista e atualiza posições nefastas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_gaf957d6a53e29b4504367f27beb858bb9}{Adicionar\+Antena}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef, char freq, int x, int y, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Adiciona ou atualiza uma antena na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___nefastos_gabcb2df429138321bf1a982da105b7eba}{Inserir\+Nefasto}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef, int x, int y, int ant1, int ant2, \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Insere uma nova posição nefasta na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___nefastos_ga2e4798a06d5d3c5469e10537a1a17121}{Encontrar\+Nefastos}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Calcula posições nefastas entre antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___nefastos_gaa28d290058a7ad68746554223e82fbe1}{Apresentar\+Lista\+Nef}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Imprime no ecrã a lista de posições nefastas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___nefastos_ga16798ac8d9c91ea8d5e7911305d8c671}{Apresentar\+Matriz\+Lista\+Nef}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas, \mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Exibe matriz com antenas e posições nefastas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___memoria_ga855309e2366d9e593b7cbfeec6ccafaf}{Free\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___memoria_ga130620bba45fe2a728f1800b9780e9d4}{Free\+Lista\+Nef}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para lista de nefastos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___memoria_gabe9a9c0979bb1220204c956f2b50127f}{Free\+Ant\+Nef}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para ambas as listas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definições de estruturas e protótipos de funções para manipulação de antenas e nefastos. 
+
+\begin{DoxyAuthor}{Author}
+Fábio Rafael Gomes Costa @contact \href{mailto:a22997@alunos.ipca.pt}{\texttt{ a22997@alunos.\+ipca.\+pt}} @course Engenharia Sistemas Informáticos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+"{}\+Com correções pos defesa"{} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+04/04/2025 
+\end{DoxyDate}

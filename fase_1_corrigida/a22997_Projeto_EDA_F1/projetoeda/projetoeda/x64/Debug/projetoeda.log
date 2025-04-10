@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\fabio\Desktop\fase_1\versao_corrigida\a22997_Projeto_EDA_F1\projetoeda\projetoeda\main.c(33,13): warning C4133: 'inicializando': tipos incompatíveis - de 'Ant *' para 'AntNef *'
+  projetoeda.vcxproj -> C:\Users\fabio\Desktop\fase_1\versao_corrigida\a22997_Projeto_EDA_F1\projetoeda\x64\Debug\projetoeda.exe

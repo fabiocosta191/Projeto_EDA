@@ -1,0 +1,68 @@
+\doxysection{Nef Struct Reference}
+\hypertarget{struct_nef}{}\label{struct_nef}\index{Nef@{Nef}}
+
+
+Estrutura que representa uma posição nefasta.  
+
+
+
+
+{\ttfamily \#include $<$funcao.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}{x}}
+\item 
+int \mbox{\hyperlink{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}{y}}
+\item 
+int \mbox{\hyperlink{struct_nef_a6fd3fc1721340aa6cda6ff64130ee22d}{antena1}}
+\item 
+int \mbox{\hyperlink{struct_nef_a8480896859f1fd5c82e65d9409a60251}{antena2}}
+\item 
+struct \mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_nef_ac7bc194eec4867eccf5ecf84c58c5eeb}{prox\+Nef}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura que representa uma posição nefasta. 
+
+Armazena coordenadas de posições onde podem ocorrer interferências entre antenas, incluindo referências às antenas relacionadas. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_nef_a6fd3fc1721340aa6cda6ff64130ee22d}\index{Nef@{Nef}!antena1@{antena1}}
+\index{antena1@{antena1}!Nef@{Nef}}
+\doxysubsubsection{\texorpdfstring{antena1}{antena1}}
+{\footnotesize\ttfamily \label{struct_nef_a6fd3fc1721340aa6cda6ff64130ee22d} 
+int antena1}
+
+ID da primeira antena associada ao nefasto. \Hypertarget{struct_nef_a8480896859f1fd5c82e65d9409a60251}\index{Nef@{Nef}!antena2@{antena2}}
+\index{antena2@{antena2}!Nef@{Nef}}
+\doxysubsubsection{\texorpdfstring{antena2}{antena2}}
+{\footnotesize\ttfamily \label{struct_nef_a8480896859f1fd5c82e65d9409a60251} 
+int antena2}
+
+ID da segunda antena associada ao nefasto. \Hypertarget{struct_nef_ac7bc194eec4867eccf5ecf84c58c5eeb}\index{Nef@{Nef}!proxNef@{proxNef}}
+\index{proxNef@{proxNef}!Nef@{Nef}}
+\doxysubsubsection{\texorpdfstring{proxNef}{proxNef}}
+{\footnotesize\ttfamily \label{struct_nef_ac7bc194eec4867eccf5ecf84c58c5eeb} 
+struct \mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*} prox\+Nef}
+
+Ponteiro para o próximo nefasto na lista ligada. \Hypertarget{struct_nef_a6150e0515f7202e2fb518f7206ed97dc}\index{Nef@{Nef}!x@{x}}
+\index{x@{x}!Nef@{Nef}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{struct_nef_a6150e0515f7202e2fb518f7206ed97dc} 
+int x}
+
+Coordenada horizontal da posição nefasta. \Hypertarget{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33}\index{Nef@{Nef}!y@{y}}
+\index{y@{y}!Nef@{Nef}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{struct_nef_a0a2f84ed7838f07779ae24c5a9086d33} 
+int y}
+
+Coordenada vertical da posição nefasta. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+projetoeda/\mbox{\hyperlink{projetoeda_2funcao_8h}{funcao.\+h}}\item 
+projetoedalib/\mbox{\hyperlink{projetoedalib_2funcao_8h}{funcao.\+h}}\end{DoxyCompactItemize}

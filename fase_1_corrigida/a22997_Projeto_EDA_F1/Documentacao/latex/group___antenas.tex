@@ -1,0 +1,272 @@
+\doxysection{Funções de Manipulação de Antenas}
+\hypertarget{group___antenas}{}\label{group___antenas}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+
+
+Conjunto de funções para criação, leitura e manipulação de antenas.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_ga5634cbe9bfd58f5b46a9f64e7603b776}{Inserir\+Antena}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, char freq, int x, int y, int id)
+\begin{DoxyCompactList}\small\item\em Cria e insere uma nova antena na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_gab005b833253ce78f9ddff1cd4b801093}{Ler\+Lista}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, const char \texorpdfstring{$\ast$}{*}tipo\+Ficheiro, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
+\begin{DoxyCompactList}\small\item\em Lê um ficheiro e constrói a lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___antenas_ga908a4cd69d0e74ecd0500fc85e4c90cc}{Apresentar\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Imprime no ecrã a lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___antenas_ga5ef24be2defa86d485ed72d0c495088e}{Apresentar\+Matriz\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Exibe uma representação matricial das antenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_ga9acc7b3fcccbb825057aa9a70cfc122a}{Remover\+Antena}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef, int x, int y)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista e atualiza posições nefastas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___antenas_gaf957d6a53e29b4504367f27beb858bb9}{Adicionar\+Antena}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef, char freq, int x, int y, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Adiciona ou atualiza uma antena na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conjunto de funções para criação, leitura e manipulação de antenas. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___antenas_gaf957d6a53e29b4504367f27beb858bb9}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!AdicionarAntena@{AdicionarAntena}}
+\index{AdicionarAntena@{AdicionarAntena}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{AdicionarAntena()}{AdicionarAntena()}}
+{\footnotesize\ttfamily \label{group___antenas_gaf957d6a53e29b4504367f27beb858bb9} 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} Adicionar\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Ant\+Nef}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona ou atualiza uma antena na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Ant\+Nef} & Estrutura contendo ambas as listas \\
+\hline
+{\em freq} & Frequência da nova antena \\
+\hline
+{\em x} & Coordenada x da antena \\
+\hline
+{\em y} & Coordenada y da antena \\
+\hline
+{\em linhas} & Total de linhas da área \\
+\hline
+{\em colunas} & Total de colunas da área \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estrutura atualizada
+\end{DoxyReturn}
+Adiciona ou atualiza uma antena na lista.
+
+Se já existir uma antena nas coordenadas especificadas, atualiza sua frequência. Caso contrário, insere uma nova antena.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Ant\+Nef} & Estrutura contendo listas de antenas e posições nefastas \\
+\hline
+{\em freq} & Frequência da antena \\
+\hline
+{\em x} & Coordenada x da antena \\
+\hline
+{\em y} & Coordenada y da antena \\
+\hline
+{\em linhas} & Número de linhas da área de cobertura \\
+\hline
+{\em colunas} & Número de colunas da área de cobertura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ant\+Nef\texorpdfstring{$\ast$}{*} Retorna a estrutura atualizada 
+\end{DoxyReturn}
+\Hypertarget{group___antenas_ga908a4cd69d0e74ecd0500fc85e4c90cc}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!ApresentarLista@{ApresentarLista}}
+\index{ApresentarLista@{ApresentarLista}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{ApresentarLista()}{ApresentarLista()}}
+{\footnotesize\ttfamily \label{group___antenas_ga908a4cd69d0e74ecd0500fc85e4c90cc} 
+int Apresentar\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Imprime no ecrã a lista de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a ser exibida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Imprime no ecrã a lista de antenas.
+
+Percorre a lista de antenas e imprime no ecrã a frequência, coordenadas e ID de cada uma.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a apresentar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___antenas_ga5ef24be2defa86d485ed72d0c495088e}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!ApresentarMatrizLista@{ApresentarMatrizLista}}
+\index{ApresentarMatrizLista@{ApresentarMatrizLista}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{ApresentarMatrizLista()}{ApresentarMatrizLista()}}
+{\footnotesize\ttfamily \label{group___antenas_ga5ef24be2defa86d485ed72d0c495088e} 
+int Apresentar\+Matriz\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Exibe uma representação matricial das antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas \\
+\hline
+{\em linhas} & Número de linhas da matriz \\
+\hline
+{\em colunas} & Número de colunas da matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Exibe uma representação matricial das antenas.
+
+Gera uma representação matricial onde as antenas são mostradas com sua frequência e os espaços vazios são representados por pontos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas \\
+\hline
+{\em linhas} & Número de linhas da matriz \\
+\hline
+{\em colunas} & Número de colunas da matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___antenas_ga5634cbe9bfd58f5b46a9f64e7603b776}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!InserirAntena@{InserirAntena}}
+\index{InserirAntena@{InserirAntena}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{InserirAntena()}{InserirAntena()}}
+{\footnotesize\ttfamily \label{group___antenas_ga5634cbe9bfd58f5b46a9f64e7603b776} 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Cria e insere uma nova antena na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista existente de antenas (pode ser NULL) \\
+\hline
+{\em freq} & Carácter representando a frequência da antena \\
+\hline
+{\em x} & Coordenada horizontal da antena \\
+\hline
+{\em y} & Coordenada vertical da antena \\
+\hline
+{\em id} & Identificador único para a nova antena \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a lista atualizada
+\end{DoxyReturn}
+Cria e insere uma nova antena na lista.
+
+Aloca memória para uma nova antena e insere-\/a no início da lista.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas existente \\
+\hline
+{\em freq} & Carácter que representa a frequência da antena \\
+\hline
+{\em x} & Coordenada x da antena \\
+\hline
+{\em y} & Coordenada y da antena \\
+\hline
+{\em id} & Identificador único da antena \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ant\texorpdfstring{$\ast$}{*} Retorna a lista atualizada com a nova antena 
+\end{DoxyReturn}
+\Hypertarget{group___antenas_gab005b833253ce78f9ddff1cd4b801093}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!LerLista@{LerLista}}
+\index{LerLista@{LerLista}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{LerLista()}{LerLista()}}
+{\footnotesize\ttfamily \label{group___antenas_gab005b833253ce78f9ddff1cd4b801093} 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Ler\+Lista (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{tipo\+Ficheiro}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Lê um ficheiro e constrói a lista de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & Nome base do ficheiro (sem extensão) \\
+\hline
+{\em tipo\+Ficheiro} & Extensão do ficheiro ("{}.\+txt"{} ou outro) \\
+\hline
+{\em linhas} & Ponteiro para armazenar número de linhas lidas \\
+\hline
+{\em colunas} & Ponteiro para armazenar número máximo de colunas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de antenas criada ou NULL em caso de erro
+\end{DoxyReturn}
+Lê um ficheiro e constrói a lista de antenas.
+
+Esta função lê um ficheiro (texto ou binário) e cria uma lista ligada de antenas com base nos caracteres encontrados que não sejam pontos (\textquotesingle{}.\textquotesingle{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & Nome base do ficheiro (sem extensão) \\
+\hline
+{\em tipo\+Ficheiro} & Extensão do ficheiro ("{}.\+txt"{} ou outro para binário) \\
+\hline
+{\em linhas} & Ponteiro para armazenar o número de linhas lidas \\
+\hline
+{\em colunas} & Ponteiro para armazenar o número máximo de colunas encontradas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ant\texorpdfstring{$\ast$}{*} Retorna a lista de antenas criada ou NULL em caso de erro 
+\end{DoxyReturn}
+\Hypertarget{group___antenas_ga9acc7b3fcccbb825057aa9a70cfc122a}\index{Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!Funções de Manipulação de Antenas@{Funções de Manipulação de Antenas}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{group___antenas_ga9acc7b3fcccbb825057aa9a70cfc122a} 
+\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*} Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Ant\+Nef}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista e atualiza posições nefastas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Ant\+Nef} & Estrutura contendo ambas as listas \\
+\hline
+{\em x} & Coordenada x da antena a remover \\
+\hline
+{\em y} & Coordenada y da antena a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estrutura atualizada
+\end{DoxyReturn}
+Remove uma antena da lista e atualiza posições nefastas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Ant\+Nef} & Estrutura contendo listas de antenas e posições nefastas \\
+\hline
+{\em x} & Coordenada x da antena a remover \\
+\hline
+{\em y} & Coordenada y da antena a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ant\+Nef\texorpdfstring{$\ast$}{*} Retorna a estrutura atualizada 
+\end{DoxyReturn}

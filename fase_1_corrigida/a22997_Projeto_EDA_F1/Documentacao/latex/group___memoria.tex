@@ -1,0 +1,110 @@
+\doxysection{Funções de Gestão de Memória}
+\hypertarget{group___memoria}{}\label{group___memoria}\index{Funções de Gestão de Memória@{Funções de Gestão de Memória}}
+
+
+Funções para libertação de memória alocada.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group___memoria_ga855309e2366d9e593b7cbfeec6ccafaf}{Free\+Lista}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para lista de antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___memoria_ga130620bba45fe2a728f1800b9780e9d4}{Free\+Lista\+Nef}} (\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}lista\+Nef)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para lista de nefastos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___memoria_gabe9a9c0979bb1220204c956f2b50127f}{Free\+Ant\+Nef}} (\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}lista\+Ant\+Nef)
+\begin{DoxyCompactList}\small\item\em Liberta memória alocada para ambas as listas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para libertação de memória alocada. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___memoria_gabe9a9c0979bb1220204c956f2b50127f}\index{Funções de Gestão de Memória@{Funções de Gestão de Memória}!FreeAntNef@{FreeAntNef}}
+\index{FreeAntNef@{FreeAntNef}!Funções de Gestão de Memória@{Funções de Gestão de Memória}}
+\doxysubsubsection{\texorpdfstring{FreeAntNef()}{FreeAntNef()}}
+{\footnotesize\ttfamily \label{group___memoria_gabe9a9c0979bb1220204c956f2b50127f} 
+int Free\+Ant\+Nef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant_nef}{Ant\+Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Ant\+Nef}{}\end{DoxyParamCaption})}
+
+
+
+Liberta memória alocada para ambas as listas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a ser liberada \\
+\hline
+{\em lista\+Nef} & Lista de nefastos a ser liberada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Liberta memória alocada para ambas as listas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Ant\+Nef} & Estrutura \doxylink{struct_ant_nef}{Ant\+Nef} a libertar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___memoria_ga855309e2366d9e593b7cbfeec6ccafaf}\index{Funções de Gestão de Memória@{Funções de Gestão de Memória}!FreeLista@{FreeLista}}
+\index{FreeLista@{FreeLista}!Funções de Gestão de Memória@{Funções de Gestão de Memória}}
+\doxysubsubsection{\texorpdfstring{FreeLista()}{FreeLista()}}
+{\footnotesize\ttfamily \label{group___memoria_ga855309e2366d9e593b7cbfeec6ccafaf} 
+int Free\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Liberta memória alocada para lista de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista a ser liberada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Liberta memória alocada para lista de antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas a libertar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
+\Hypertarget{group___memoria_ga130620bba45fe2a728f1800b9780e9d4}\index{Funções de Gestão de Memória@{Funções de Gestão de Memória}!FreeListaNef@{FreeListaNef}}
+\index{FreeListaNef@{FreeListaNef}!Funções de Gestão de Memória@{Funções de Gestão de Memória}}
+\doxysubsubsection{\texorpdfstring{FreeListaNef()}{FreeListaNef()}}
+{\footnotesize\ttfamily \label{group___memoria_ga130620bba45fe2a728f1800b9780e9d4} 
+int Free\+Lista\+Nef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nef}{Nef}} \texorpdfstring{$\ast$}{*}}]{lista\+Nef}{}\end{DoxyParamCaption})}
+
+
+
+Liberta memória alocada para lista de nefastos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista a ser liberada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 em caso de sucesso
+\end{DoxyReturn}
+Liberta memória alocada para lista de nefastos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Nef} & Lista de posições nefastas a libertar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 em caso de sucesso 
+\end{DoxyReturn}
