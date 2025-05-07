@@ -52,6 +52,9 @@ int main() {
             }
         }
     }
+	// Liberta a memória alocada
+    FreeListaAntenas(listaAntenas);
+    FreeGrafo(&grafo);
 
     return 0;
 }

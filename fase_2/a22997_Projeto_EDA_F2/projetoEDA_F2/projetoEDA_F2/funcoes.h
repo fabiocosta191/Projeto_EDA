@@ -46,3 +46,11 @@ Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, i
 Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id);
 int CriarListaArestas(Ant* lista);
 
+
+
+
+
+//* Funcao para liberar a memoria alocada para a lista de antenas, grafo, vertice */
+int FreeGrafo(Grafo* grafo);
+int FreeListaAntenas(Ant * lista);
+

@@ -134,3 +134,34 @@ int CriarListaArestas(Ant* lista) {
 }
 
 
+
+
+//* Função para liberar a memória alocada para a lista de antenas, grafo, vertice */
+int FreeListaAntenas(Ant* lista) {
+    Ant* atual = lista;
+    while (atual != NULL) {
+        Ars* aresta = atual->listaAresta;
+        // Liberta todas as arestas desta antena
+        while (aresta != NULL) {
+            Ars* tempAresta = aresta;
+            aresta = aresta->proximaAresta;
+            free(tempAresta);
+        }
+
+        Ant* tempAntena = atual;
+        atual = atual->proxAntena;
+        free(tempAntena);
+    }
+	return 1;
+}
+
+int FreeGrafo(Grafo* grafo) {
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        grafo->Antena[i] = NULL; // só para segurança se não fores libertar aqui
+    }
+	free(grafo); // Liberta a memória alocada para o grafo
+	return 1;
+}
+
+
+
