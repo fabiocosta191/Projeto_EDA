@@ -60,6 +60,7 @@ int IniciarDFS(Grafo* grafo, int idOrigem);
 
 
 int ImprimirMatriz(Grafo* grafo, int linhas, int colunas);
+void ListarArestasENefastos(Grafo* grafo, int linhas, int colunas);
 
 
 

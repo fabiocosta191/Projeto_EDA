@@ -51,5 +51,51 @@ int ImprimirMatriz(Grafo* grafo, int linhas, int colunas) {
         }
         printf("\n");
     }
+    printf("\n\n");
+	return 200;
+}
+
+
+void ListarArestasENefastos(Grafo* grafo, int linhas, int colunas) {
+    
+    printf("\nLista de Antenas, Arestas e Zonas Nefastas:\n");
+
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        Ant* ant = grafo->Antena[i];
+        if (ant == NULL)
+            continue;
+
+        printf("\nAntena %d (freq. %c) em [%d, %d]:\n", ant->id, ant->freqAntena, ant->x, ant->y);
+
+        Ars* aresta = ant->listaAresta;
+        int count = 0;
+        if (aresta == NULL) {
+            printf("  - Sem arestas.\n");
+        }
+
+        while (aresta != NULL) {
+            int xNef = aresta->xNef;
+            int yNef = aresta->yNef;
+            int nefastoValido = (xNef >= 0 && xNef < colunas && yNef >= 0 && yNef < linhas);
+
+            printf("  Aresta %d -> Antena %d (%c) em [%d, %d] | ",
+                count,
+                aresta->destinoAntena->id,
+                aresta->destinoAntena->freqAntena,
+                aresta->destinoAntena->x,
+                aresta->destinoAntena->y);
+
+            if (nefastoValido) {
+                printf("Zona nefasta: [%d, %d]\n", xNef, yNef);
+            }
+            else {
+                printf("Nao possui zona nefasta guardada, ou esta encontra-se fora dos limites da matriz.\n");
+            }
+
+            count++;
+            aresta = aresta->proximaAresta;
+        }
+    }
+	printf("\n\n");
 	return 200;
 }

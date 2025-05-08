@@ -28,7 +28,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="projetoEDA_F2.lib">
+    <Library Include="..\x64\Debug\projetoEDA_F2.lib">
       <Filter>Arquivos de Origem</Filter>
     </Library>
   </ItemGroup>

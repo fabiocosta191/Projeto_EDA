@@ -17,7 +17,6 @@
         FILE* ficheiro;
         char nomeCompleto[256];  // Buffer para o nome do arquivo
         snprintf(nomeCompleto, sizeof(nomeCompleto), "%s%s", nomeFicheiro, tipoFicheiro);
-
         if (strcmp(tipoFicheiro, ".txt") == 0) {
             errno_t err = fopen_s(&ficheiro, nomeCompleto, "r");
             if (err != 0) {
@@ -104,7 +103,7 @@
 
             while (listaAnt2 != NULL) {
 
-                if (listaAnt1->freqAntena == listaAnt2->freqAntena) {
+                if (listaAnt1->freqAntena == listaAnt2->freqAntena && (listaAnt1->y != listaAnt2->y && listaAnt1->x != listaAnt2->x)) {
 				    Ars* novaAresta = (Ars*)malloc(sizeof(Ars));
 				    if (novaAresta == NULL) {
 					    perror("Erro ao alocar mem�ria para a aresta");
@@ -115,73 +114,72 @@
 				    novaAresta->proximaAresta = listaAnt1->listaAresta;
 				    listaAnt1->listaAresta = novaAresta;
 
-                    if (listaAnt1->y != listaAnt2->y && listaAnt1->x != listaAnt2->x)
+                    
+                    if (listaAnt1->x > listaAnt2->x)
                     {
-                        if (listaAnt1->x > listaAnt2->x)
-                        {
-                            difx = listaAnt1->x - listaAnt2->x;
-                            menorx = listaAnt2->x - difx;
-                            maiorx = listaAnt1->x + difx;
-                        }
-                        else
-                        {
-                            difx = listaAnt2->x - listaAnt1->x;
-                            menorx = listaAnt1->x - difx;
-                            maiorx = listaAnt2->x + difx;
-                        }
-                        if (listaAnt1->y > listaAnt2->y)
-                        {
-                            dify = listaAnt1->y - listaAnt2->y;
-                            menory = listaAnt2->y - dify;
-                            maiory = listaAnt1->y + dify;
-                        }
-                        else
-                        {
-                            dify = listaAnt2->y - listaAnt1->y;
-                            menory = listaAnt1->y - dify;
-                            maiory = listaAnt2->y + dify;
-                        }
+                        difx = listaAnt1->x - listaAnt2->x;
+                        menorx = listaAnt2->x - difx;
+                        maiorx = listaAnt1->x + difx;
+                    }
+                    else
+                    {
+                        difx = listaAnt2->x - listaAnt1->x;
+                        menorx = listaAnt1->x - difx;
+                        maiorx = listaAnt2->x + difx;
+                    }
+                    if (listaAnt1->y > listaAnt2->y)
+                    {
+                        dify = listaAnt1->y - listaAnt2->y;
+                        menory = listaAnt2->y - dify;
+                        maiory = listaAnt1->y + dify;
+                    }
+                    else
+                    {
+                        dify = listaAnt2->y - listaAnt1->y;
+                        menory = listaAnt1->y - dify;
+                        maiory = listaAnt2->y + dify;
+                    }
 
-                        idant1 = listaAnt1->id;
-                        idant2 = listaAnt2->id;
+                    idant1 = listaAnt1->id;
+                    idant2 = listaAnt2->id;
 
-                        if (listaAnt1->x > listaAnt2->x && listaAnt1->y > listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y < listaAnt2->y)
-                        {
-                            if (listaAnt1->y < listaAnt2->y) {
-                                if (menorx >= 0 && menory >= 0 && menorx <= linhas && menory <= colunas)
-                                {
-                                    novaAresta->xNef = menorx;
-                                    novaAresta->yNef = menory;
-                                }
-                            }
-                            else {
-                                if (maiorx <= colunas && maiory <= linhas && maiorx <= linhas && maiory <= colunas)
-                                {
-                                    novaAresta->xNef = maiorx;
-                                    novaAresta->yNef = maiory;
-                                }
+                    if (listaAnt1->x > listaAnt2->x && listaAnt1->y > listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y < listaAnt2->y)
+                    {
+                        if (listaAnt1->y < listaAnt2->y) {
+                            if (menorx >= 0 && menory >= 0 && menorx <= linhas && menory <= colunas)
+                            {
+                                novaAresta->xNef = menorx;
+                                novaAresta->yNef = menory;
                             }
                         }
-                        else if (listaAnt1->x > listaAnt2->x && listaAnt1->y < listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y > listaAnt2->y)
-                        {
-                            if (listaAnt1->y < listaAnt2->y) {
-
-                                if (maiorx >= 0 && menory >= 0 && maiorx <= linhas && menory <= colunas)
-                                {
-                                    novaAresta->xNef = maiorx;
-                                    novaAresta->yNef = menory;
-                                }
-                            }
-                            else {
-                                if (menorx <= colunas && maiory <= linhas && menorx <= linhas && maiory <= colunas)
-                                {
-                                    novaAresta->xNef = menorx;
-                                    novaAresta->yNef = maiory;
-                                }
-
+                        else {
+                            if (maiorx <= colunas && maiory <= linhas && maiorx <= linhas && maiory <= colunas)
+                            {
+                                novaAresta->xNef = maiorx;
+                                novaAresta->yNef = maiory;
                             }
                         }
                     }
+                    else if (listaAnt1->x > listaAnt2->x && listaAnt1->y < listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y > listaAnt2->y)
+                    {
+                        if (listaAnt1->y < listaAnt2->y) {
+
+                            if (maiorx >= 0 && menory >= 0 && maiorx <= linhas && menory <= colunas)
+                            {
+                                novaAresta->xNef = maiorx;
+                                novaAresta->yNef = menory;
+                            }
+                        }
+                        else {
+                            if (menorx <= colunas && maiory <= linhas && menorx <= linhas && maiory <= colunas)
+                            {
+                                novaAresta->xNef = menorx;
+                                novaAresta->yNef = maiory;
+                            }
+
+                        }
+                    }
+                    
                 }
                 listaAnt2 = listaAnt2->proxAntena;
             }
@@ -199,10 +197,11 @@
 #pragma region DFS
 
     int DFS(Ant* atual, int visitado[]) {
-        if (atual == NULL || visitado[atual->id])
-            return 200;
+        if (atual == NULL || visitado[atual->id]) {
+            return;
+        }
 
-        visitado[atual->id] = 1;  // Marca como visitado
+        visitado[atual->id] = 1;
 
         printf("Antena %d (%c) em [%d, %d]\n", atual->id, atual->freqAntena, atual->x, atual->y);
 
@@ -211,7 +210,6 @@
             DFS(aresta->destinoAntena, visitado);
             aresta = aresta->proximaAresta;
         }
-
     }
 
     int IniciarDFS(Grafo* grafo, int idOrigem) {
@@ -220,13 +218,15 @@
             return 500;
         }
 
-        int visitado[MAX_VERTICES] = { 0 };  // Inicializa todos a 0
+        int visitado[MAX_VERTICES] = { 0 };
         printf("DFS a partir da antena %d:\n", idOrigem);
         DFS(grafo->Antena[idOrigem], visitado);
-		return 200;
+        printf("Retorno à origem: %d\n\n", idOrigem);
+        return 200;
     }
 
 #pragma endregion
+
 
 
 

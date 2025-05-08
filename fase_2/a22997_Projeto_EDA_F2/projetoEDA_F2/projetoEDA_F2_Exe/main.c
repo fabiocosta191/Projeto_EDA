@@ -21,12 +21,19 @@ int main() {
 	if (validacaoResultado != 200) {
         perror("Erro ao imprimir a matriz.\n");
 	}
+    ListarArestasENefastos(&grafo, linhas, colunas);
+
+
+
 
 
     validacaoResultado = IniciarDFS(&grafo, 3); // Inicia DFS a partir da antena com ID 3 (ajusta conforme necessário)
     if (validacaoResultado != 200) {
         perror("Erro na procura em profundidade.\n");
     }
+
+
+
 
 
 	// Liberta a memória alocada

@@ -1,5 +1,7 @@
 ﻿  funcoes.c
-C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(47,28): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(110,17): warning C4566: caractere representado por nome de caractere universal (UCN) '\uFFFD' não pode ser representado na página de código atual (1252)
-C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(215,1): warning C4715: 'DFS': nem todos os caminhos de controle retornam um valor
-  projetoEDA_F2.vcxproj -> C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\x64\Debug\projetoEDA_F2.lib
+C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(46,28): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(109,17): warning C4566: caractere representado por nome de caractere universal (UCN) '\uFFFD' não pode ser representado na página de código atual (1252)
+C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.c(199,10): error C2371: 'DFS': redefinição; tipos básicos diferentes
+      C:\Users\fabio\Documents\GitHub\Projeto_EDA\fase_2\a22997_Projeto_EDA_F2\projetoEDA_F2\projetoEDA_F2\funcoes.h(54,5):
+      consulte a declaração de 'DFS'
+  
