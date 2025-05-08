@@ -31,8 +31,11 @@ typedef struct Ant { //Antena == Vertice
 } Ant;
 
 typedef struct Ars {
+	struct Ant* origemAntena; //Antena origem
     struct Ant* destinoAntena;
     struct Ars* proximaAresta;
+    int xNef;
+    int yNef;
 }Ars;
 
 typedef struct Grafo {
@@ -42,15 +45,26 @@ typedef struct Grafo {
 
 
 
+
 Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas, Grafo* grafo);
 Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id);
-int CriarListaArestas(Ant* lista);
+int CriarListaArestas(Ant* lista, int linhas, int colunas);
+
+
+int DFS(Ant* atual, int visitado[]);
+int IniciarDFS(Grafo* grafo, int idOrigem);
+
+
+
+
+
+
+int ImprimirMatriz(Grafo* grafo, int linhas, int colunas);
 
 
 
 
 
 //* Funcao para liberar a memoria alocada para a lista de antenas, grafo, vertice */
-int FreeGrafo(Grafo* grafo);
-int FreeListaAntenas(Ant * lista);
+int FreeListaAntenas(Ant * lista, Grafo* grafo);
 
