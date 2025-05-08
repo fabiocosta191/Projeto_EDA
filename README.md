@@ -30,8 +30,8 @@ Regras do trabalho em anexo [**"Projeto_EDA.pdf"**](Projeto_EDA.pdf)
 
 _____________________________________________________________________________________
 
-[**Solução mais Recente Fase 1 "Versão Corrigida"**](fase_1/versao_corrigida)
+[**Solução mais Recente Fase 1 "Versão Corrigida"**](fase_1_corrigida/a22997_Projeto_EDA_F1)
 
-[**Solução mais Recente Fase 2**](a22997_Projeto_EDA_F1.zip)
+[**Solução mais Recente Fase 2**](fase_2/a22997_Projeto_EDA_F2)
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=footer"/>
