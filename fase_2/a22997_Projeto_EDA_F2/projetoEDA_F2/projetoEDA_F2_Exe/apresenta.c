@@ -56,7 +56,7 @@ int ImprimirMatriz(Grafo* grafo, int linhas, int colunas) {
 }
 
 
-void ListarArestasENefastos(Grafo* grafo, int linhas, int colunas) {
+int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas) {
     
     printf("\nLista de Antenas, Arestas e Zonas Nefastas:\n");
 

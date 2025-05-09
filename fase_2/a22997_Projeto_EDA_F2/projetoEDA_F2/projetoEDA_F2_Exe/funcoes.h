@@ -20,7 +20,7 @@
 #define MAX_VERTICES 200
 
 
-
+#pragma region Estrutura_grafo
 typedef struct Ant { //Antena == Vertice
     char freqAntena;    /**< Frequ?ncia da antena (car?cter representativo). */
     int id;             /**< Identificador ?nico da antena. */
@@ -42,30 +42,40 @@ typedef struct Grafo {
     //array que armazena endere�os de Ant
     struct Ant* Antena[MAX_VERTICES]; //Antena[0]= Endere�o de Antena 0
 }Grafo;
+#pragma endregion
 
 
-
-
+#pragma region Leitura_Armazenamento
 Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas, Grafo* grafo);
 Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id);
 int CriarListaArestas(Ant* lista, int linhas, int colunas);
+#pragma endregion
 
 
-int DFS(Ant* atual, int visitado[]);
+#pragma region DFS
+void DFS(Ant* atual, int visitado[], int idOrigem);
 int IniciarDFS(Grafo* grafo, int idOrigem);
+#pragma endregion
 
 
+#pragma region BFS
+int BFS(Grafo* grafo, int idOrigem);
+#pragma endregion
 
 
+#pragma region Todos_Caminhos
+void encontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao);
+int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino);
+#pragma endregion
 
 
+#pragma region Impressao
 int ImprimirMatriz(Grafo* grafo, int linhas, int colunas);
-void ListarArestasENefastos(Grafo* grafo, int linhas, int colunas);
+int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas);
+#pragma endregion
 
 
-
-
-
+#pragma region Libertacao_Memoria
 //* Funcao para liberar a memoria alocada para a lista de antenas, grafo, vertice */
 int FreeListaAntenas(Ant* lista, Grafo* grafo);
-
+#pragma endregion

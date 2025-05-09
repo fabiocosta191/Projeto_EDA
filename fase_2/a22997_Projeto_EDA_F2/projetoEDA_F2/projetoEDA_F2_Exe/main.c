@@ -10,19 +10,22 @@ int main() {
 	int validacaoResultado = 0;
 
     // Substitui "matriz" e ".txt" pelos nomes reais do teu ficheiro
-    listaAntenas = LerLista("antenas", ".txt", &linhas, &colunas, &grafo);
+	listaAntenas = LerLista("antenas", ".txt", &linhas, &colunas, &grafo);//não é necessario returnar a lista
     if (listaAntenas == NULL) {
         perror("Erro ao carregar a lista de antenas.\n");
         return 1;
     }
 
 
+
     validacaoResultado = ImprimirMatriz(&grafo, linhas, colunas);
 	if (validacaoResultado != 200) {
         perror("Erro ao imprimir a matriz.\n");
 	}
-    ListarArestasENefastos(&grafo, linhas, colunas);
-
+    validacaoResultado = ListarArestasENefastos(&grafo, linhas, colunas);
+    if (validacaoResultado != 200) {
+        perror("Erro ao imprimir lista.\n");
+    }
 
 
 
@@ -33,7 +36,15 @@ int main() {
     }
 
 
+    validacaoResultado = BFS(&grafo, 3);
+    if (validacaoResultado != 200) {
+        perror("Erro na procura em largura.\n");
+    }
 
+    validacaoResultado = TodosCaminhos(&grafo, 4, 6);
+    if (validacaoResultado != 200) {
+        perror("Erro na procura ao encontrar o caminho.\n");
+    }
 
 
 	// Liberta a memória alocada
