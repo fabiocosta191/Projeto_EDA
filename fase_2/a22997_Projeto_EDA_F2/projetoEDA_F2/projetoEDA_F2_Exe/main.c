@@ -25,7 +25,7 @@ int main() {
     if (validacaoResultado != 200) {
         perror("Erro ao imprimir lista.\n");
     }
-    validacaoResultado = IniciarDFS(&grafo, 3); // Inicia DFS a partir da antena com ID 3 (ajusta conforme necessário)
+    validacaoResultado = IniciarDFS(&grafo, 3); //Inicia DFS a partir da antena com ID 3 (ajusta conforme necessário)
     if (validacaoResultado != 200) {
         perror("Erro na procura em profundidade.\n");
     }
@@ -37,7 +37,7 @@ int main() {
     if (validacaoResultado != 200) {
         perror("Erro na procura ao encontrar o caminho.\n");
     }
-
+    
 
 	// Liberta a memória alocada
     FreeListaAntenas(listaAntenas, &grafo);
