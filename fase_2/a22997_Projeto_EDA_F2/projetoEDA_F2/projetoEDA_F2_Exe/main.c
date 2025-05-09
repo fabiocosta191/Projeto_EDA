@@ -17,7 +17,6 @@ int main() {
     }
 
 
-
     validacaoResultado = ImprimirMatriz(&grafo, linhas, colunas);
 	if (validacaoResultado != 200) {
         perror("Erro ao imprimir a matriz.\n");
