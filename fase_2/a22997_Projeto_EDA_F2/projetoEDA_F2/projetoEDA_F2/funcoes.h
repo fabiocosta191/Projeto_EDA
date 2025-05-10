@@ -27,20 +27,19 @@ typedef struct Ant { //Antena == Vertice
     int x;              /**< Coordenada horizontal (coluna) da antena. */
     int y;              /**< Coordenada vertical (linha) da antena. */
     struct Ant* proxAntena; /**< Ponteiro para a pr?xima antena na lista ligada. */
-    struct Ars* listaAresta;
+    struct Ars* listaAresta; // Lista de arestas
 } Ant;
 
 typedef struct Ars {
-    struct Ant* origemAntena; //Antena origem
-    struct Ant* destinoAntena;
-    struct Ars* proximaAresta;
-    int xNef;
-    int yNef;
+    struct Ant* origemAntena; //Antena Origem
+    struct Ant* destinoAntena;//Antena Destino
+    struct Ars* proximaAresta;//Proxima Aresta
+    int xNef;// Coordenada X do nefasto
+    int yNef;// Coordenada Y do nefasto
 }Ars;
 
 typedef struct Grafo {
-    //array que armazena endere�os de Ant
-    struct Ant* Antena[MAX_VERTICES]; //Antena[0]= Endere�o de Antena 0
+    struct Ant* Antena[MAX_VERTICES]; //Antena[id]= Endereço de Antena id
 }Grafo;
 #pragma endregion
 

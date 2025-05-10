@@ -106,7 +106,7 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
             if (listaAnt1->freqAntena == listaAnt2->freqAntena && (listaAnt1->y != listaAnt2->y && listaAnt1->x != listaAnt2->x)) {
                 Ars* novaAresta = (Ars*)malloc(sizeof(Ars));
                 if (novaAresta == NULL) {
-                    perror("Erro ao alocar mem�ria para a aresta");
+                    perror("Erro ao alocar memoria para a aresta");
                     return 500;
                 }
                 novaAresta->origemAntena = listaAnt1;
