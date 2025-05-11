@@ -103,7 +103,7 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
 
         while (listaAnt2 != NULL) {
 
-            if (listaAnt1->freqAntena == listaAnt2->freqAntena && (listaAnt1->y != listaAnt2->y && listaAnt1->x != listaAnt2->x)) {
+            if (listaAnt1->freqAntena == listaAnt2->freqAntena && (listaAnt1->y != listaAnt2->y || listaAnt1->x != listaAnt2->x)) {
                 Ars* novaAresta = (Ars*)malloc(sizeof(Ars));
                 if (novaAresta == NULL) {
                     perror("Erro ao alocar memoria para a aresta");
@@ -114,72 +114,72 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
                 novaAresta->proximaAresta = listaAnt1->listaAresta;
                 listaAnt1->listaAresta = novaAresta;
 
+                if (listaAnt1->y != listaAnt2->y || listaAnt1->x != listaAnt2->x){
+                    if (listaAnt1->x > listaAnt2->x)
+                    {
+                        difx = listaAnt1->x - listaAnt2->x;
+                        menorx = listaAnt2->x - difx;
+                        maiorx = listaAnt1->x + difx;
+                    }
+                    else
+                    {
+                        difx = listaAnt2->x - listaAnt1->x;
+                        menorx = listaAnt1->x - difx;
+                        maiorx = listaAnt2->x + difx;
+                    }
+                    if (listaAnt1->y > listaAnt2->y)
+                    {
+                        dify = listaAnt1->y - listaAnt2->y;
+                        menory = listaAnt2->y - dify;
+                        maiory = listaAnt1->y + dify;
+                    }
+                    else
+                    {
+                        dify = listaAnt2->y - listaAnt1->y;
+                        menory = listaAnt1->y - dify;
+                        maiory = listaAnt2->y + dify;
+                    }
 
-                if (listaAnt1->x > listaAnt2->x)
-                {
-                    difx = listaAnt1->x - listaAnt2->x;
-                    menorx = listaAnt2->x - difx;
-                    maiorx = listaAnt1->x + difx;
-                }
-                else
-                {
-                    difx = listaAnt2->x - listaAnt1->x;
-                    menorx = listaAnt1->x - difx;
-                    maiorx = listaAnt2->x + difx;
-                }
-                if (listaAnt1->y > listaAnt2->y)
-                {
-                    dify = listaAnt1->y - listaAnt2->y;
-                    menory = listaAnt2->y - dify;
-                    maiory = listaAnt1->y + dify;
-                }
-                else
-                {
-                    dify = listaAnt2->y - listaAnt1->y;
-                    menory = listaAnt1->y - dify;
-                    maiory = listaAnt2->y + dify;
-                }
+                    idant1 = listaAnt1->id;
+                    idant2 = listaAnt2->id;
 
-                idant1 = listaAnt1->id;
-                idant2 = listaAnt2->id;
-
-                if (listaAnt1->x > listaAnt2->x && listaAnt1->y > listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y < listaAnt2->y)
-                {
-                    if (listaAnt1->y < listaAnt2->y) {
-                        if (menorx >= 0 && menory >= 0 && menorx <= linhas && menory <= colunas)
-                        {
-                            novaAresta->xNef = menorx;
-                            novaAresta->yNef = menory;
+                    if (listaAnt1->x > listaAnt2->x && listaAnt1->y > listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y < listaAnt2->y)
+                    {
+                        if (listaAnt1->y < listaAnt2->y) {
+                            if (menorx >= 0 && menory >= 0 && menorx <= linhas && menory <= colunas)
+                            {
+                                novaAresta->xNef = menorx;
+                                novaAresta->yNef = menory;
+                            }
+                        }
+                        else {
+                            if (maiorx <= colunas && maiory <= linhas && maiorx <= linhas && maiory <= colunas)
+                            {
+                                novaAresta->xNef = maiorx;
+                                novaAresta->yNef = maiory;
+                            }
                         }
                     }
-                    else {
-                        if (maiorx <= colunas && maiory <= linhas && maiorx <= linhas && maiory <= colunas)
-                        {
-                            novaAresta->xNef = maiorx;
-                            novaAresta->yNef = maiory;
+                    else if (listaAnt1->x > listaAnt2->x && listaAnt1->y < listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y > listaAnt2->y)
+                    {
+                        if (listaAnt1->y < listaAnt2->y) {
+
+                            if (maiorx >= 0 && menory >= 0 && maiorx <= linhas && menory <= colunas)
+                            {
+                                novaAresta->xNef = maiorx;
+                                novaAresta->yNef = menory;
+                            }
+                        }
+                        else {
+                            if (menorx <= colunas && maiory <= linhas && menorx <= linhas && maiory <= colunas)
+                            {
+                                novaAresta->xNef = menorx;
+                                novaAresta->yNef = maiory;
+                            }
+
                         }
                     }
                 }
-                else if (listaAnt1->x > listaAnt2->x && listaAnt1->y < listaAnt2->y || listaAnt1->x < listaAnt2->x && listaAnt1->y > listaAnt2->y)
-                {
-                    if (listaAnt1->y < listaAnt2->y) {
-
-                        if (maiorx >= 0 && menory >= 0 && maiorx <= linhas && menory <= colunas)
-                        {
-                            novaAresta->xNef = maiorx;
-                            novaAresta->yNef = menory;
-                        }
-                    }
-                    else {
-                        if (menorx <= colunas && maiory <= linhas && menorx <= linhas && maiory <= colunas)
-                        {
-                            novaAresta->xNef = menorx;
-                            novaAresta->yNef = maiory;
-                        }
-
-                    }
-                }
-
             }
             listaAnt2 = listaAnt2->proxAntena;
         }
@@ -193,9 +193,9 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
 
 
 #pragma region DFS
-void DFS(Ant* atual, int visitado[], int idOrigem) {
+int DFS(Ant* atual, int visitado[], int idOrigem) {
     if (atual == NULL || visitado[atual->id]) {
-        return;
+        return 200;
     }
 
     visitado[atual->id] = 1;
@@ -214,6 +214,7 @@ void DFS(Ant* atual, int visitado[], int idOrigem) {
         DFS(aresta->destinoAntena, visitado, atual->id);
         aresta = aresta->proximaAresta;
     }
+    return 200;
 }
 
 int IniciarDFS(Grafo* grafo, int idOrigem) {
@@ -284,8 +285,8 @@ int BFS(Grafo* grafo, int idOrigem) {
 
 
 #pragma region Todos_Caminhos
-void encontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao) {
-    if (atual == NULL) return;
+int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao) {
+    if (atual == NULL) return 200;
 
     visitado[atual->id] = 1;
     caminho[posicao++] = atual->id;
@@ -302,13 +303,14 @@ void encontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[],
         while (aresta != NULL) {
             int vizinhoID = aresta->destinoAntena->id;
             if (!visitado[vizinhoID]) {
-                encontrarCaminhos(aresta->destinoAntena, idDestino, visitado, caminho, posicao);
+                EncontrarCaminhos(aresta->destinoAntena, idDestino, visitado, caminho, posicao);
             }
             aresta = aresta->proximaAresta;
         }
     }
 
     visitado[atual->id] = 0; // backtracking
+	return 200;
 }
 int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
     if (grafo->Antena[idOrigem] == NULL || grafo->Antena[idDestino] == NULL) {
@@ -319,7 +321,7 @@ int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
     int visitado[MAX_VERTICES] = { 0 };
     int caminho[MAX_VERTICES];
     printf("Todos os caminhos de %d para %d:\n", idOrigem, idDestino);
-    encontrarCaminhos(grafo->Antena[idOrigem], idDestino, visitado, caminho, 0);
+    EncontrarCaminhos(grafo->Antena[idOrigem], idDestino, visitado, caminho, 0);
     printf("\n\n");
     return 200;
 

@@ -52,7 +52,7 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas);
 
 
 #pragma region DFS
-void DFS(Ant* atual, int visitado[], int idOrigem);
+int DFS(Ant* atual, int visitado[], int idOrigem);
 int IniciarDFS(Grafo* grafo, int idOrigem);
 #pragma endregion
 
@@ -63,7 +63,7 @@ int BFS(Grafo* grafo, int idOrigem);
 
 
 #pragma region Todos_Caminhos
-void encontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao);
+int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao);
 int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino);
 #pragma endregion
 
