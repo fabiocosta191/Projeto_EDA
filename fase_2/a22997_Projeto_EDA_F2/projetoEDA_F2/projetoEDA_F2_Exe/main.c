@@ -33,7 +33,7 @@ int main() {
     if (validacaoResultado != 200) {
         perror("Erro na procura em largura.\n");
     }
-    validacaoResultado = TodosCaminhos(&grafo, 4, 6);
+    validacaoResultado = TodosCaminhos(&grafo, 1, 6);
     if (validacaoResultado != 200) {
         perror("Erro na procura ao encontrar o caminho.\n");
     }

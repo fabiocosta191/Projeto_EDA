@@ -321,6 +321,11 @@ int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
     int visitado[MAX_VERTICES] = { 0 };
     int caminho[MAX_VERTICES];
     printf("Todos os caminhos de %d para %d:\n", idOrigem, idDestino);
+    //compara a frequencia da antena origem e destino
+    if (grafo->Antena[idOrigem]->freqAntena != grafo->Antena[idDestino]->freqAntena) {
+        printf("As antenas de origem e destino nao tem a mesma frequencia.\n\n\n");
+        return 200;
+    }
     EncontrarCaminhos(grafo->Antena[idOrigem], idDestino, visitado, caminho, 0);
     printf("\n\n");
     return 200;
