@@ -1,0 +1,66 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{projetoEDA\_F2\_Exe/main.c@{projetoEDA\_F2\_Exe/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h}{funcoes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00030}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{struct_ant}{Ant}}*\ listaAntenas\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ linhas\ =\ 0,\ colunas\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ validacaoResultado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Leitura\ da\ matriz\ do\ ficheiro\ "{}antenas.txt"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ \ \ \ \ listaAntenas\ =\ \mbox{\hyperlink{funcoes_8c_a24a0c73e61c508d9e884966640ce0aea}{LerLista}}(\textcolor{stringliteral}{"{}antenas"{}},\ \textcolor{stringliteral}{"{}.txt"{}},\ \&linhas,\ \&colunas,\ \&grafo);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (listaAntenas\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ carregar\ a\ lista\ de\ antenas.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Imprime\ a\ matriz\ com\ antenas\ e\ zonas\ nefastas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}{ImprimirMatriz}}(\&grafo,\ linhas,\ colunas);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ imprimir\ a\ matriz.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Lista\ as\ arestas\ e\ zonas\ nefastas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_adaa941ab25d7f5c32600c747bcffa924}{ListarArestasENefastos}}(\&grafo,\ linhas,\ colunas);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ imprimir\ lista.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Executa\ a\ procura\ em\ profundidade\ (DFS)\ a\ partir\ da\ antena\ 3}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{funcoes_8c_aace3cba108d565f7054960bc755e30e7}{IniciarDFS}}(\&grafo,\ 3);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ na\ procura\ em\ profundidade.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Executa\ a\ procura\ em\ largura\ (BFS)\ a\ partir\ da\ antena\ 3}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{funcoes_8c_a7ffdf7be6879cc6c53d6705877e44e9d}{BFS}}(\&grafo,\ 3);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ na\ procura\ em\ largura.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ Encontra\ todos\ os\ caminhos\ possíveis\ entre\ a\ antena\ 1\ e\ 6}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00068}00068\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{funcoes_8c_aecbc4d104ad42b1e13dd93f0319335a8}{TodosCaminhos}}(\&grafo,\ 1,\ 6);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ na\ procura\ ao\ encontrar\ o\ caminho.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Liberta\ toda\ a\ memória\ alocada}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00074}00074\ \ \ \ \ validacaoResultado\ =\ \mbox{\hyperlink{funcoes_8c_aa4054f9cb873a2cf5b5ef80b7e036faa}{FreeListaAntenas}}(listaAntenas,\ \&grafo);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (validacaoResultado\ !=\ 200)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Erro\ ao\ libertar\ memoria.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memoria\ libertada\ com\ sucesso.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00083}00083\ \}}
+
+\end{DoxyCode}

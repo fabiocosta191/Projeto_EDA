@@ -1,0 +1,95 @@
+\doxysection{apresenta.\+c}
+\hypertarget{apresenta_8c_source}{}\label{apresenta_8c_source}\index{projetoEDA\_F2\_Exe/apresenta.c@{projetoEDA\_F2\_Exe/apresenta.c}}
+\mbox{\hyperlink{apresenta_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h}{funcoes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00032}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}{00032}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{apresenta_8c_aaa5180fd0408054e7b86dd31ef2d08ec}{ImprimirMatriz}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ linhas;\ y++)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ colunas;\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ marcado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ existe\ uma\ antena\ nesta\ posição}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{MAX\_VERTICES}}\ \&\&\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]\ !=\ NULL;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]-\/>\mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ ==\ x\ \&\&\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]-\/>\mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ ==\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c\ "{}},\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]-\/>\mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{freqAntena}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ marcado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (marcado)\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Se\ já\ foi\ marcado,\ não\ precisa\ verificar\ os\ nefastos}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ existe\ um\ ponto\ nefasto\ nesta\ posição}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{MAX\_VERTICES}}\ \&\&\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]\ !=\ NULL;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_ars}{Ars}}*\ aresta\ =\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i]-\/>\mbox{\hyperlink{struct_ant_ae359129f4dea404cd3abb4a5760da3f7}{listaAresta}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (aresta\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aresta-\/>\mbox{\hyperlink{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}{xNef}}\ ==\ x\ \&\&\ aresta-\/>\mbox{\hyperlink{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}{yNef}}\ ==\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\#\ "{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ marcado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aresta\ =\ aresta-\/>\mbox{\hyperlink{struct_ars_af91f148395a813238b48c0ef05d7ac27}{proximaAresta}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (marcado)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!marcado)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}.\ "{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00068}00068\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ 200;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00085}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_adaa941ab25d7f5c32600c747bcffa924}{00085}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{apresenta_8c_adaa941ab25d7f5c32600c747bcffa924}{ListarArestasENefastos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00086}00086\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nLista\ de\ Antenas,\ Arestas\ e\ Zonas\ Nefastas:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{MAX\_VERTICES}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_ant}{Ant}}*\ ant\ =\ grafo-\/>\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[i];}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ant\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nAntena\ \%d\ (freq.\ \%c)\ em\ [\%d,\ \%d]:\(\backslash\)n"{}},\ ant-\/>\mbox{\hyperlink{struct_ant_a7441ef0865bcb3db9b8064dd7375c1ea}{id}},\ ant-\/>\mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{freqAntena}},\ ant-\/>\mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ ant-\/>\mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_ars}{Ars}}*\ aresta\ =\ ant-\/>\mbox{\hyperlink{struct_ant_ae359129f4dea404cd3abb4a5760da3f7}{listaAresta}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aresta\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ -\/\ Sem\ arestas.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (aresta\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xNef\ =\ aresta-\/>\mbox{\hyperlink{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}{xNef}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yNef\ =\ aresta-\/>\mbox{\hyperlink{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}{yNef}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nefastoValido\ =\ (xNef\ >=\ 0\ \&\&\ xNef\ <\ colunas\ \&\&\ yNef\ >=\ 0\ \&\&\ yNef\ <\ linhas);}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ Aresta\ \%d\ -\/>\ Antena\ \%d\ (\%c)\ em\ [\%d,\ \%d]\ |\ "{}},}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count,}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aresta-\/>\mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destinoAntena}}-\/>\mbox{\hyperlink{struct_ant_a7441ef0865bcb3db9b8064dd7375c1ea}{id}},}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aresta-\/>\mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destinoAntena}}-\/>\mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{freqAntena}},}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aresta-\/>\mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destinoAntena}}-\/>\mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}},}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aresta-\/>\mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destinoAntena}}-\/>\mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nefastoValido)\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Zona\ nefasta:\ [\%d,\ \%d]\(\backslash\)n"{}},\ xNef,\ yNef);}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nao\ possui\ zona\ nefasta\ guardada,\ ou\ esta\ encontra-\/se\ fora\ dos\ limites\ da\ matriz.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ aresta\ =\ aresta-\/>\mbox{\hyperlink{struct_ars_af91f148395a813238b48c0ef05d7ac27}{proximaAresta}};}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00124}00124\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ 200;}
+\DoxyCodeLine{\Hypertarget{apresenta_8c_source_l00126}00126\ \}}
+
+\end{DoxyCode}

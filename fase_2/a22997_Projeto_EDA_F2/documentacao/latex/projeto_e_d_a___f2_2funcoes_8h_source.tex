@@ -1,0 +1,87 @@
+\doxysection{funcoes.\+h}
+\hypertarget{projeto_e_d_a___f2_2funcoes_8h_source}{}\label{projeto_e_d_a___f2_2funcoes_8h_source}\index{projetoEDA\_F2/funcoes.h@{projetoEDA\_F2/funcoes.h}}
+\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00019}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_ab44f6d43935e7b204b295865fc8c1edc}{00019}}\ \textcolor{preprocessor}{\#define\ MAX\_LINHAS\ 100\ \ \ \ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00020}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_ad624bf76d9366faecf9041ef6ffffcb9}{00020}}\ \textcolor{preprocessor}{\#define\ MAX\_COLUNAS\ 100\ \ \ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00021}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{00021}}\ \textcolor{preprocessor}{\#define\ MAX\_VERTICES\ 200\ \ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00023}00023\ \textcolor{preprocessor}{\#pragma\ region\ Estrutura\_grafo}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00029}\mbox{\hyperlink{struct_ant}{00029}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}\ \{}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00030}\mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{00030}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_ant_a3419940d73191a069f0f2cb626622b92}{freqAntena}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00031}\mbox{\hyperlink{struct_ant_a7441ef0865bcb3db9b8064dd7375c1ea}{00031}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00032}\mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{00032}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00033}\mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{00033}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00034}\mbox{\hyperlink{struct_ant_ae4906fba945c9bbb471249069b84bed8}{00034}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{struct_ant_ae4906fba945c9bbb471249069b84bed8}{proxAntena}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00035}\mbox{\hyperlink{struct_ant_ae359129f4dea404cd3abb4a5760da3f7}{00035}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ars}{Ars}}*\ \mbox{\hyperlink{struct_ant_ae359129f4dea404cd3abb4a5760da3f7}{listaAresta}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00036}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aac8aa3b966adc7c1ca6e25c673921ca0}{00036}}\ \}\ \mbox{\hyperlink{struct_ant}{Ant}};}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00042}\mbox{\hyperlink{struct_ars}{00042}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ars}{Ars}}\ \{}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00043}\mbox{\hyperlink{struct_ars_a8d5799e2bf13a95a3fdbe32a08cce47b}{00043}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{struct_ars_a8d5799e2bf13a95a3fdbe32a08cce47b}{origemAntena}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00044}\mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{00044}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destinoAntena}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00045}\mbox{\hyperlink{struct_ars_af91f148395a813238b48c0ef05d7ac27}{00045}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ars}{Ars}}*\ \mbox{\hyperlink{struct_ars_af91f148395a813238b48c0ef05d7ac27}{proximaAresta}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00046}\mbox{\hyperlink{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}{00046}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}{xNef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00047}\mbox{\hyperlink{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}{00047}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}{yNef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00048}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a204371464f9ff60bd9b8b6b45890a945}{00048}}\ \}\ \mbox{\hyperlink{struct_ars}{Ars}};}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00054}\mbox{\hyperlink{struct_grafo}{00054}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafo}{Grafo}}\ \{}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00055}\mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{00055}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}}[\mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{MAX\_VERTICES}}];\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00056}\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_adab04f64457aac52a13e71e40915bd43}{00056}}\ \}\ \mbox{\hyperlink{struct_grafo}{Grafo}};}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00058}00058\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00060}00060\ \textcolor{preprocessor}{\#pragma\ region\ Leitura\_Armazenamento}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00072}00072\ \mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a24a0c73e61c508d9e884966640ce0aea}{LerLista}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tipoFicheiro,\ \textcolor{keywordtype}{int}*\ linhas,\ \textcolor{keywordtype}{int}*\ colunas,\ \mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00085}00085\ \mbox{\hyperlink{struct_ant}{Ant}}*\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a8b31b1e3a3b6ec3e1f80ab307251c167}{InserirAntena}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_ant_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00095}00095\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_ab8d4bb73287b5636baed7050b9ea23bd}{CriarListaArestas}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00097}00097\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00099}00099\ \textcolor{preprocessor}{\#pragma\ region\ DFS}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00109}00109\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a563b0b82af3e0991ad41f65f2c06b3d6}{DFS}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ atual,\ \textcolor{keywordtype}{int}\ visitado[],\ \textcolor{keywordtype}{int}\ idOrigem);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00118}00118\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aace3cba108d565f7054960bc755e30e7}{IniciarDFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ idOrigem);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00120}00120\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00122}00122\ \textcolor{preprocessor}{\#pragma\ region\ BFS}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00131}00131\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a7ffdf7be6879cc6c53d6705877e44e9d}{BFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ idOrigem);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00133}00133\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00135}00135\ \textcolor{preprocessor}{\#pragma\ region\ Todos\_Caminhos}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00147}00147\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_a90b04d8e5771d466d0cb839814f08eb9}{EncontrarCaminhos}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ atual,\ \textcolor{keywordtype}{int}\ idDestino,\ \textcolor{keywordtype}{int}\ visitado[],\ \textcolor{keywordtype}{int}\ caminho[],\ \textcolor{keywordtype}{int}\ posicao);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00157}00157\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aecbc4d104ad42b1e13dd93f0319335a8}{TodosCaminhos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ idOrigem,\ \textcolor{keywordtype}{int}\ idDestino);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00159}00159\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00161}00161\ \textcolor{preprocessor}{\#pragma\ region\ Impressao}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00171}00171\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}{ImprimirMatriz}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00181}00181\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_adaa941ab25d7f5c32600c747bcffa924}{ListarArestasENefastos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ linhas,\ \textcolor{keywordtype}{int}\ colunas);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00183}00183\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00185}00185\ \textcolor{preprocessor}{\#pragma\ region\ Libertacao\_Memoria}}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00194}00194\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_aa4054f9cb873a2cf5b5ef80b7e036faa}{FreeListaAntenas}}(\mbox{\hyperlink{struct_ant}{Ant}}*\ lista,\ \mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo);}
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{projeto_e_d_a___f2_2funcoes_8h_source_l00196}00196\ \textcolor{preprocessor}{\#pragma\ endregion}}
+
+\end{DoxyCode}

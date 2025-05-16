@@ -1,9 +1,13 @@
 ﻿/**
  * @file apresenta.c
- * @brief Implementa��o de funcoes para apresentar Dados.
- * @author Fabio Rafael Gomes Costa
+ * @brief Implementação de funções para apresentação de dados do grafo (matriz e lista de arestas).
+ *
+ * Contém funções responsáveis por mostrar graficamente a matriz de antenas e os efeitos nefastos,
+ * bem como listar todas as antenas, suas ligações (arestas) e zonas nefastas associadas.
+ *
+ * @author Fábio Rafael Gomes Costa
  * @contact a22997@alunos.ipca.pt
- * @course Engenharia Sistemas Informaticos
+ * @course Engenharia Sistemas Informáticos
  * @date 04/04/2025
  */
 
@@ -12,10 +16,20 @@
 #include <string.h>
 #include "funcoes.h"
 
-
+ /**
+  * @brief Imprime a matriz de antenas e zonas nefastas.
+  *
+  * A matriz representa:
+  * - Cada antena com a sua frequência (ex: '0', 'A', etc.);
+  * - Cada zona nefasta com o símbolo '#';
+  * - Células vazias com o símbolo '.'.
+  *
+  * @param grafo Ponteiro para o grafo que contém as antenas.
+  * @param linhas Número de linhas da matriz.
+  * @param colunas Número de colunas da matriz.
+  * @return 200 em caso de sucesso.
+  */
 int ImprimirMatriz(Grafo* grafo, int linhas, int colunas) {
-    //printf("Matriz com Antenas e Efeitos Nefastos:\n");
-
     for (int y = 0; y < linhas; y++) {
         for (int x = 0; x < colunas; x++) {
             int marcado = 0;
@@ -29,7 +43,7 @@ int ImprimirMatriz(Grafo* grafo, int linhas, int colunas) {
                 }
             }
 
-			if (marcado) continue; // Se já foi marcado, não precisa verificar os nefastos
+            if (marcado) continue; // Se já foi marcado, não precisa verificar os nefastos
 
             // Verifica se existe um ponto nefasto nesta posição
             for (int i = 0; i < MAX_VERTICES && grafo->Antena[i] != NULL; i++) {
@@ -52,12 +66,23 @@ int ImprimirMatriz(Grafo* grafo, int linhas, int colunas) {
         printf("\n");
     }
     printf("\n\n");
-	return 200;
+    return 200;
 }
 
-
+/**
+ * @brief Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas.
+ *
+ * Para cada antena no grafo:
+ * - Mostra a sua frequência e posição;
+ * - Lista todas as arestas para antenas com mesma frequência;
+ * - Indica a coordenada da zona nefasta associada, se válida;
+ *
+ * @param grafo Ponteiro para o grafo.
+ * @param linhas Número total de linhas da matriz (para validar nefastos).
+ * @param colunas Número total de colunas da matriz (para validar nefastos).
+ * @return 200 em caso de sucesso.
+ */
 int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas) {
-    
     printf("\nLista de Antenas, Arestas e Zonas Nefastas:\n");
 
     for (int i = 0; i < MAX_VERTICES; i++) {
@@ -96,6 +121,6 @@ int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas) {
             aresta = aresta->proximaAresta;
         }
     }
-	printf("\n\n");
-	return 200;
+    printf("\n\n");
+    return 200;
 }

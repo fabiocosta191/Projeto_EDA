@@ -1,11 +1,15 @@
 ﻿/**
  * @file funcao.c
- * @brief Implementa��o de funcoes para manipulacao de antenas e nefastos.
- * @author Fabio Rafael Gomes Costa
- * @contact a22997@alunos.ipca.pt
- * @course Engenharia Sistemas Informaticos
- * @date 04/04/2025
+ * @brief Implementação das funções para manipulação de antenas, grafos e zonas nefastas.
+ *
+ * Inclui as operações de leitura, criação de grafos com lista de adjacência, travessias (DFS, BFS),
+ * descoberta de caminhos possíveis entre antenas e libertação de memória.
+ *
+ * @author Fábio Rafael Gomes Costa
+ * @date 18/05/2025
+ * @version 2.0
  */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,6 +17,19 @@
 #include "funcoes.h"
 
 #pragma region Leitura_Armazenamento
+ /**
+  * @brief Lê a matriz de antenas a partir de um ficheiro (.txt ou .bin) e constrói a lista ligada.
+  *
+  * Esta função percorre o ficheiro linha a linha e cria antenas para todas as células não vazias.
+  * Após a leitura, chama a função CriarListaArestas() para estabelecer as ligações entre antenas.
+  *
+  * @param nomeFicheiro Nome base do ficheiro (sem extensão)
+  * @param tipoFicheiro Extensão do ficheiro (".txt" ou ".bin")
+  * @param linhas Ponteiro para armazenar o número de linhas da matriz
+  * @param colunas Ponteiro para armazenar o número de colunas da matriz
+  * @param grafo Ponteiro para o grafo onde as antenas serão registadas
+  * @return Ponteiro para o início da lista ligada de antenas
+  */
 Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas, Grafo* grafo) {
     FILE* ficheiro;
     char nomeCompleto[256];  // Buffer para o nome do arquivo
@@ -73,7 +90,17 @@ Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, i
     return lista;
 }
 
-
+/**
+ * @brief Insere uma nova antena na lista ligada e atualiza o grafo com o seu endereço.
+ *
+ * @param lista Lista ligada atual de antenas
+ * @param grafo Grafo onde a antena será registada pelo seu ID
+ * @param freq Carácter representativo da frequência da antena
+ * @param x Coordenada X (coluna) da antena
+ * @param y Coordenada Y (linha) da antena
+ * @param id Identificador único da antena
+ * @return Ponteiro para a nova cabeça da lista ligada
+ */
 Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id) {
     Ant* novaAntena = (Ant*)malloc(sizeof(Ant));
     if (novaAntena == NULL) {
@@ -95,6 +122,17 @@ Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id) {
     return novaAntena;
 }
 
+/**
+ * @brief Cria as arestas entre antenas com a mesma frequência e calcula zonas nefastas.
+ *
+ * Compara todas as antenas entre si e liga aquelas com frequência igual.
+ * Cada ligação pode armazenar uma zona nefasta resultante da interferência.
+ *
+ * @param lista Lista ligada com todas as antenas
+ * @param linhas Número total de linhas da matriz
+ * @param colunas Número total de colunas da matriz
+ * @return 200 se bem-sucedido, ou 500 em caso de erro de alocação
+ */
 int CriarListaArestas(Ant* lista, int linhas, int colunas) {
     int menorx, menory, maiorx, maiory, difx, dify, idant1, idant2;
     Ant* listaAnt1 = lista;
@@ -193,6 +231,16 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
 
 
 #pragma region DFS
+/**
+ * @brief Realiza uma travessia em profundidade (DFS) recursiva a partir de uma antena.
+ *
+ * Atravessa todas as conexões do grafo, listando as antenas alcançadas.
+ *
+ * @param atual Ponteiro para a antena atual
+ * @param visitado Vetor de controlo de antenas já visitadas
+ * @param idOrigem ID da antena anterior (usado para rastrear o percurso)
+ * @return Código de estado (200)
+ */
 int DFS(Ant* atual, int visitado[], int idOrigem) {
     if (atual == NULL || visitado[atual->id]) {
         return 200;
@@ -217,6 +265,15 @@ int DFS(Ant* atual, int visitado[], int idOrigem) {
     return 200;
 }
 
+/**
+ * @brief Função de inicialização para DFS.
+ *
+ * Verifica a validade da antena de origem e inicia a travessia.
+ *
+ * @param grafo Grafo onde se realiza a travessia
+ * @param idOrigem ID da antena de origem
+ * @return 200 em caso de sucesso, 500 se o ID for inválido
+ */
 int IniciarDFS(Grafo* grafo, int idOrigem) {
     if (idOrigem < 0 || idOrigem >= MAX_VERTICES || grafo->Antena[idOrigem] == NULL) {
         fprintf(stderr, "Antena com ID %d não existe.\n", idOrigem);
@@ -233,6 +290,15 @@ int IniciarDFS(Grafo* grafo, int idOrigem) {
 
 
 #pragma region BFS
+/**
+ * @brief Realiza uma travessia em largura (BFS) a partir de uma antena de origem.
+ *
+ * Utiliza uma fila para visitar os vértices por camadas e imprime o percurso.
+ *
+ * @param grafo Grafo que contém todas as antenas
+ * @param idOrigem ID da antena de origem
+ * @return 200 em caso de sucesso, ou se a antena for inválida
+ */
 int BFS(Grafo* grafo, int idOrigem) {
     if (grafo->Antena[idOrigem] == NULL) {
         printf("Antena com ID %d não existe.\n", idOrigem);
@@ -285,6 +351,18 @@ int BFS(Grafo* grafo, int idOrigem) {
 
 
 #pragma region Todos_Caminhos
+/**
+ * @brief Procura todos os caminhos possíveis entre a antena atual e o destino.
+ *
+ * Utiliza backtracking para encontrar todos os caminhos válidos.
+ *
+ * @param atual Ponteiro para a antena atual
+ * @param idDestino ID da antena destino
+ * @param visitado Vetor de controlo de antenas visitadas
+ * @param caminho Vetor para armazenar o caminho atual
+ * @param posicao Posição atual no vetor caminho
+ * @return 200 em caso de sucesso
+ */
 int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao) {
     if (atual == NULL) return 200;
 
@@ -312,6 +390,16 @@ int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], 
     visitado[atual->id] = 0; // backtracking
 	return 200;
 }
+/**
+ * @brief Função principal para listar todos os caminhos entre duas antenas.
+ *
+ * Verifica se as antenas são válidas e têm a mesma frequência antes de iniciar a busca.
+ *
+ * @param grafo Grafo com as antenas
+ * @param idOrigem ID da antena de origem
+ * @param idDestino ID da antena de destino
+ * @return 200 em caso de sucesso, ou se os IDs forem inválidos
+ */
 int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
     if (grafo->Antena[idOrigem] == NULL || grafo->Antena[idDestino] == NULL) {
         printf("Antena(s) inválida(s)\n");
@@ -349,7 +437,16 @@ int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
 
 
 #pragma region Libertacao_Memoria
-
+/**
+ * @brief Liberta a memória alocada para a lista de antenas e o grafo.
+ *
+ * Percorre a lista de antenas, libertando cada aresta e cada antena.
+ * Também limpa o grafo, definindo todos os ponteiros de antena como NULL.
+ *
+ * @param lista Lista ligada de antenas
+ * @param grafo Grafo onde as antenas estão registadas
+ * @return 200 em caso de sucesso
+ */
 int FreeListaAntenas(Ant* lista, Grafo* grafo) {
     Ant* atual = lista;
     while (atual != NULL) {

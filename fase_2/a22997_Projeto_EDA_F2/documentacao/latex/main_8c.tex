@@ -1,0 +1,62 @@
+\doxysection{projeto\+EDA\+\_\+\+F2\+\_\+\+Exe/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{projetoEDA\_F2\_Exe/main.c@{projetoEDA\_F2\_Exe/main.c}}
+
+
+Ponto de entrada principal do programa que manipula grafos de antenas.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}funcoes.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Função principal do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ponto de entrada principal do programa que manipula grafos de antenas. 
+
+Este ficheiro contém o {\ttfamily main}, responsável por\+:
+\begin{DoxyItemize}
+\item Carregar as antenas a partir de um ficheiro;
+\item Imprimir a matriz de antenas e zonas nefastas;
+\item Listar todas as arestas e as zonas nefastas associadas;
+\item Realizar travessias DFS e BFS a partir de uma antena escolhida;
+\item Encontrar todos os caminhos entre duas antenas;
+\item Libertar a memória alocada dinamicamente no final.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Fábio Rafael Gomes Costa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18/05/2025 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Função principal do programa. 
+
+Executa uma sequência de operações sobre um grafo de antenas, carregado a partir de um ficheiro. As operações incluem impressão da matriz, listagem de arestas, execução de DFS, BFS e descoberta de todos os caminhos entre dois nós. Ao final, toda a memória alocada é libertada.
+
+\begin{DoxyReturn}{Returns}
+int Retorna 0 se a execução for bem-\/sucedida, ou 1 em caso de erro. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00030}{30}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
