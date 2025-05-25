@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|solutionrelative:projetoEDA_F2\\funcoes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8BA9D99F-1E24-4D9A-BA1C-BAA2B43E01AA}|projetoEDA_F2_Exe\\projetoEDA_F2_Exe.vcxproj|C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8BA9D99F-1E24-4D9A-BA1C-BAA2B43E01AA}|projetoEDA_F2_Exe\\projetoEDA_F2_Exe.vcxproj|solutionrelative:projetoEDA_F2_Exe\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|solutionrelative:projetoEDA_F2\\funcoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{93BE329C-1F08-4C5D-A9EA-44AE469A7D9C}|projetoEDA_F2\\projetoEDA_F2.vcxproj|solutionrelative:projetoEDA_F2\\funcoes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BA9D99F-1E24-4D9A-BA1C-BAA2B43E01AA}|projetoEDA_F2_Exe\\projetoEDA_F2_Exe.vcxproj|C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\apresenta.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "funcoes.c",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.c",
               "RelativeDocumentMoniker": "projetoEDA_F2\\funcoes.c",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.c",
               "RelativeToolTip": "projetoEDA_F2\\funcoes.c",
-              "ViewState": "AgIAAGkBAAAAAAAAAAAQwE4BAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAANoBAAAAAAAAAAAAABQCAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-09T22:42:08.298Z",
               "IsPinned": true,
@@ -48,29 +48,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "funcoes.h",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.h",
               "RelativeDocumentMoniker": "projetoEDA_F2\\funcoes.h",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2\\funcoes.h",
               "RelativeToolTip": "projetoEDA_F2\\funcoes.h",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDUAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAUwN0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-09T22:42:09.523Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\main.c",
               "RelativeDocumentMoniker": "projetoEDA_F2_Exe\\main.c",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\main.c",
               "RelativeToolTip": "projetoEDA_F2_Exe\\main.c",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAD8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAD8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-11T16:30:34.655Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -78,15 +80,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "funcoes.h",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\funcoes.h",
               "RelativeDocumentMoniker": "projetoEDA_F2_Exe\\funcoes.h",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\Projeto_EDA\\fase_2_corrigida\\a22997_Projeto_EDA_F2\\projetoEDA_F2\\projetoEDA_F2_Exe\\funcoes.h",
               "RelativeToolTip": "projetoEDA_F2_Exe\\funcoes.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAQwN0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-22T09:33:02.699Z"
+              "WhenOpened": "2025-05-22T09:33:02.699Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

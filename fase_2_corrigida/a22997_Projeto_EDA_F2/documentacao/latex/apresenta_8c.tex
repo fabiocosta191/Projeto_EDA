@@ -13,9 +13,9 @@ Implementação de funções para apresentação de dados do grafo (matriz e lis
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{apresenta_8c_aaa5180fd0408054e7b86dd31ef2d08ec}{Imprimir\+Matriz}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas)
-\begin{DoxyCompactList}\small\item\em Imprime a matriz de antenas e zonas nefastas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Imprime a matriz com as antenas e zonas nefastas. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{apresenta_8c_adaa941ab25d7f5c32600c747bcffa924}{Listar\+Arestas\+ENefastos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas)
-\begin{DoxyCompactList}\small\item\em Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lista todas as antenas, arestas e zonas nefastas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,32 +44,23 @@ int Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_gra
 
 
 
-Imprime a matriz de antenas e zonas nefastas. 
-
-Imprime a matriz com a posição das antenas.
-
-A matriz representa\+:
-\begin{DoxyItemize}
-\item Cada antena com a sua frequência (ex\+: \textquotesingle{}0\textquotesingle{}, \textquotesingle{}A\textquotesingle{}, etc.);
-\item Cada zona nefasta com o símbolo \textquotesingle{}\#\textquotesingle{};
-\item Células vazias com o símbolo \textquotesingle{}.\textquotesingle{}.
-\end{DoxyItemize}
+Imprime a matriz com as antenas e zonas nefastas. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em grafo} & Ponteiro para o grafo que contém as antenas. \\
+{\em grafo} & Ponteiro para o grafo. \\
 \hline
-{\em linhas} & Número de linhas da matriz. \\
+{\em linhas} & Número de linhas. \\
 \hline
-{\em colunas} & Número de colunas da matriz. \\
+{\em colunas} & Número de colunas. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso. 
+200. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{apresenta_8c_source_l00032}{32}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
+Definition at line \mbox{\hyperlink{apresenta_8c_source_l00022}{22}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
 
 \Hypertarget{apresenta_8c_adaa941ab25d7f5c32600c747bcffa924}\index{apresenta.c@{apresenta.c}!ListarArestasENefastos@{ListarArestasENefastos}}
 \index{ListarArestasENefastos@{ListarArestasENefastos}!apresenta.c@{apresenta.c}}
@@ -79,30 +70,21 @@ int Listar\+Arestas\+ENefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{
 
 
 
-Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas. 
-
-Lista todas as arestas existentes e suas zonas nefastas (se existirem).
-
-Para cada antena no grafo\+:
-\begin{DoxyItemize}
-\item Mostra a sua frequência e posição;
-\item Lista todas as arestas para antenas com mesma frequência;
-\item Indica a coordenada da zona nefasta associada, se válida;
-\end{DoxyItemize}
+Lista todas as antenas, arestas e zonas nefastas. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em grafo} & Ponteiro para o grafo. \\
 \hline
-{\em linhas} & Número total de linhas da matriz (para validar nefastos). \\
+{\em linhas} & Número de linhas. \\
 \hline
-{\em colunas} & Número total de colunas da matriz (para validar nefastos). \\
+{\em colunas} & Número de colunas. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso. 
+200. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{apresenta_8c_source_l00085}{85}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
+Definition at line \mbox{\hyperlink{apresenta_8c_source_l00067}{67}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
 

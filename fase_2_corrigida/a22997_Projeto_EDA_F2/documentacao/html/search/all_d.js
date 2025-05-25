@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc',1,'Ant']]],
-  ['xnef_1',['xNef',['../struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a',1,'Ars']]]
+  ['y_0',['y',['../struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33',1,'Ant']]],
+  ['ynef_1',['yNef',['../struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8',1,'Ars']]]
 ];

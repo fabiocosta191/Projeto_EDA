@@ -2,7 +2,7 @@
 \hypertarget{struct_grafo}{}\label{struct_grafo}\index{Grafo@{Grafo}}
 
 
-Representa o grafo principal através de um array de ponteiros para antenas.  
+Representa o grafo principal como uma lista ligada de vértices.  
 
 
 
@@ -12,27 +12,39 @@ Representa o grafo principal através de um array de ponteiros para antenas.
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}{Antena}} \mbox{[}\mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}{MAX\+\_\+\+VERTICES}}\mbox{]}
+struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_grafo_afed78368f7fbd5b50315733cf284a47c}{Antena}}
+\item 
+struct \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_grafo_ad4db301e55275c08ccb51e318bea2d8b}{lista\+Grafo}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa o grafo principal através de um array de ponteiros para antenas. 
+Representa o grafo principal como uma lista ligada de vértices. 
 
-Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00054}{54}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00056}{56}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
 
 
 
 \doxysubsection{Field Documentation}
-\Hypertarget{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7}\index{Grafo@{Grafo}!Antena@{Antena}}
+\Hypertarget{struct_grafo_afed78368f7fbd5b50315733cf284a47c}\index{Grafo@{Grafo}!Antena@{Antena}}
 \index{Antena@{Antena}!Grafo@{Grafo}}
 \doxysubsubsection{\texorpdfstring{Antena}{Antena}}
-{\footnotesize\ttfamily \label{struct_grafo_a69a90269f5dce0ec2ca6cafbb7485ca7} 
+{\footnotesize\ttfamily \label{struct_grafo_afed78368f7fbd5b50315733cf284a47c} 
 struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Antena}
 
-Array que armazena os ponteiros para antenas indexadas pelo seu ID. 
+Ponteiro para a antena armazenada neste nó do grafo. 
 
-Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00055}{55}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00057}{57}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+\Hypertarget{struct_grafo_ad4db301e55275c08ccb51e318bea2d8b}\index{Grafo@{Grafo}!listaGrafo@{listaGrafo}}
+\index{listaGrafo@{listaGrafo}!Grafo@{Grafo}}
+\doxysubsubsection{\texorpdfstring{listaGrafo}{listaGrafo}}
+{\footnotesize\ttfamily \label{struct_grafo_ad4db301e55275c08ccb51e318bea2d8b} 
+struct \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} lista\+Grafo}
+
+Ponteiro para o próximo nó do grafo (lista ligada). 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00058}{58}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
 
 
 

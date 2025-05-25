@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA_F2: projetoEDA_F2_Exe/funcoes.h File Reference</title>
+<title>Projeto_EDA_F2: projetoEDA_F2_Exe/funcoes.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProjetoEDA_F2
+   <div id="projectname">Projeto_EDA_F2<span id="projectnumber">&#160;2</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -125,7 +125,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa uma aresta entre duas antenas, podendo conter a zona nefasta.  <a href="struct_ars.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grafo.html">Grafo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa o grafo principal através de um array de ponteiros para antenas.  <a href="struct_grafo.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa o grafo principal como uma lista ligada de vértices.  <a href="struct_grafo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -148,15 +148,18 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a24a0c73e61c508d9e884966640ce0aea" id="r_a24a0c73e61c508d9e884966640ce0aea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ant.html">Ant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a0c73e61c508d9e884966640ce0aea">LerLista</a> (const char *nomeFicheiro, const char *tipoFicheiro, int *linhas, int *colunas, <a class="el" href="struct_grafo.html">Grafo</a> *grafo)</td></tr>
-<tr class="memdesc:a24a0c73e61c508d9e884966640ce0aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspondente.  <br /></td></tr>
-<tr class="separator:a24a0c73e61c508d9e884966640ce0aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b31b1e3a3b6ec3e1f80ab307251c167" id="r_a8b31b1e3a3b6ec3e1f80ab307251c167"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ant.html">Ant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b31b1e3a3b6ec3e1f80ab307251c167">InserirAntena</a> (<a class="el" href="struct_ant.html">Ant</a> *lista, <a class="el" href="struct_grafo.html">Grafo</a> *grafo, char freq, int x, int y, int id)</td></tr>
-<tr class="memdesc:a8b31b1e3a3b6ec3e1f80ab307251c167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere uma nova antena na lista e no grafo.  <br /></td></tr>
-<tr class="separator:a8b31b1e3a3b6ec3e1f80ab307251c167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d4bb73287b5636baed7050b9ea23bd" id="r_ab8d4bb73287b5636baed7050b9ea23bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8d4bb73287b5636baed7050b9ea23bd">CriarListaArestas</a> (<a class="el" href="struct_ant.html">Ant</a> *lista, int linhas, int colunas)</td></tr>
-<tr class="memdesc:ab8d4bb73287b5636baed7050b9ea23bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.  <br /></td></tr>
-<tr class="separator:ab8d4bb73287b5636baed7050b9ea23bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad130e15bf2879a82fee27a70fc2a6905" id="r_ad130e15bf2879a82fee27a70fc2a6905"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_grafo.html">Grafo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad130e15bf2879a82fee27a70fc2a6905">LerLista</a> (const char *nomeFicheiro, const char *tipoFicheiro, int *linhas, int *colunas)</td></tr>
+<tr class="memdesc:ad130e15bf2879a82fee27a70fc2a6905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspondente.  <br /></td></tr>
+<tr class="separator:ad130e15bf2879a82fee27a70fc2a6905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18bc9353a419ad290776100ce6625cc4" id="r_a18bc9353a419ad290776100ce6625cc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ant.html">Ant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18bc9353a419ad290776100ce6625cc4">CriarAntena</a> (<a class="el" href="struct_ant.html">Ant</a> *lista, char freq, int x, int y, int id)</td></tr>
+<tr class="memdesc:a18bc9353a419ad290776100ce6625cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova antena e insere na lista ligada.  <br /></td></tr>
+<tr class="separator:a18bc9353a419ad290776100ce6625cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9d90e80097c267fb7e863ab1385dd0" id="r_adb9d90e80097c267fb7e863ab1385dd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_grafo.html">Grafo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb9d90e80097c267fb7e863ab1385dd0">InserirAntena</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, <a class="el" href="struct_ant.html">Ant</a> *lista)</td></tr>
+<tr class="memdesc:adb9d90e80097c267fb7e863ab1385dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere uma nova antena na estrutura do grafo.  <br /></td></tr>
+<tr class="separator:adb9d90e80097c267fb7e863ab1385dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af251d8576814772ef9de9f9bc249c469" id="r_af251d8576814772ef9de9f9bc249c469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af251d8576814772ef9de9f9bc249c469">CriarListaArestas</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas)</td></tr>
+<tr class="memdesc:af251d8576814772ef9de9f9bc249c469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.  <br /></td></tr>
+<tr class="separator:af251d8576814772ef9de9f9bc249c469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a563b0b82af3e0991ad41f65f2c06b3d6" id="r_a563b0b82af3e0991ad41f65f2c06b3d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a563b0b82af3e0991ad41f65f2c06b3d6">DFS</a> (<a class="el" href="struct_ant.html">Ant</a> *atual, int visitado[], int idOrigem)</td></tr>
 <tr class="memdesc:a563b0b82af3e0991ad41f65f2c06b3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função recursiva que realiza a travessia em profundidade (DFS).  <br /></td></tr>
 <tr class="separator:a563b0b82af3e0991ad41f65f2c06b3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,20 +170,23 @@ Functions</h2></td></tr>
 <tr class="memdesc:a7ffdf7be6879cc6c53d6705877e44e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa a travessia em largura (BFS) a partir de uma antena de origem.  <br /></td></tr>
 <tr class="separator:a7ffdf7be6879cc6c53d6705877e44e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90b04d8e5771d466d0cb839814f08eb9" id="r_a90b04d8e5771d466d0cb839814f08eb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90b04d8e5771d466d0cb839814f08eb9">EncontrarCaminhos</a> (<a class="el" href="struct_ant.html">Ant</a> *atual, int idDestino, int visitado[], int caminho[], int posicao)</td></tr>
-<tr class="memdesc:a90b04d8e5771d466d0cb839814f08eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função recursiva para descobrir todos os caminhos entre duas antenas.  <br /></td></tr>
+<tr class="memdesc:a90b04d8e5771d466d0cb839814f08eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função recursiva para encontrar todos os caminhos entre duas antenas.  <br /></td></tr>
 <tr class="separator:a90b04d8e5771d466d0cb839814f08eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecbc4d104ad42b1e13dd93f0319335a8" id="r_aecbc4d104ad42b1e13dd93f0319335a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecbc4d104ad42b1e13dd93f0319335a8">TodosCaminhos</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int idOrigem, int idDestino)</td></tr>
-<tr class="memdesc:aecbc4d104ad42b1e13dd93f0319335a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia a busca por todos os caminhos possíveis entre duas antenas.  <br /></td></tr>
+<tr class="memdesc:aecbc4d104ad42b1e13dd93f0319335a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia a busca por todos os caminhos entre duas antenas.  <br /></td></tr>
 <tr class="separator:aecbc4d104ad42b1e13dd93f0319335a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9514cc0faad651a566b4956cd5690c" id="r_a0a9514cc0faad651a566b4956cd5690c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a9514cc0faad651a566b4956cd5690c">ExportarMatriz</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas, const char *nomeFicheiro, const char *tipoFicheiro)</td></tr>
+<tr class="memdesc:a0a9514cc0faad651a566b4956cd5690c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exporta a matriz de antenas para ficheiro .txt ou .bin.  <br /></td></tr>
+<tr class="separator:a0a9514cc0faad651a566b4956cd5690c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa5180fd0408054e7b86dd31ef2d08ec" id="r_aaa5180fd0408054e7b86dd31ef2d08ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas)</td></tr>
-<tr class="memdesc:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a matriz com a posição das antenas.  <br /></td></tr>
+<tr class="memdesc:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a matriz com as antenas e zonas nefastas.  <br /></td></tr>
 <tr class="separator:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaa941ab25d7f5c32600c747bcffa924" id="r_adaa941ab25d7f5c32600c747bcffa924"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas)</td></tr>
-<tr class="memdesc:adaa941ab25d7f5c32600c747bcffa924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as arestas existentes e suas zonas nefastas (se existirem).  <br /></td></tr>
+<tr class="memdesc:adaa941ab25d7f5c32600c747bcffa924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as antenas, arestas e zonas nefastas.  <br /></td></tr>
 <tr class="separator:adaa941ab25d7f5c32600c747bcffa924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4054f9cb873a2cf5b5ef80b7e036faa" id="r_aa4054f9cb873a2cf5b5ef80b7e036faa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4054f9cb873a2cf5b5ef80b7e036faa">FreeListaAntenas</a> (<a class="el" href="struct_ant.html">Ant</a> *lista, <a class="el" href="struct_grafo.html">Grafo</a> *grafo)</td></tr>
-<tr class="memdesc:aa4054f9cb873a2cf5b5ef80b7e036faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta a memória alocada para a lista de antenas e suas arestas.  <br /></td></tr>
-<tr class="separator:aa4054f9cb873a2cf5b5ef80b7e036faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f403a1c2889640fc30370701f6c3f0b" id="r_a2f403a1c2889640fc30370701f6c3f0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f403a1c2889640fc30370701f6c3f0b">FreeListaAntenas</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo)</td></tr>
+<tr class="memdesc:a2f403a1c2889640fc30370701f6c3f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta toda a memória alocada pelo grafo e antenas.  <br /></td></tr>
+<tr class="separator:a2f403a1c2889640fc30370701f6c3f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad624bf76d9366faecf9041ef6ffffcb9" name="ad624bf76d9366faecf9041ef6ffffcb9"></a>
@@ -196,7 +202,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Número máximo de colunas da matriz. </p>
 
-<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00020">20</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00023">23</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
 
 </div>
 </div>
@@ -213,7 +219,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Número máximo de linhas da matriz. </p>
 
-<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00019">19</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00022">22</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +236,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Número máximo de antenas (vértices) no grafo. </p>
 
-<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00021">21</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html#l00024">24</a> of file <a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h_source.html">funcoes.h</a>.</p>
 
 </div>
 </div>
@@ -301,28 +307,90 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">idOrigem</td><td>ID da antena de origem. </td></tr>
+    <tr><td class="paramname">idOrigem</td><td>ID da antena inicial. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
 <p>Executa a travessia em largura (BFS) a partir de uma antena de origem.</p>
-<p>Utiliza uma fila para visitar os vértices por camadas e imprime o percurso.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> que contém todas as antenas </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> contendo as antenas </td></tr>
     <tr><td class="paramname">idOrigem</td><td>ID da antena de origem </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, ou se a antena for inválida </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 se executado com sucesso, mesmo que a antena não exista </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00302">302</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00314">314</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="ab8d4bb73287b5636baed7050b9ea23bd" name="ab8d4bb73287b5636baed7050b9ea23bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8d4bb73287b5636baed7050b9ea23bd">&#9670;&#160;</a></span>CriarListaArestas()</h2>
+<a id="a18bc9353a419ad290776100ce6625cc4" name="a18bc9353a419ad290776100ce6625cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18bc9353a419ad290776100ce6625cc4">&#9670;&#160;</a></span>CriarAntena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ant.html">Ant</a> * CriarAntena </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_ant.html">Ant</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>freq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma nova antena e insere na lista ligada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>Lista atual de antenas. </td></tr>
+    <tr><td class="paramname">freq</td><td>Frequência da antena. </td></tr>
+    <tr><td class="paramname">x</td><td>Coordenada X da antena. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y da antena. </td></tr>
+    <tr><td class="paramname">id</td><td>Identificador único da antena. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro atualizado para a lista.</dd></dl>
+<p>Cria uma nova antena e insere na lista ligada.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>Lista atual de antenas </td></tr>
+    <tr><td class="paramname">freq</td><td>Frequência da antena (carácter) </td></tr>
+    <tr><td class="paramname">x</td><td>Posição X na matriz </td></tr>
+    <tr><td class="paramname">y</td><td>Posição Y na matriz </td></tr>
+    <tr><td class="paramname">id</td><td>Identificador único da antena </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para a nova cabeça da lista </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00101">101</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+
+</div>
+</div>
+<a id="af251d8576814772ef9de9f9bc249c469" name="af251d8576814772ef9de9f9bc249c469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af251d8576814772ef9de9f9bc249c469">&#9670;&#160;</a></span>CriarListaArestas()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +398,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int CriarListaArestas </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_ant.html">Ant</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -348,26 +416,25 @@ Functions</h2></td></tr>
 <p>Cria as arestas entre antenas com base na frequência e calcula zonas nefastas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista de antenas. </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> com as antenas. </td></tr>
     <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
     <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, ou 500 em caso de erro de alocação.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 501 em caso de erro.</dd></dl>
 <p>Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.</p>
-<p>Compara todas as antenas entre si e liga aquelas com frequência igual. Cada ligação pode armazenar uma zona nefasta resultante da interferência.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista ligada com todas as antenas </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> com a lista de antenas </td></tr>
     <tr><td class="paramname">linhas</td><td>Número total de linhas da matriz </td></tr>
     <tr><td class="paramname">colunas</td><td>Número total de colunas da matriz </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 se bem-sucedido, ou 500 em caso de erro de alocação </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 501 em caso de erro de alocação </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00136">136</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00144">144</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
@@ -400,24 +467,23 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">atual</td><td>Ponteiro para a antena atual. </td></tr>
     <tr><td class="paramname">visitado</td><td>Vetor de controlo de visitados. </td></tr>
-    <tr><td class="paramname">idOrigem</td><td>ID da antena anterior (para rastreamento). </td></tr>
+    <tr><td class="paramname">idOrigem</td><td>ID da antena de origem. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200.</dd></dl>
 <p>Função recursiva que realiza a travessia em profundidade (DFS).</p>
-<p>Atravessa todas as conexões do grafo, listando as antenas alcançadas.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">atual</td><td>Ponteiro para a antena atual </td></tr>
-    <tr><td class="paramname">visitado</td><td>Vetor de controlo de antenas já visitadas </td></tr>
-    <tr><td class="paramname">idOrigem</td><td>ID da antena anterior (usado para rastrear o percurso) </td></tr>
+    <tr><td class="paramname">atual</td><td>Antena atual sendo visitada </td></tr>
+    <tr><td class="paramname">visitado</td><td>Vetor de marcação de antenas visitadas </td></tr>
+    <tr><td class="paramname">idOrigem</td><td>ID da antena de onde veio </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Código de estado (200) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 sempre </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00244">244</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00247">247</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
@@ -455,38 +521,101 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Função recursiva para descobrir todos os caminhos entre duas antenas. </p>
+<p>Função recursiva para encontrar todos os caminhos entre duas antenas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">atual</td><td>Antena atual no percurso. </td></tr>
     <tr><td class="paramname">idDestino</td><td>ID da antena destino. </td></tr>
     <tr><td class="paramname">visitado</td><td>Vetor de controlo de visitados. </td></tr>
-    <tr><td class="paramname">caminho</td><td>Vetor para armazenar o caminho atual. </td></tr>
-    <tr><td class="paramname">posicao</td><td>Posição atual no vetor de caminho. </td></tr>
+    <tr><td class="paramname">caminho</td><td>Vetor que armazena o caminho atual. </td></tr>
+    <tr><td class="paramname">posicao</td><td>Índice atual no vetor caminho. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
-<p>Função recursiva para descobrir todos os caminhos entre duas antenas.</p>
-<p>Utiliza backtracking para encontrar todos os caminhos válidos.</p>
+<dl class="section return"><dt>Returns</dt><dd>200.</dd></dl>
+<p>Função recursiva para encontrar todos os caminhos entre duas antenas.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">atual</td><td>Ponteiro para a antena atual </td></tr>
+    <tr><td class="paramname">atual</td><td>Ponteiro para a antena atual no caminho </td></tr>
     <tr><td class="paramname">idDestino</td><td>ID da antena destino </td></tr>
-    <tr><td class="paramname">visitado</td><td>Vetor de controlo de antenas visitadas </td></tr>
-    <tr><td class="paramname">caminho</td><td>Vetor para armazenar o caminho atual </td></tr>
+    <tr><td class="paramname">visitado</td><td>Vetor de marcação de antenas já visitadas </td></tr>
+    <tr><td class="paramname">caminho</td><td>Vetor de IDs representando o caminho atual </td></tr>
     <tr><td class="paramname">posicao</td><td>Posição atual no vetor caminho </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 sempre </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00366">366</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00388">388</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="aa4054f9cb873a2cf5b5ef80b7e036faa" name="aa4054f9cb873a2cf5b5ef80b7e036faa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4054f9cb873a2cf5b5ef80b7e036faa">&#9670;&#160;</a></span>FreeListaAntenas()</h2>
+<a id="a0a9514cc0faad651a566b4956cd5690c" name="a0a9514cc0faad651a566b4956cd5690c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9514cc0faad651a566b4956cd5690c">&#9670;&#160;</a></span>ExportarMatriz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ExportarMatriz </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafoOriginal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>linhas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>colunas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>nomeFicheiro</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>tipoFicheiro</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exporta a matriz de antenas para ficheiro .txt ou .bin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
+    <tr><td class="paramname">nomeFicheiro</td><td>Nome base do ficheiro. </td></tr>
+    <tr><td class="paramname">tipoFicheiro</td><td>Extensão (".txt" ou ".bin"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>200 em sucesso, 500 em erro.</dd></dl>
+<p>Exporta a matriz de antenas para ficheiro .txt ou .bin.</p>
+<p>As posições são preenchidas com o símbolo da antena, ou '.' caso esteja vazia. No caso de exportação binária, os caracteres são gravados diretamente em bytes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grafoOriginal</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> com as antenas </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz </td></tr>
+    <tr><td class="paramname">nomeFicheiro</td><td>Nome base do ficheiro </td></tr>
+    <tr><td class="paramname">tipoFicheiro</td><td>Extensão do ficheiro: ".txt" ou ".bin" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 500 em erro </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00481">481</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+
+</div>
+</div>
+<a id="a2f403a1c2889640fc30370701f6c3f0b" name="a2f403a1c2889640fc30370701f6c3f0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f403a1c2889640fc30370701f6c3f0b">&#9670;&#160;</a></span>FreeListaAntenas()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,37 +623,30 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int FreeListaAntenas </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_ant.html">Ant</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Liberta a memória alocada para a lista de antenas e suas arestas. </p>
+<p>Liberta toda a memória alocada pelo grafo e antenas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista de antenas. </td></tr>
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> a ser limpo. </td></tr>
+    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 após a libertação completa.</dd></dl>
-<p>Liberta a memória alocada para a lista de antenas e suas arestas.</p>
-<p>Percorre a lista de antenas, libertando cada aresta e cada antena. Também limpa o grafo, definindo todos os ponteiros de antena como NULL.</p>
+<dl class="section return"><dt>Returns</dt><dd>200 após libertação bem-sucedida.</dd></dl>
+<p>Liberta toda a memória alocada pelo grafo e antenas.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista ligada de antenas </td></tr>
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> onde as antenas estão registadas </td></tr>
+    <tr><td class="paramname">grafo</td><td>Ponteiro para a estrutura do grafo </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 sempre </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00450">450</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00532">532</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
@@ -552,33 +674,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Imprime a matriz com a posição das antenas. </p>
+<p>Imprime a matriz com as antenas e zonas nefastas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas. </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
-<p>Imprime a matriz com a posição das antenas.</p>
-<p>A matriz representa:</p><ul>
-<li>Cada antena com a sua frequência (ex: '0', 'A', etc.);</li>
-<li>Cada zona nefasta com o símbolo '#';</li>
-<li>Células vazias com o símbolo '.'.</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo que contém as antenas. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00032">32</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00022">22</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
 
 </div>
 </div>
@@ -605,104 +712,74 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">idOrigem</td><td>ID da antena de origem. </td></tr>
+    <tr><td class="paramname">idOrigem</td><td>ID da antena inicial. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 se bem-sucedido, 500 se o ID for inválido.</dd></dl>
-<p>Inicia a travessia DFS a partir de uma antena de origem.</p>
-<p>Verifica a validade da antena de origem e inicia a travessia.</p>
+<dl class="section return"><dt>Returns</dt><dd>200 se bem-sucedido, 500 se ID inválido.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> onde se realiza a travessia </td></tr>
-    <tr><td class="paramname">idOrigem</td><td>ID da antena de origem </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> contendo todas as antenas </td></tr>
+    <tr><td class="paramname">idOrigem</td><td>ID da antena inicial </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 500 se o ID for inválido </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 se bem-sucedido, 500 se ID inválido </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00277">277</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00278">278</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="a8b31b1e3a3b6ec3e1f80ab307251c167" name="a8b31b1e3a3b6ec3e1f80ab307251c167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b31b1e3a3b6ec3e1f80ab307251c167">&#9670;&#160;</a></span>InserirAntena()</h2>
+<a id="adb9d90e80097c267fb7e863ab1385dd0" name="adb9d90e80097c267fb7e863ab1385dd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9d90e80097c267fb7e863ab1385dd0">&#9670;&#160;</a></span>InserirAntena()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_ant.html">Ant</a> * InserirAntena </td>
+          <td class="memname"><a class="el" href="struct_grafo.html">Grafo</a> * InserirAntena </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_ant.html">Ant</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>freq</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_ant.html">Ant</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Insere uma nova antena na lista e no grafo. </p>
+<p>Insere uma nova antena na estrutura do grafo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista atual de antenas. </td></tr>
-    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">freq</td><td>Carácter da frequência da antena. </td></tr>
-    <tr><td class="paramname">x</td><td>Coordenada X da antena. </td></tr>
-    <tr><td class="paramname">y</td><td>Coordenada Y da antena. </td></tr>
-    <tr><td class="paramname">id</td><td>Identificador único da antena. </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> atual. </td></tr>
+    <tr><td class="paramname">lista</td><td>Ponteiro para a nova antena a ser inserida. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para a nova cabeça da lista ligada.</dd></dl>
-<p>Insere uma nova antena na lista e no grafo.</p>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro atualizado para o grafo.</dd></dl>
+<p>Insere uma nova antena na estrutura do grafo.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>Lista ligada atual de antenas </td></tr>
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> onde a antena será registada pelo seu ID </td></tr>
-    <tr><td class="paramname">freq</td><td>Carácter representativo da frequência da antena </td></tr>
-    <tr><td class="paramname">x</td><td>Coordenada X (coluna) da antena </td></tr>
-    <tr><td class="paramname">y</td><td>Coordenada Y (linha) da antena </td></tr>
-    <tr><td class="paramname">id</td><td>Identificador único da antena </td></tr>
+    <tr><td class="paramname">grafo</td><td>Estrutura atual do grafo </td></tr>
+    <tr><td class="paramname">lista</td><td>Ponteiro para a nova antena a ser inserida </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para a nova cabeça da lista ligada </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro atualizado para o grafo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00104">104</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00124">124</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="a24a0c73e61c508d9e884966640ce0aea" name="a24a0c73e61c508d9e884966640ce0aea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24a0c73e61c508d9e884966640ce0aea">&#9670;&#160;</a></span>LerLista()</h2>
+<a id="ad130e15bf2879a82fee27a70fc2a6905" name="ad130e15bf2879a82fee27a70fc2a6905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad130e15bf2879a82fee27a70fc2a6905">&#9670;&#160;</a></span>LerLista()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_ant.html">Ant</a> * LerLista </td>
+          <td class="memname"><a class="el" href="struct_grafo.html">Grafo</a> * LerLista </td>
           <td>(</td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>nomeFicheiro</em></span>, </td>
         </tr>
@@ -719,12 +796,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>colunas</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span>&#160;)</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>colunas</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -736,26 +808,24 @@ Functions</h2></td></tr>
     <tr><td class="paramname">tipoFicheiro</td><td>Extensão do ficheiro (".txt" ou ".bin"). </td></tr>
     <tr><td class="paramname">linhas</td><td>Ponteiro onde será armazenado o número de linhas lidas. </td></tr>
     <tr><td class="paramname">colunas</td><td>Ponteiro onde será armazenado o número de colunas lidas. </td></tr>
-    <tr><td class="paramname">grafo</td><td>Ponteiro para a estrutura do grafo a ser preenchida. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o início da lista ligada de antenas.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para a estrutura do grafo, ou NULL em caso de erro.</dd></dl>
 <p>Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspondente.</p>
-<p>Esta função percorre o ficheiro linha a linha e cria antenas para todas as células não vazias. Após a leitura, chama a função <a class="el" href="projeto_e_d_a___f2_2funcoes_8h.html#ab8d4bb73287b5636baed7050b9ea23bd" title="Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.">CriarListaArestas()</a> para estabelecer as ligações entre antenas.</p>
+<p>A função percorre o ficheiro linha a linha e cria uma estrutura ligada (lista + grafo) com as antenas. Após a leitura, também estabelece as conexões entre antenas de mesma frequência.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nomeFicheiro</td><td>Nome base do ficheiro (sem extensão) </td></tr>
     <tr><td class="paramname">tipoFicheiro</td><td>Extensão do ficheiro (".txt" ou ".bin") </td></tr>
-    <tr><td class="paramname">linhas</td><td>Ponteiro para armazenar o número de linhas da matriz </td></tr>
-    <tr><td class="paramname">colunas</td><td>Ponteiro para armazenar o número de colunas da matriz </td></tr>
-    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo onde as antenas serão registadas </td></tr>
+    <tr><td class="paramname">linhas</td><td>Ponteiro para armazenar o número de linhas lidas </td></tr>
+    <tr><td class="paramname">colunas</td><td>Ponteiro para armazenar o número de colunas lidas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o início da lista ligada de antenas </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para a estrutura do grafo construído, ou NULL em caso de erro </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00033">33</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00032">32</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
@@ -783,33 +853,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lista todas as arestas existentes e suas zonas nefastas (se existirem). </p>
+<p>Lista todas as antenas, arestas e zonas nefastas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas. </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
-<p>Lista todas as arestas existentes e suas zonas nefastas (se existirem).</p>
-<p>Para cada antena no grafo:</p><ul>
-<li>Mostra a sua frequência e posição;</li>
-<li>Lista todas as arestas para antenas com mesma frequência;</li>
-<li>Indica a coordenada da zona nefasta associada, se válida;</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número total de linhas da matriz (para validar nefastos). </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número total de colunas da matriz (para validar nefastos). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00085">85</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00067">67</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
 
 </div>
 </div>
@@ -837,29 +892,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inicia a busca por todos os caminhos possíveis entre duas antenas. </p>
+<p>Inicia a busca por todos os caminhos entre duas antenas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> com todas as antenas. </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> com as antenas. </td></tr>
     <tr><td class="paramname">idOrigem</td><td>ID da antena de origem. </td></tr>
-    <tr><td class="paramname">idDestino</td><td>ID da antena de destino. </td></tr>
+    <tr><td class="paramname">idDestino</td><td>ID da antena destino. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso.</dd></dl>
-<p>Inicia a busca por todos os caminhos possíveis entre duas antenas.</p>
-<p>Verifica se as antenas são válidas e têm a mesma frequência antes de iniciar a busca.</p>
+<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 500 se IDs forem inválidos.</dd></dl>
+<p>Inicia a busca por todos os caminhos entre duas antenas.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal através de um array de ponteiros para antenas.">Grafo</a> com as antenas </td></tr>
+    <tr><td class="paramname">grafo</td><td><a class="el" href="struct_grafo.html" title="Representa o grafo principal como uma lista ligada de vértices.">Grafo</a> com as antenas </td></tr>
     <tr><td class="paramname">idOrigem</td><td>ID da antena de origem </td></tr>
-    <tr><td class="paramname">idDestino</td><td>ID da antena de destino </td></tr>
+    <tr><td class="paramname">idDestino</td><td>ID da antena destino </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, ou se os IDs forem inválidos </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso, 500 se IDs inválidos </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00403">403</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00425">425</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>

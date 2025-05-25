@@ -2,8 +2,11 @@
  * @file funcao.h
  * @brief Definições de estruturas e protótipos de funções para manipulação de antenas e zonas nefastas.
  *
- * Este cabeçalho define as estruturas fundamentais usadas no projeto (antenas, arestas, grafo)
- * bem como as funções para leitura, travessia, análise e libertação de memória associadas à rede de antenas.
+ * Este cabeçalho define as estruturas fundamentais usadas no projeto (antenas, arestas, grafo),
+ * bem como as funções para leitura, travessia, análise, exportação e libertação de memória associadas à rede de antenas.
+ * As estruturas são representadas em C com listas ligadas e listas de adjacência.
+ *
+ * A documentação segue o formato compatível com Doxygen.
  *
  * @author Fábio Rafael Gomes Costa
  * @contact a22997@alunos.ipca.pt
@@ -48,11 +51,11 @@ typedef struct Ars {
 
 /**
  * @struct Grafo
- * @brief Representa o grafo principal através de um array de ponteiros para antenas.
+ * @brief Representa o grafo principal como uma lista ligada de vértices.
  */
 typedef struct Grafo {
-    struct Ant* Antena;
-    struct Grafo* listaGrafo; /**< Ponteiro para a lista de grafos (não utilizado neste contexto). */
+    struct Ant* Antena;          /**< Ponteiro para a antena armazenada neste nó do grafo. */
+    struct Grafo* listaGrafo;    /**< Ponteiro para o próximo nó do grafo (lista ligada). */
 } Grafo;
 
 #pragma endregion
@@ -66,40 +69,38 @@ typedef struct Grafo {
  * @param tipoFicheiro Extensão do ficheiro (".txt" ou ".bin").
  * @param linhas Ponteiro onde será armazenado o número de linhas lidas.
  * @param colunas Ponteiro onde será armazenado o número de colunas lidas.
- * @param grafo Ponteiro para a estrutura do grafo a ser preenchida.
- * @return Ponteiro para o início da lista ligada de antenas.
+ * @return Ponteiro para a estrutura do grafo, ou NULL em caso de erro.
  */
 Grafo* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas);
 
 /**
- * @brief Insere uma nova antena na lista e no grafo.
+ * @brief Cria uma nova antena e insere na lista ligada.
  *
  * @param lista Lista atual de antenas.
- * @param grafo Ponteiro para o grafo.
- * @param freq Carácter da frequência da antena.
+ * @param freq Frequência da antena.
  * @param x Coordenada X da antena.
  * @param y Coordenada Y da antena.
  * @param id Identificador único da antena.
- * @return Ponteiro para a nova cabeça da lista ligada.
+ * @return Ponteiro atualizado para a lista.
  */
 Ant* CriarAntena(Ant* lista, char freq, int x, int y, int id);
 
 /**
- * @brief Insere uma nova antena no grafo.
+ * @brief Insere uma nova antena na estrutura do grafo.
  *
  * @param grafo Grafo atual.
- * @param lista Lista ligada de antenas.
- * @return Ponteiro para o novo grafo.
+ * @param lista Ponteiro para a nova antena a ser inserida.
+ * @return Ponteiro atualizado para o grafo.
  */
 Grafo* InserirAntena(Grafo* grafo, Ant* lista);
 
 /**
  * @brief Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.
  *
- * @param lista Lista de antenas.
+ * @param grafo Grafo com as antenas.
  * @param linhas Número de linhas da matriz.
  * @param colunas Número de colunas da matriz.
- * @return 200 em caso de sucesso, ou 500 em caso de erro de alocação.
+ * @return 200 em caso de sucesso, 501 em caso de erro.
  */
 int CriarListaArestas(Grafo* grafo, int linhas, int colunas);
 
@@ -112,8 +113,8 @@ int CriarListaArestas(Grafo* grafo, int linhas, int colunas);
  *
  * @param atual Ponteiro para a antena atual.
  * @param visitado Vetor de controlo de visitados.
- * @param idOrigem ID da antena anterior (para rastreamento).
- * @return 200 em caso de sucesso.
+ * @param idOrigem ID da antena de origem.
+ * @return 200.
  */
 int DFS(Ant* atual, int visitado[], int idOrigem);
 
@@ -121,8 +122,8 @@ int DFS(Ant* atual, int visitado[], int idOrigem);
  * @brief Inicia a travessia DFS a partir de uma antena de origem.
  *
  * @param grafo Ponteiro para o grafo.
- * @param idOrigem ID da antena de origem.
- * @return 200 se bem-sucedido, 500 se o ID for inválido.
+ * @param idOrigem ID da antena inicial.
+ * @return 200 se bem-sucedido, 500 se ID inválido.
  */
 int IniciarDFS(Grafo* grafo, int idOrigem);
 
@@ -134,7 +135,7 @@ int IniciarDFS(Grafo* grafo, int idOrigem);
  * @brief Executa a travessia em largura (BFS) a partir de uma antena de origem.
  *
  * @param grafo Ponteiro para o grafo.
- * @param idOrigem ID da antena de origem.
+ * @param idOrigem ID da antena inicial.
  * @return 200 em caso de sucesso.
  */
 int BFS(Grafo* grafo, int idOrigem);
@@ -144,39 +145,40 @@ int BFS(Grafo* grafo, int idOrigem);
 #pragma region Todos_Caminhos
 
 /**
- * @brief Função recursiva para descobrir todos os caminhos entre duas antenas.
+ * @brief Função recursiva para encontrar todos os caminhos entre duas antenas.
  *
  * @param atual Antena atual no percurso.
  * @param idDestino ID da antena destino.
  * @param visitado Vetor de controlo de visitados.
- * @param caminho Vetor para armazenar o caminho atual.
- * @param posicao Posição atual no vetor de caminho.
- * @return 200 em caso de sucesso.
+ * @param caminho Vetor que armazena o caminho atual.
+ * @param posicao Índice atual no vetor caminho.
+ * @return 200.
  */
 int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao);
 
 /**
- * @brief Inicia a busca por todos os caminhos possíveis entre duas antenas.
+ * @brief Inicia a busca por todos os caminhos entre duas antenas.
  *
- * @param grafo Grafo com todas as antenas.
+ * @param grafo Grafo com as antenas.
  * @param idOrigem ID da antena de origem.
- * @param idDestino ID da antena de destino.
- * @return 200 em caso de sucesso.
+ * @param idDestino ID da antena destino.
+ * @return 200 em caso de sucesso, 500 se IDs forem inválidos.
  */
 int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino);
 
 #pragma endregion
 
 #pragma region Exportar_Dados
+
 /**
- * @brief Exporta a matriz de antenas para um ficheiro de texto ou binário.
+ * @brief Exporta a matriz de antenas para ficheiro .txt ou .bin.
  *
- * @param grafo Ponteiro para o grafo contendo as antenas.
+ * @param grafo Ponteiro para o grafo.
  * @param linhas Número de linhas da matriz.
  * @param colunas Número de colunas da matriz.
- * @param nomeFicheiro Nome do ficheiro a ser criado.
- * @param tipoFicheiro Extensão do ficheiro (por ex., ".txt" ou ".bin").
- * @return 200 em caso de sucesso, 500 em caso de erro.
+ * @param nomeFicheiro Nome base do ficheiro.
+ * @param tipoFicheiro Extensão (".txt" ou ".bin").
+ * @return 200 em sucesso, 500 em erro.
  */
 int ExportarMatriz(Grafo* grafo, int linhas, int colunas, const char* nomeFicheiro, const char* tipoFicheiro);
 
@@ -185,22 +187,22 @@ int ExportarMatriz(Grafo* grafo, int linhas, int colunas, const char* nomeFichei
 #pragma region Impressao
 
 /**
- * @brief Imprime a matriz com a posição das antenas.
+ * @brief Imprime a matriz com as antenas e zonas nefastas.
  *
  * @param grafo Ponteiro para o grafo.
- * @param linhas Número de linhas da matriz.
- * @param colunas Número de colunas da matriz.
- * @return 200 em caso de sucesso.
+ * @param linhas Número de linhas.
+ * @param colunas Número de colunas.
+ * @return 200.
  */
 int ImprimirMatriz(Grafo* grafo, int linhas, int colunas);
 
 /**
- * @brief Lista todas as arestas existentes e suas zonas nefastas (se existirem).
+ * @brief Lista todas as antenas, arestas e zonas nefastas.
  *
  * @param grafo Ponteiro para o grafo.
- * @param linhas Número de linhas da matriz.
- * @param colunas Número de colunas da matriz.
- * @return 200 em caso de sucesso.
+ * @param linhas Número de linhas.
+ * @param colunas Número de colunas.
+ * @return 200.
  */
 int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas);
 
@@ -209,11 +211,10 @@ int ListarArestasENefastos(Grafo* grafo, int linhas, int colunas);
 #pragma region Libertacao_Memoria
 
 /**
- * @brief Liberta a memória alocada para a lista de antenas e suas arestas.
+ * @brief Liberta toda a memória alocada pelo grafo e antenas.
  *
- * @param lista Lista de antenas.
- * @param grafo Grafo a ser limpo.
- * @return 200 após a libertação completa.
+ * @param grafo Ponteiro para o grafo.
+ * @return 200 após libertação bem-sucedida.
  */
 int FreeListaAntenas(Grafo* grafo);
 

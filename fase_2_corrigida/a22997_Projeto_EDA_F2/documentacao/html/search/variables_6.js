@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['proxantena_0',['proxAntena',['../struct_ant.html#ae4906fba945c9bbb471249069b84bed8',1,'Ant']]],
-  ['proximaaresta_1',['proximaAresta',['../struct_ars.html#af91f148395a813238b48c0ef05d7ac27',1,'Ars']]]
+  ['x_0',['x',['../struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc',1,'Ant']]],
+  ['xnef_1',['xNef',['../struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a',1,'Ars']]]
 ];

@@ -11,7 +11,7 @@ struct \mbox{\hyperlink{struct_ant}{Ant}}
 struct \mbox{\hyperlink{struct_ars}{Ars}}
 \begin{DoxyCompactList}\small\item\em Representa uma aresta entre duas antenas, podendo conter a zona nefasta. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_grafo}{Grafo}}
-\begin{DoxyCompactList}\small\item\em Representa o grafo principal através de um array de ponteiros para antenas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Representa o grafo principal como uma lista ligada de vértices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,11 +33,13 @@ typedef struct Grafo \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_adab0
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a24a0c73e61c508d9e884966640ce0aea}{Ler\+Lista}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, const char \texorpdfstring{$\ast$}{*}tipo\+Ficheiro, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo)
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_ad130e15bf2879a82fee27a70fc2a6905}{Ler\+Lista}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, const char \texorpdfstring{$\ast$}{*}tipo\+Ficheiro, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
 \begin{DoxyCompactList}\small\item\em Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspondente. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a8b31b1e3a3b6ec3e1f80ab307251c167}{Inserir\+Antena}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, char freq, int x, int y, int id)
-\begin{DoxyCompactList}\small\item\em Insere uma nova antena na lista e no grafo. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_ab8d4bb73287b5636baed7050b9ea23bd}{Criar\+Lista\+Arestas}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, int linhas, int colunas)
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a18bc9353a419ad290776100ce6625cc4}{Criar\+Antena}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, char freq, int x, int y, int id)
+\begin{DoxyCompactList}\small\item\em Cria uma nova antena e insere na lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_adb9d90e80097c267fb7e863ab1385dd0}{Inserir\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Insere uma nova antena na estrutura do grafo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_af251d8576814772ef9de9f9bc249c469}{Criar\+Lista\+Arestas}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas)
 \begin{DoxyCompactList}\small\item\em Cria as arestas entre antenas com base na frequência e calcula zonas nefastas. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a563b0b82af3e0991ad41f65f2c06b3d6}{DFS}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}atual, int visitado\mbox{[}$\,$\mbox{]}, int id\+Origem)
 \begin{DoxyCompactList}\small\item\em Função recursiva que realiza a travessia em profundidade (DFS). \end{DoxyCompactList}\item 
@@ -46,15 +48,17 @@ int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_aace3cba108d565f705496
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a7ffdf7be6879cc6c53d6705877e44e9d}{BFS}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int id\+Origem)
 \begin{DoxyCompactList}\small\item\em Executa a travessia em largura (BFS) a partir de uma antena de origem. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a90b04d8e5771d466d0cb839814f08eb9}{Encontrar\+Caminhos}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}atual, int id\+Destino, int visitado\mbox{[}$\,$\mbox{]}, int caminho\mbox{[}$\,$\mbox{]}, int posicao)
-\begin{DoxyCompactList}\small\item\em Função recursiva para descobrir todos os caminhos entre duas antenas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função recursiva para encontrar todos os caminhos entre duas antenas. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_aecbc4d104ad42b1e13dd93f0319335a8}{Todos\+Caminhos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int id\+Origem, int id\+Destino)
-\begin{DoxyCompactList}\small\item\em Inicia a busca por todos os caminhos possíveis entre duas antenas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inicia a busca por todos os caminhos entre duas antenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a0a9514cc0faad651a566b4956cd5690c}{Exportar\+Matriz}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas, const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro, const char \texorpdfstring{$\ast$}{*}tipo\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Exporta a matriz de antenas para ficheiro .txt ou .bin. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}{Imprimir\+Matriz}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas)
-\begin{DoxyCompactList}\small\item\em Imprime a matriz com a posição das antenas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Imprime a matriz com as antenas e zonas nefastas. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_adaa941ab25d7f5c32600c747bcffa924}{Listar\+Arestas\+ENefastos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, int linhas, int colunas)
-\begin{DoxyCompactList}\small\item\em Lista todas as arestas existentes e suas zonas nefastas (se existirem). \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_aa4054f9cb873a2cf5b5ef80b7e036faa}{Free\+Lista\+Antenas}} (\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo)
-\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista de antenas e suas arestas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lista todas as antenas, arestas e zonas nefastas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_a2f403a1c2889640fc30370701f6c3f0b}{Free\+Lista\+Antenas}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo)
+\begin{DoxyCompactList}\small\item\em Liberta toda a memória alocada pelo grafo e antenas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -66,7 +70,7 @@ int \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_aa4054f9cb873a2cf5b5ef
 
 Número máximo de colunas da matriz. 
 
-Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00020}{20}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00023}{23}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_ab44f6d43935e7b204b295865fc8c1edc}\index{funcoes.h@{funcoes.h}!MAX\_LINHAS@{MAX\_LINHAS}}
 \index{MAX\_LINHAS@{MAX\_LINHAS}!funcoes.h@{funcoes.h}}
@@ -76,7 +80,7 @@ Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_
 
 Número máximo de linhas da matriz. 
 
-Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00019}{19}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00022}{22}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a0fdb7b933ef091574ff57d1f36dd4167}\index{funcoes.h@{funcoes.h}!MAX\_VERTICES@{MAX\_VERTICES}}
 \index{MAX\_VERTICES@{MAX\_VERTICES}!funcoes.h@{funcoes.h}}
@@ -86,7 +90,7 @@ Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_
 
 Número máximo de antenas (vértices) no grafo. 
 
-Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00021}{21}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source_l00024}{24}} of file \mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h_source}{funcoes.\+h}}.
 
 
 
@@ -126,7 +130,7 @@ Executa a travessia em largura (BFS) a partir de uma antena de origem.
 \begin{DoxyParams}{Parameters}
 {\em grafo} & Ponteiro para o grafo. \\
 \hline
-{\em id\+Origem} & ID da antena de origem. \\
+{\em id\+Origem} & ID da antena inicial. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -134,27 +138,73 @@ Executa a travessia em largura (BFS) a partir de uma antena de origem.
 \end{DoxyReturn}
 Executa a travessia em largura (BFS) a partir de uma antena de origem.
 
-Utiliza uma fila para visitar os vértices por camadas e imprime o percurso.
-
 
 \begin{DoxyParams}{Parameters}
-{\em grafo} & \doxylink{struct_grafo}{Grafo} que contém todas as antenas \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} contendo as antenas \\
 \hline
 {\em id\+Origem} & ID da antena de origem \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso, ou se a antena for inválida 
+200 se executado com sucesso, mesmo que a antena não exista 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00302}{302}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00314}{314}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
-\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_ab8d4bb73287b5636baed7050b9ea23bd}\index{funcoes.h@{funcoes.h}!CriarListaArestas@{CriarListaArestas}}
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a18bc9353a419ad290776100ce6625cc4}\index{funcoes.h@{funcoes.h}!CriarAntena@{CriarAntena}}
+\index{CriarAntena@{CriarAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{CriarAntena()}{CriarAntena()}}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_a18bc9353a419ad290776100ce6625cc4} 
+\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Criar\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma nova antena e insere na lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista atual de antenas. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em x} & Coordenada X da antena. \\
+\hline
+{\em y} & Coordenada Y da antena. \\
+\hline
+{\em id} & Identificador único da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro atualizado para a lista.
+\end{DoxyReturn}
+Cria uma nova antena e insere na lista ligada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista atual de antenas \\
+\hline
+{\em freq} & Frequência da antena (carácter) \\
+\hline
+{\em x} & Posição X na matriz \\
+\hline
+{\em y} & Posição Y na matriz \\
+\hline
+{\em id} & Identificador único da antena \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a nova cabeça da lista 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00101}{101}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_af251d8576814772ef9de9f9bc249c469}\index{funcoes.h@{funcoes.h}!CriarListaArestas@{CriarListaArestas}}
 \index{CriarListaArestas@{CriarListaArestas}!funcoes.h@{funcoes.h}}
 \doxysubsubsection{\texorpdfstring{CriarListaArestas()}{CriarListaArestas()}}
-{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_ab8d4bb73287b5636baed7050b9ea23bd} 
-int Criar\+Lista\+Arestas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_af251d8576814772ef9de9f9bc249c469} 
+int Criar\+Lista\+Arestas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
 
 
 
@@ -162,7 +212,7 @@ Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.
 
 
 \begin{DoxyParams}{Parameters}
-{\em lista} & Lista de antenas. \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} com as antenas. \\
 \hline
 {\em linhas} & Número de linhas da matriz. \\
 \hline
@@ -170,15 +220,13 @@ Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso, ou 500 em caso de erro de alocação.
+200 em caso de sucesso, 501 em caso de erro.
 \end{DoxyReturn}
 Cria as arestas entre antenas com base na frequência e calcula zonas nefastas.
 
-Compara todas as antenas entre si e liga aquelas com frequência igual. Cada ligação pode armazenar uma zona nefasta resultante da interferência.
-
 
 \begin{DoxyParams}{Parameters}
-{\em lista} & Lista ligada com todas as antenas \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} com a lista de antenas \\
 \hline
 {\em linhas} & Número total de linhas da matriz \\
 \hline
@@ -186,11 +234,11 @@ Compara todas as antenas entre si e liga aquelas com frequência igual. Cada lig
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 se bem-\/sucedido, ou 500 em caso de erro de alocação 
+200 em caso de sucesso, 501 em caso de erro de alocação 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00136}{136}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00144}{144}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a563b0b82af3e0991ad41f65f2c06b3d6}\index{funcoes.h@{funcoes.h}!DFS@{DFS}}
 \index{DFS@{DFS}!funcoes.h@{funcoes.h}}
@@ -208,31 +256,29 @@ Função recursiva que realiza a travessia em profundidade (DFS).
 \hline
 {\em visitado} & Vetor de controlo de visitados. \\
 \hline
-{\em id\+Origem} & ID da antena anterior (para rastreamento). \\
+{\em id\+Origem} & ID da antena de origem. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso.
+200.
 \end{DoxyReturn}
 Função recursiva que realiza a travessia em profundidade (DFS).
 
-Atravessa todas as conexões do grafo, listando as antenas alcançadas.
-
 
 \begin{DoxyParams}{Parameters}
-{\em atual} & Ponteiro para a antena atual \\
+{\em atual} & Antena atual sendo visitada \\
 \hline
-{\em visitado} & Vetor de controlo de antenas já visitadas \\
+{\em visitado} & Vetor de marcação de antenas visitadas \\
 \hline
-{\em id\+Origem} & ID da antena anterior (usado para rastrear o percurso) \\
+{\em id\+Origem} & ID da antena de onde veio \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Código de estado (200) 
+200 sempre 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00244}{244}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00247}{247}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a90b04d8e5771d466d0cb839814f08eb9}\index{funcoes.h@{funcoes.h}!EncontrarCaminhos@{EncontrarCaminhos}}
 \index{EncontrarCaminhos@{EncontrarCaminhos}!funcoes.h@{funcoes.h}}
@@ -242,7 +288,7 @@ int Encontrar\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_
 
 
 
-Função recursiva para descobrir todos os caminhos entre duas antenas. 
+Função recursiva para encontrar todos os caminhos entre duas antenas. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -252,85 +298,45 @@ Função recursiva para descobrir todos os caminhos entre duas antenas.
 \hline
 {\em visitado} & Vetor de controlo de visitados. \\
 \hline
-{\em caminho} & Vetor para armazenar o caminho atual. \\
+{\em caminho} & Vetor que armazena o caminho atual. \\
 \hline
-{\em posicao} & Posição atual no vetor de caminho. \\
+{\em posicao} & Índice atual no vetor caminho. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso.
+200.
 \end{DoxyReturn}
-Função recursiva para descobrir todos os caminhos entre duas antenas.
-
-Utiliza backtracking para encontrar todos os caminhos válidos.
+Função recursiva para encontrar todos os caminhos entre duas antenas.
 
 
 \begin{DoxyParams}{Parameters}
-{\em atual} & Ponteiro para a antena atual \\
+{\em atual} & Ponteiro para a antena atual no caminho \\
 \hline
 {\em id\+Destino} & ID da antena destino \\
 \hline
-{\em visitado} & Vetor de controlo de antenas visitadas \\
+{\em visitado} & Vetor de marcação de antenas já visitadas \\
 \hline
-{\em caminho} & Vetor para armazenar o caminho atual \\
+{\em caminho} & Vetor de IDs representando o caminho atual \\
 \hline
 {\em posicao} & Posição atual no vetor caminho \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso 
+200 sempre 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00366}{366}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00388}{388}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
-\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_aa4054f9cb873a2cf5b5ef80b7e036faa}\index{funcoes.h@{funcoes.h}!FreeListaAntenas@{FreeListaAntenas}}
-\index{FreeListaAntenas@{FreeListaAntenas}!funcoes.h@{funcoes.h}}
-\doxysubsubsection{\texorpdfstring{FreeListaAntenas()}{FreeListaAntenas()}}
-{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_aa4054f9cb873a2cf5b5ef80b7e036faa} 
-int Free\+Lista\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{}\end{DoxyParamCaption})}
-
-
-
-Liberta a memória alocada para a lista de antenas e suas arestas. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lista} & Lista de antenas. \\
-\hline
-{\em grafo} & \doxylink{struct_grafo}{Grafo} a ser limpo. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-200 após a libertação completa.
-\end{DoxyReturn}
-Liberta a memória alocada para a lista de antenas e suas arestas.
-
-Percorre a lista de antenas, libertando cada aresta e cada antena. Também limpa o grafo, definindo todos os ponteiros de antena como NULL.
-
-
-\begin{DoxyParams}{Parameters}
-{\em lista} & Lista ligada de antenas \\
-\hline
-{\em grafo} & \doxylink{struct_grafo}{Grafo} onde as antenas estão registadas \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-200 em caso de sucesso 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00450}{450}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
-
-\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}\index{funcoes.h@{funcoes.h}!ImprimirMatriz@{ImprimirMatriz}}
-\index{ImprimirMatriz@{ImprimirMatriz}!funcoes.h@{funcoes.h}}
-\doxysubsubsection{\texorpdfstring{ImprimirMatriz()}{ImprimirMatriz()}}
-{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec} 
-int Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a0a9514cc0faad651a566b4956cd5690c}\index{funcoes.h@{funcoes.h}!ExportarMatriz@{ExportarMatriz}}
+\index{ExportarMatriz@{ExportarMatriz}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ExportarMatriz()}{ExportarMatriz()}}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_a0a9514cc0faad651a566b4956cd5690c} 
+int Exportar\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo\+Original}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{tipo\+Ficheiro}{}\end{DoxyParamCaption})}
 
 
 
-Imprime a matriz com a posição das antenas. 
+Exporta a matriz de antenas para ficheiro .txt ou .bin. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -340,34 +346,95 @@ Imprime a matriz com a posição das antenas.
 \hline
 {\em colunas} & Número de colunas da matriz. \\
 \hline
+{\em nome\+Ficheiro} & Nome base do ficheiro. \\
+\hline
+{\em tipo\+Ficheiro} & Extensão ("{}.\+txt"{} ou "{}.\+bin"{}). \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso.
+200 em sucesso, 500 em erro.
 \end{DoxyReturn}
-Imprime a matriz com a posição das antenas.
+Exporta a matriz de antenas para ficheiro .txt ou .bin.
 
-A matriz representa\+:
-\begin{DoxyItemize}
-\item Cada antena com a sua frequência (ex\+: \textquotesingle{}0\textquotesingle{}, \textquotesingle{}A\textquotesingle{}, etc.);
-\item Cada zona nefasta com o símbolo \textquotesingle{}\#\textquotesingle{};
-\item Células vazias com o símbolo \textquotesingle{}.\textquotesingle{}.
-\end{DoxyItemize}
+As posições são preenchidas com o símbolo da antena, ou \textquotesingle{}.\textquotesingle{} caso esteja vazia. No caso de exportação binária, os caracteres são gravados diretamente em bytes.
 
 
 \begin{DoxyParams}{Parameters}
-{\em grafo} & Ponteiro para o grafo que contém as antenas. \\
+{\em grafo\+Original} & \doxylink{struct_grafo}{Grafo} com as antenas \\
 \hline
-{\em linhas} & Número de linhas da matriz. \\
+{\em linhas} & Número de linhas da matriz \\
 \hline
-{\em colunas} & Número de colunas da matriz. \\
+{\em colunas} & Número de colunas da matriz \\
+\hline
+{\em nome\+Ficheiro} & Nome base do ficheiro \\
+\hline
+{\em tipo\+Ficheiro} & Extensão do ficheiro\+: "{}.\+txt"{} ou "{}.\+bin"{} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso. 
+200 em caso de sucesso, 500 em erro 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{apresenta_8c_source_l00032}{32}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00481}{481}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a2f403a1c2889640fc30370701f6c3f0b}\index{funcoes.h@{funcoes.h}!FreeListaAntenas@{FreeListaAntenas}}
+\index{FreeListaAntenas@{FreeListaAntenas}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{FreeListaAntenas()}{FreeListaAntenas()}}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_a2f403a1c2889640fc30370701f6c3f0b} 
+int Free\+Lista\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{}\end{DoxyParamCaption})}
+
+
+
+Liberta toda a memória alocada pelo grafo e antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+200 após libertação bem-\/sucedida.
+\end{DoxyReturn}
+Liberta toda a memória alocada pelo grafo e antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Ponteiro para a estrutura do grafo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+200 sempre 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00532}{532}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec}\index{funcoes.h@{funcoes.h}!ImprimirMatriz@{ImprimirMatriz}}
+\index{ImprimirMatriz@{ImprimirMatriz}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ImprimirMatriz()}{ImprimirMatriz()}}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_aaa5180fd0408054e7b86dd31ef2d08ec} 
+int Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Imprime a matriz com as antenas e zonas nefastas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Ponteiro para o grafo. \\
+\hline
+{\em linhas} & Número de linhas. \\
+\hline
+{\em colunas} & Número de colunas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+200. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{apresenta_8c_source_l00022}{22}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_aace3cba108d565f7054960bc755e30e7}\index{funcoes.h@{funcoes.h}!IniciarDFS@{IniciarDFS}}
 \index{IniciarDFS@{IniciarDFS}!funcoes.h@{funcoes.h}}
@@ -383,87 +450,67 @@ Inicia a travessia DFS a partir de uma antena de origem.
 \begin{DoxyParams}{Parameters}
 {\em grafo} & Ponteiro para o grafo. \\
 \hline
-{\em id\+Origem} & ID da antena de origem. \\
+{\em id\+Origem} & ID da antena inicial. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 se bem-\/sucedido, 500 se o ID for inválido.
+200 se bem-\/sucedido, 500 se ID inválido.
 \end{DoxyReturn}
-Inicia a travessia DFS a partir de uma antena de origem.
-
-Verifica a validade da antena de origem e inicia a travessia.
-
 
 \begin{DoxyParams}{Parameters}
-{\em grafo} & \doxylink{struct_grafo}{Grafo} onde se realiza a travessia \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} contendo todas as antenas \\
 \hline
-{\em id\+Origem} & ID da antena de origem \\
+{\em id\+Origem} & ID da antena inicial \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso, 500 se o ID for inválido 
+200 se bem-\/sucedido, 500 se ID inválido 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00277}{277}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00278}{278}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
-\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a8b31b1e3a3b6ec3e1f80ab307251c167}\index{funcoes.h@{funcoes.h}!InserirAntena@{InserirAntena}}
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_adb9d90e80097c267fb7e863ab1385dd0}\index{funcoes.h@{funcoes.h}!InserirAntena@{InserirAntena}}
 \index{InserirAntena@{InserirAntena}!funcoes.h@{funcoes.h}}
 \doxysubsubsection{\texorpdfstring{InserirAntena()}{InserirAntena()}}
-{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_a8b31b1e3a3b6ec3e1f80ab307251c167} 
-\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_adb9d90e80097c267fb7e863ab1385dd0} 
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} Inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
 
 
-Insere uma nova antena na lista e no grafo. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lista} & Lista atual de antenas. \\
-\hline
-{\em grafo} & Ponteiro para o grafo. \\
-\hline
-{\em freq} & Carácter da frequência da antena. \\
-\hline
-{\em x} & Coordenada X da antena. \\
-\hline
-{\em y} & Coordenada Y da antena. \\
-\hline
-{\em id} & Identificador único da antena. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Ponteiro para a nova cabeça da lista ligada.
-\end{DoxyReturn}
-Insere uma nova antena na lista e no grafo.
+Insere uma nova antena na estrutura do grafo. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em lista} & Lista ligada atual de antenas \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} atual. \\
 \hline
-{\em grafo} & \doxylink{struct_grafo}{Grafo} onde a antena será registada pelo seu ID \\
-\hline
-{\em freq} & Carácter representativo da frequência da antena \\
-\hline
-{\em x} & Coordenada X (coluna) da antena \\
-\hline
-{\em y} & Coordenada Y (linha) da antena \\
-\hline
-{\em id} & Identificador único da antena \\
+{\em lista} & Ponteiro para a nova antena a ser inserida. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Ponteiro para a nova cabeça da lista ligada 
+Ponteiro atualizado para o grafo.
+\end{DoxyReturn}
+Insere uma nova antena na estrutura do grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Estrutura atual do grafo \\
+\hline
+{\em lista} & Ponteiro para a nova antena a ser inserida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro atualizado para o grafo 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00104}{104}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00124}{124}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
-\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_a24a0c73e61c508d9e884966640ce0aea}\index{funcoes.h@{funcoes.h}!LerLista@{LerLista}}
+\Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_ad130e15bf2879a82fee27a70fc2a6905}\index{funcoes.h@{funcoes.h}!LerLista@{LerLista}}
 \index{LerLista@{LerLista}!funcoes.h@{funcoes.h}}
 \doxysubsubsection{\texorpdfstring{LerLista()}{LerLista()}}
-{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_a24a0c73e61c508d9e884966640ce0aea} 
-\mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} Ler\+Lista (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{tipo\+Ficheiro}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{projeto_e_d_a___f2___exe_2funcoes_8h_ad130e15bf2879a82fee27a70fc2a6905} 
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} Ler\+Lista (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{tipo\+Ficheiro}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{}\end{DoxyParamCaption})}
 
 
 
@@ -479,15 +526,13 @@ Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspo
 \hline
 {\em colunas} & Ponteiro onde será armazenado o número de colunas lidas. \\
 \hline
-{\em grafo} & Ponteiro para a estrutura do grafo a ser preenchida. \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Ponteiro para o início da lista ligada de antenas.
+Ponteiro para a estrutura do grafo, ou NULL em caso de erro.
 \end{DoxyReturn}
 Lê um ficheiro com a matriz de antenas e cria a lista ligada e o grafo correspondente.
 
-Esta função percorre o ficheiro linha a linha e cria antenas para todas as células não vazias. Após a leitura, chama a função \doxylink{projeto_e_d_a___f2_2funcoes_8h_ab8d4bb73287b5636baed7050b9ea23bd}{Criar\+Lista\+Arestas()} para estabelecer as ligações entre antenas.
+A função percorre o ficheiro linha a linha e cria uma estrutura ligada (lista + grafo) com as antenas. Após a leitura, também estabelece as conexões entre antenas de mesma frequência.
 
 
 \begin{DoxyParams}{Parameters}
@@ -495,19 +540,17 @@ Esta função percorre o ficheiro linha a linha e cria antenas para todas as cé
 \hline
 {\em tipo\+Ficheiro} & Extensão do ficheiro ("{}.\+txt"{} ou "{}.\+bin"{}) \\
 \hline
-{\em linhas} & Ponteiro para armazenar o número de linhas da matriz \\
+{\em linhas} & Ponteiro para armazenar o número de linhas lidas \\
 \hline
-{\em colunas} & Ponteiro para armazenar o número de colunas da matriz \\
-\hline
-{\em grafo} & Ponteiro para o grafo onde as antenas serão registadas \\
+{\em colunas} & Ponteiro para armazenar o número de colunas lidas \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Ponteiro para o início da lista ligada de antenas 
+Ponteiro para a estrutura do grafo construído, ou NULL em caso de erro 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00033}{33}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00032}{32}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_adaa941ab25d7f5c32600c747bcffa924}\index{funcoes.h@{funcoes.h}!ListarArestasENefastos@{ListarArestasENefastos}}
 \index{ListarArestasENefastos@{ListarArestasENefastos}!funcoes.h@{funcoes.h}}
@@ -517,44 +560,23 @@ int Listar\+Arestas\+ENefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{
 
 
 
-Lista todas as arestas existentes e suas zonas nefastas (se existirem). 
+Lista todas as antenas, arestas e zonas nefastas. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em grafo} & Ponteiro para o grafo. \\
 \hline
-{\em linhas} & Número de linhas da matriz. \\
+{\em linhas} & Número de linhas. \\
 \hline
-{\em colunas} & Número de colunas da matriz. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-200 em caso de sucesso.
-\end{DoxyReturn}
-Lista todas as arestas existentes e suas zonas nefastas (se existirem).
-
-Para cada antena no grafo\+:
-\begin{DoxyItemize}
-\item Mostra a sua frequência e posição;
-\item Lista todas as arestas para antenas com mesma frequência;
-\item Indica a coordenada da zona nefasta associada, se válida;
-\end{DoxyItemize}
-
-
-\begin{DoxyParams}{Parameters}
-{\em grafo} & Ponteiro para o grafo. \\
-\hline
-{\em linhas} & Número total de linhas da matriz (para validar nefastos). \\
-\hline
-{\em colunas} & Número total de colunas da matriz (para validar nefastos). \\
+{\em colunas} & Número de colunas. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso. 
+200. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{apresenta_8c_source_l00085}{85}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
+Definition at line \mbox{\hyperlink{apresenta_8c_source_l00067}{67}} of file \mbox{\hyperlink{apresenta_8c_source}{apresenta.\+c}}.
 
 \Hypertarget{projeto_e_d_a___f2___exe_2funcoes_8h_aecbc4d104ad42b1e13dd93f0319335a8}\index{funcoes.h@{funcoes.h}!TodosCaminhos@{TodosCaminhos}}
 \index{TodosCaminhos@{TodosCaminhos}!funcoes.h@{funcoes.h}}
@@ -564,23 +586,21 @@ int Todos\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graf
 
 
 
-Inicia a busca por todos os caminhos possíveis entre duas antenas. 
+Inicia a busca por todos os caminhos entre duas antenas. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em grafo} & \doxylink{struct_grafo}{Grafo} com todas as antenas. \\
+{\em grafo} & \doxylink{struct_grafo}{Grafo} com as antenas. \\
 \hline
 {\em id\+Origem} & ID da antena de origem. \\
 \hline
-{\em id\+Destino} & ID da antena de destino. \\
+{\em id\+Destino} & ID da antena destino. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso.
+200 em caso de sucesso, 500 se IDs forem inválidos.
 \end{DoxyReturn}
-Inicia a busca por todos os caminhos possíveis entre duas antenas.
-
-Verifica se as antenas são válidas e têm a mesma frequência antes de iniciar a busca.
+Inicia a busca por todos os caminhos entre duas antenas.
 
 
 \begin{DoxyParams}{Parameters}
@@ -588,13 +608,13 @@ Verifica se as antenas são válidas e têm a mesma frequência antes de iniciar
 \hline
 {\em id\+Origem} & ID da antena de origem \\
 \hline
-{\em id\+Destino} & ID da antena de destino \\
+{\em id\+Destino} & ID da antena destino \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-200 em caso de sucesso, ou se os IDs forem inválidos 
+200 em caso de sucesso, 500 se IDs inválidos 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{funcoes_8c_source_l00403}{403}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
+Definition at line \mbox{\hyperlink{funcoes_8c_source_l00425}{425}} of file \mbox{\hyperlink{funcoes_8c_source}{funcoes.\+c}}.
 

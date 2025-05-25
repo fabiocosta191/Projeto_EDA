@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA_F2: Grafo Struct Reference</title>
+<title>Projeto_EDA_F2: Grafo Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProjetoEDA_F2
+   <div id="projectname">Projeto_EDA_F2<span id="projectnumber">&#160;2</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,23 +108,25 @@ $(function(){initNavTree('struct_grafo.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Representa o grafo principal através de um array de ponteiros para antenas.  
+<p>Representa o grafo principal como uma lista ligada de vértices.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a69a90269f5dce0ec2ca6cafbb7485ca7" id="r_a69a90269f5dce0ec2ca6cafbb7485ca7"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_ant.html">Ant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a> [<a class="el" href="projeto_e_d_a___f2___exe_2funcoes_8h.html#a0fdb7b933ef091574ff57d1f36dd4167">MAX_VERTICES</a>]</td></tr>
-<tr class="separator:a69a90269f5dce0ec2ca6cafbb7485ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed78368f7fbd5b50315733cf284a47c" id="r_afed78368f7fbd5b50315733cf284a47c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_ant.html">Ant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed78368f7fbd5b50315733cf284a47c">Antena</a></td></tr>
+<tr class="separator:afed78368f7fbd5b50315733cf284a47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4db301e55275c08ccb51e318bea2d8b" id="r_ad4db301e55275c08ccb51e318bea2d8b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_grafo.html">Grafo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4db301e55275c08ccb51e318bea2d8b">listaGrafo</a></td></tr>
+<tr class="separator:ad4db301e55275c08ccb51e318bea2d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representa o grafo principal através de um array de ponteiros para antenas. </p>
+<div class="textblock"><p>Representa o grafo principal como uma lista ligada de vértices. </p>
 
-<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00054">54</a> of file <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00056">56</a> of file <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a69a90269f5dce0ec2ca6cafbb7485ca7" name="a69a90269f5dce0ec2ca6cafbb7485ca7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69a90269f5dce0ec2ca6cafbb7485ca7">&#9670;&#160;</a></span>Antena</h2>
+<a id="afed78368f7fbd5b50315733cf284a47c" name="afed78368f7fbd5b50315733cf284a47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed78368f7fbd5b50315733cf284a47c">&#9670;&#160;</a></span>Antena</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,9 +136,26 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Array que armazena os ponteiros para antenas indexadas pelo seu ID. </p>
+<p>Ponteiro para a antena armazenada neste nó do grafo. </p>
 
-<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00055">55</a> of file <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00057">57</a> of file <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>.</p>
+
+</div>
+</div>
+<a id="ad4db301e55275c08ccb51e318bea2d8b" name="ad4db301e55275c08ccb51e318bea2d8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4db301e55275c08ccb51e318bea2d8b">&#9670;&#160;</a></span>listaGrafo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_grafo.html">Grafo</a> * listaGrafo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ponteiro para o próximo nó do grafo (lista ligada). </p>
+
+<p class="definition">Definition at line <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00058">58</a> of file <a class="el" href="projeto_e_d_a___f2_2funcoes_8h_source.html">funcoes.h</a>.</p>
 
 </div>
 </div>

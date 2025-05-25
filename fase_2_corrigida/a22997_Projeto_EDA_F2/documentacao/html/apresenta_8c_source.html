@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA_F2: projetoEDA_F2_Exe/apresenta.c Source File</title>
+<title>Projeto_EDA_F2: projetoEDA_F2_Exe/apresenta.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProjetoEDA_F2
+   <div id="projectname">Projeto_EDA_F2<span id="projectnumber">&#160;2</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,110 +111,119 @@ $(function(){initNavTree('apresenta_8c_source.html',''); initResizable(true); })
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="projeto_e_d_a___f2___exe_2funcoes_8h.html">funcoes.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="projeto_e_d_a___f2_2funcoes_8h.html#aaa5180fd0408054e7b86dd31ef2d08ec">   32</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="apresenta_8c.html#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a>(<a class="code hl_struct" href="struct_grafo.html">Grafo</a>* grafo, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; linhas; y++) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; colunas; x++) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordtype">int</span> marcado = 0;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="comment">// Verifica se existe uma antena nesta posição</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="projeto_e_d_a___f2_2funcoes_8h.html#a0fdb7b933ef091574ff57d1f36dd4167">MAX_VERTICES</a> &amp;&amp; grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i] != NULL; i++) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">if</span> (grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i]-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> == x &amp;&amp; grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i]-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> == y) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                    printf(<span class="stringliteral">&quot;%c &quot;</span>, grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i]-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    marcado = 1;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span> (marcado) <span class="keywordflow">continue</span>; <span class="comment">// Se já foi marcado, não precisa verificar os nefastos</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">// Verifica se existe um ponto nefasto nesta posição</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="projeto_e_d_a___f2_2funcoes_8h.html#a0fdb7b933ef091574ff57d1f36dd4167">MAX_VERTICES</a> &amp;&amp; grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i] != NULL; i++) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <a class="code hl_struct" href="struct_ars.html">Ars</a>* aresta = grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i]-&gt;<a class="code hl_variable" href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">listaAresta</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">while</span> (aresta != NULL) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    <span class="keywordflow">if</span> (aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">xNef</a> == x &amp;&amp; aresta-&gt;<a class="code hl_variable" href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">yNef</a> == y) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                        printf(<span class="stringliteral">&quot;# &quot;</span>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        marcado = 1;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    aresta = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">proximaAresta</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">if</span> (marcado) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span> (!marcado) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                printf(<span class="stringliteral">&quot;. &quot;</span>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    printf(<span class="stringliteral">&quot;\n\n&quot;</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> 200;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="projeto_e_d_a___f2_2funcoes_8h.html#aaa5180fd0408054e7b86dd31ef2d08ec">   22</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="apresenta_8c.html#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a>(<a class="code hl_struct" href="struct_grafo.html">Grafo</a>* grafo, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; linhas; y++) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; colunas; x++) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordtype">int</span> marcado = 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="comment">// Percorrer lista ligada de antenas</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <a class="code hl_struct" href="struct_ant.html">Ant</a>* atual = grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#afed78368f7fbd5b50315733cf284a47c">Antena</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">while</span> (atual != NULL) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="keywordflow">if</span> (atual-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> == x &amp;&amp; atual-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> == y) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                    printf(<span class="stringliteral">&quot;%c &quot;</span>, atual-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                    marcado = 1;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                atual = atual-&gt;<a class="code hl_variable" href="struct_ant.html#ae4906fba945c9bbb471249069b84bed8">proxAntena</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">if</span> (marcado) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="comment">// Percorrer zonas nefastas</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            atual = grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#afed78368f7fbd5b50315733cf284a47c">Antena</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">while</span> (atual != NULL) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <a class="code hl_struct" href="struct_ars.html">Ars</a>* aresta = atual-&gt;<a class="code hl_variable" href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">listaAresta</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">while</span> (aresta != NULL) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    <span class="keywordflow">if</span> (aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">xNef</a> == x &amp;&amp; aresta-&gt;<a class="code hl_variable" href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">yNef</a> == y) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        printf(<span class="stringliteral">&quot;# &quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        marcado = 1;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    aresta = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">proximaAresta</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keywordflow">if</span> (marcado) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                atual = atual-&gt;<a class="code hl_variable" href="struct_ant.html#ae4906fba945c9bbb471249069b84bed8">proxAntena</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (!marcado) printf(<span class="stringliteral">&quot;. &quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    printf(<span class="stringliteral">&quot;\n\n&quot;</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> 200;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="projeto_e_d_a___f2_2funcoes_8h.html#adaa941ab25d7f5c32600c747bcffa924">   85</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="apresenta_8c.html#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a>(<a class="code hl_struct" href="struct_grafo.html">Grafo</a>* grafo, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    printf(<span class="stringliteral">&quot;\nLista de Antenas, Arestas e Zonas Nefastas:\n&quot;</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="projeto_e_d_a___f2_2funcoes_8h.html#a0fdb7b933ef091574ff57d1f36dd4167">MAX_VERTICES</a>; i++) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_struct" href="struct_ant.html">Ant</a>* ant = grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Antena</a>[i];</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> (ant == NULL)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="projeto_e_d_a___f2_2funcoes_8h.html#adaa941ab25d7f5c32600c747bcffa924">   67</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="apresenta_8c.html#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a>(<a class="code hl_struct" href="struct_grafo.html">Grafo</a>* grafo, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    printf(<span class="stringliteral">&quot;\nLista de Antenas, Arestas e Zonas Nefastas:\n&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_struct" href="struct_ant.html">Ant</a>* ant = grafo-&gt;<a class="code hl_variable" href="struct_grafo.html#afed78368f7fbd5b50315733cf284a47c">Antena</a>;  <span class="comment">// Ponto de partida da lista ligada</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">while</span> (ant != NULL) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        printf(<span class="stringliteral">&quot;\nAntena %d (freq. %c) em [%d, %d]:\n&quot;</span>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_struct" href="struct_ars.html">Ars</a>* aresta = ant-&gt;<a class="code hl_variable" href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">listaAresta</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (aresta == NULL) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            printf(<span class="stringliteral">&quot;  - Sem arestas.\n&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">while</span> (aresta != NULL) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordtype">int</span> xNef = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">xNef</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordtype">int</span> yNef = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">yNef</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordtype">int</span> nefastoValido = (xNef &gt;= 0 &amp;&amp; xNef &lt; colunas &amp;&amp; yNef &gt;= 0 &amp;&amp; yNef &lt; linhas);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            printf(<span class="stringliteral">&quot;  Aresta %d -&gt; Antena %d (%c) em [%d, %d] | &quot;</span>,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                count,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        printf(<span class="stringliteral">&quot;\nAntena %d (freq. %c) em [%d, %d]:\n&quot;</span>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, ant-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_struct" href="struct_ars.html">Ars</a>* aresta = ant-&gt;<a class="code hl_variable" href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">listaAresta</a>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (aresta == NULL) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            printf(<span class="stringliteral">&quot;  - Sem arestas.\n&quot;</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">while</span> (aresta != NULL) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordtype">int</span> xNef = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">xNef</a>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordtype">int</span> yNef = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">yNef</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordtype">int</span> nefastoValido = (xNef &gt;= 0 &amp;&amp; xNef &lt; colunas &amp;&amp; yNef &gt;= 0 &amp;&amp; yNef &lt; linhas);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            printf(<span class="stringliteral">&quot;  Aresta %d -&gt; Antena %d (%c) em [%d, %d] | &quot;</span>,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                count,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">freqAntena</a>,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                aresta-&gt;<a class="code hl_variable" href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">destinoAntena</a>-&gt;<a class="code hl_variable" href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">if</span> (nefastoValido) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                printf(<span class="stringliteral">&quot;Zona nefasta: [%d, %d]\n&quot;</span>, xNef, yNef);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                printf(<span class="stringliteral">&quot;Nao possui zona nefasta guardada, ou esta encontra-se fora dos limites da matriz.\n&quot;</span>);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            count++;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            aresta = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">proximaAresta</a>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    printf(<span class="stringliteral">&quot;\n\n&quot;</span>);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> 200;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (nefastoValido) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                printf(<span class="stringliteral">&quot;Zona nefasta: [%d, %d]\n&quot;</span>, xNef, yNef);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                printf(<span class="stringliteral">&quot;Nao possui zona nefasta guardada, ou esta encontra-se fora dos limites da matriz.\n&quot;</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            count++;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            aresta = aresta-&gt;<a class="code hl_variable" href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">proximaAresta</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        ant = ant-&gt;<a class="code hl_variable" href="struct_ant.html#ae4906fba945c9bbb471249069b84bed8">proxAntena</a>;  <span class="comment">// Avança para a próxima antena na lista</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    printf(<span class="stringliteral">&quot;\n\n&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> 200;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
 </div>
-<div class="ttc" id="aapresenta_8c_html_aaa5180fd0408054e7b86dd31ef2d08ec"><div class="ttname"><a href="apresenta_8c.html#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a></div><div class="ttdeci">int ImprimirMatriz(Grafo *grafo, int linhas, int colunas)</div><div class="ttdoc">Imprime a matriz de antenas e zonas nefastas.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">apresenta.c:32</a></div></div>
-<div class="ttc" id="aapresenta_8c_html_adaa941ab25d7f5c32600c747bcffa924"><div class="ttname"><a href="apresenta_8c.html#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a></div><div class="ttdeci">int ListarArestasENefastos(Grafo *grafo, int linhas, int colunas)</div><div class="ttdoc">Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas.</div><div class="ttdef"><b>Definition</b> <a href="#l00085">apresenta.c:85</a></div></div>
-<div class="ttc" id="aprojeto_e_d_a___f2_2funcoes_8h_html_a0fdb7b933ef091574ff57d1f36dd4167"><div class="ttname"><a href="projeto_e_d_a___f2_2funcoes_8h.html#a0fdb7b933ef091574ff57d1f36dd4167">MAX_VERTICES</a></div><div class="ttdeci">#define MAX_VERTICES</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00021">funcoes.h:21</a></div></div>
+<div class="ttc" id="aapresenta_8c_html_aaa5180fd0408054e7b86dd31ef2d08ec"><div class="ttname"><a href="apresenta_8c.html#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a></div><div class="ttdeci">int ImprimirMatriz(Grafo *grafo, int linhas, int colunas)</div><div class="ttdoc">Imprime a matriz com as antenas e zonas nefastas.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">apresenta.c:22</a></div></div>
+<div class="ttc" id="aapresenta_8c_html_adaa941ab25d7f5c32600c747bcffa924"><div class="ttname"><a href="apresenta_8c.html#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a></div><div class="ttdeci">int ListarArestasENefastos(Grafo *grafo, int linhas, int colunas)</div><div class="ttdoc">Lista todas as antenas, arestas e zonas nefastas.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">apresenta.c:67</a></div></div>
 <div class="ttc" id="aprojeto_e_d_a___f2___exe_2funcoes_8h_html"><div class="ttname"><a href="projeto_e_d_a___f2___exe_2funcoes_8h.html">funcoes.h</a></div></div>
-<div class="ttc" id="astruct_ant_html"><div class="ttname"><a href="struct_ant.html">Ant</a></div><div class="ttdoc">Representa uma antena (ou vértice) do grafo.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00029">funcoes.h:29</a></div></div>
-<div class="ttc" id="astruct_ant_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">Ant::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00033">funcoes.h:33</a></div></div>
-<div class="ttc" id="astruct_ant_html_a3419940d73191a069f0f2cb626622b92"><div class="ttname"><a href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">Ant::freqAntena</a></div><div class="ttdeci">char freqAntena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00030">funcoes.h:30</a></div></div>
-<div class="ttc" id="astruct_ant_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">Ant::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00032">funcoes.h:32</a></div></div>
-<div class="ttc" id="astruct_ant_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">Ant::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00031">funcoes.h:31</a></div></div>
-<div class="ttc" id="astruct_ant_html_ae359129f4dea404cd3abb4a5760da3f7"><div class="ttname"><a href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">Ant::listaAresta</a></div><div class="ttdeci">struct Ars * listaAresta</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00035">funcoes.h:35</a></div></div>
-<div class="ttc" id="astruct_ars_html"><div class="ttname"><a href="struct_ars.html">Ars</a></div><div class="ttdoc">Representa uma aresta entre duas antenas, podendo conter a zona nefasta.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00042">funcoes.h:42</a></div></div>
-<div class="ttc" id="astruct_ars_html_a2a93eace6913dac11a9b72a8e9f07a7a"><div class="ttname"><a href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">Ars::xNef</a></div><div class="ttdeci">int xNef</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00046">funcoes.h:46</a></div></div>
-<div class="ttc" id="astruct_ars_html_a40f610f5ae06c2dec1b908f9851d95d7"><div class="ttname"><a href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">Ars::destinoAntena</a></div><div class="ttdeci">struct Ant * destinoAntena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00044">funcoes.h:44</a></div></div>
-<div class="ttc" id="astruct_ars_html_aefd6c1aef7d920f8faef59fa85f2d7c8"><div class="ttname"><a href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">Ars::yNef</a></div><div class="ttdeci">int yNef</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00047">funcoes.h:47</a></div></div>
-<div class="ttc" id="astruct_ars_html_af91f148395a813238b48c0ef05d7ac27"><div class="ttname"><a href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">Ars::proximaAresta</a></div><div class="ttdeci">struct Ars * proximaAresta</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00045">funcoes.h:45</a></div></div>
-<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="struct_grafo.html">Grafo</a></div><div class="ttdoc">Representa o grafo principal através de um array de ponteiros para antenas.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00054">funcoes.h:54</a></div></div>
-<div class="ttc" id="astruct_grafo_html_a69a90269f5dce0ec2ca6cafbb7485ca7"><div class="ttname"><a href="struct_grafo.html#a69a90269f5dce0ec2ca6cafbb7485ca7">Grafo::Antena</a></div><div class="ttdeci">struct Ant * Antena[MAX_VERTICES]</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00055">funcoes.h:55</a></div></div>
+<div class="ttc" id="astruct_ant_html"><div class="ttname"><a href="struct_ant.html">Ant</a></div><div class="ttdoc">Representa uma antena (ou vértice) do grafo.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00032">funcoes.h:32</a></div></div>
+<div class="ttc" id="astruct_ant_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="struct_ant.html#a0a2f84ed7838f07779ae24c5a9086d33">Ant::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00036">funcoes.h:36</a></div></div>
+<div class="ttc" id="astruct_ant_html_a3419940d73191a069f0f2cb626622b92"><div class="ttname"><a href="struct_ant.html#a3419940d73191a069f0f2cb626622b92">Ant::freqAntena</a></div><div class="ttdeci">char freqAntena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00033">funcoes.h:33</a></div></div>
+<div class="ttc" id="astruct_ant_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="struct_ant.html#a6150e0515f7202e2fb518f7206ed97dc">Ant::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00035">funcoes.h:35</a></div></div>
+<div class="ttc" id="astruct_ant_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_ant.html#a7441ef0865bcb3db9b8064dd7375c1ea">Ant::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00034">funcoes.h:34</a></div></div>
+<div class="ttc" id="astruct_ant_html_ae359129f4dea404cd3abb4a5760da3f7"><div class="ttname"><a href="struct_ant.html#ae359129f4dea404cd3abb4a5760da3f7">Ant::listaAresta</a></div><div class="ttdeci">struct Ars * listaAresta</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00038">funcoes.h:38</a></div></div>
+<div class="ttc" id="astruct_ant_html_ae4906fba945c9bbb471249069b84bed8"><div class="ttname"><a href="struct_ant.html#ae4906fba945c9bbb471249069b84bed8">Ant::proxAntena</a></div><div class="ttdeci">struct Ant * proxAntena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00037">funcoes.h:37</a></div></div>
+<div class="ttc" id="astruct_ars_html"><div class="ttname"><a href="struct_ars.html">Ars</a></div><div class="ttdoc">Representa uma aresta entre duas antenas, podendo conter a zona nefasta.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00045">funcoes.h:45</a></div></div>
+<div class="ttc" id="astruct_ars_html_a2a93eace6913dac11a9b72a8e9f07a7a"><div class="ttname"><a href="struct_ars.html#a2a93eace6913dac11a9b72a8e9f07a7a">Ars::xNef</a></div><div class="ttdeci">int xNef</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00048">funcoes.h:48</a></div></div>
+<div class="ttc" id="astruct_ars_html_a40f610f5ae06c2dec1b908f9851d95d7"><div class="ttname"><a href="struct_ars.html#a40f610f5ae06c2dec1b908f9851d95d7">Ars::destinoAntena</a></div><div class="ttdeci">struct Ant * destinoAntena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00046">funcoes.h:46</a></div></div>
+<div class="ttc" id="astruct_ars_html_aefd6c1aef7d920f8faef59fa85f2d7c8"><div class="ttname"><a href="struct_ars.html#aefd6c1aef7d920f8faef59fa85f2d7c8">Ars::yNef</a></div><div class="ttdeci">int yNef</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00049">funcoes.h:49</a></div></div>
+<div class="ttc" id="astruct_ars_html_af91f148395a813238b48c0ef05d7ac27"><div class="ttname"><a href="struct_ars.html#af91f148395a813238b48c0ef05d7ac27">Ars::proximaAresta</a></div><div class="ttdeci">struct Ars * proximaAresta</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00047">funcoes.h:47</a></div></div>
+<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="struct_grafo.html">Grafo</a></div><div class="ttdoc">Representa o grafo principal como uma lista ligada de vértices.</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00056">funcoes.h:56</a></div></div>
+<div class="ttc" id="astruct_grafo_html_afed78368f7fbd5b50315733cf284a47c"><div class="ttname"><a href="struct_grafo.html#afed78368f7fbd5b50315733cf284a47c">Grafo::Antena</a></div><div class="ttdeci">struct Ant * Antena</div><div class="ttdef"><b>Definition</b> <a href="projeto_e_d_a___f2_2funcoes_8h_source.html#l00057">funcoes.h:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

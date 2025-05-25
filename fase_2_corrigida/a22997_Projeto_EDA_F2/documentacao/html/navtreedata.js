@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "ProjetoEDA_F2", "index.html", [
+  [ "Projeto_EDA_F2", "index.html", [
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

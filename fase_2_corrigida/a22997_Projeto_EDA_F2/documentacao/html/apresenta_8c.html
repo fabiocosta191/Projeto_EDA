@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjetoEDA_F2: projetoEDA_F2_Exe/apresenta.c File Reference</title>
+<title>Projeto_EDA_F2: projetoEDA_F2_Exe/apresenta.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProjetoEDA_F2
+   <div id="projectname">Projeto_EDA_F2<span id="projectnumber">&#160;2</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,10 +120,10 @@ $(function(){initNavTree('apresenta_8c.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aaa5180fd0408054e7b86dd31ef2d08ec" id="r_aaa5180fd0408054e7b86dd31ef2d08ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa5180fd0408054e7b86dd31ef2d08ec">ImprimirMatriz</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas)</td></tr>
-<tr class="memdesc:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a matriz de antenas e zonas nefastas.  <br /></td></tr>
+<tr class="memdesc:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a matriz com as antenas e zonas nefastas.  <br /></td></tr>
 <tr class="separator:aaa5180fd0408054e7b86dd31ef2d08ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaa941ab25d7f5c32600c747bcffa924" id="r_adaa941ab25d7f5c32600c747bcffa924"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaa941ab25d7f5c32600c747bcffa924">ListarArestasENefastos</a> (<a class="el" href="struct_grafo.html">Grafo</a> *grafo, int linhas, int colunas)</td></tr>
-<tr class="memdesc:adaa941ab25d7f5c32600c747bcffa924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas.  <br /></td></tr>
+<tr class="memdesc:adaa941ab25d7f5c32600c747bcffa924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as antenas, arestas e zonas nefastas.  <br /></td></tr>
 <tr class="separator:adaa941ab25d7f5c32600c747bcffa924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -158,24 +158,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Imprime a matriz de antenas e zonas nefastas. </p>
-<p>Imprime a matriz com a posição das antenas.</p>
-<p>A matriz representa:</p><ul>
-<li>Cada antena com a sua frequência (ex: '0', 'A', etc.);</li>
-<li>Cada zona nefasta com o símbolo '#';</li>
-<li>Células vazias com o símbolo '.'.</li>
-</ul>
+<p>Imprime a matriz com as antenas e zonas nefastas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo que contém as antenas. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número de linhas da matriz. </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número de colunas da matriz. </td></tr>
+    <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas. </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00032">32</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00022">22</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
 
 </div>
 </div>
@@ -203,24 +197,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lista todas as antenas e as respetivas arestas com as zonas nefastas associadas. </p>
-<p>Lista todas as arestas existentes e suas zonas nefastas (se existirem).</p>
-<p>Para cada antena no grafo:</p><ul>
-<li>Mostra a sua frequência e posição;</li>
-<li>Lista todas as arestas para antenas com mesma frequência;</li>
-<li>Indica a coordenada da zona nefasta associada, se válida;</li>
-</ul>
+<p>Lista todas as antenas, arestas e zonas nefastas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grafo</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Número total de linhas da matriz (para validar nefastos). </td></tr>
-    <tr><td class="paramname">colunas</td><td>Número total de colunas da matriz (para validar nefastos). </td></tr>
+    <tr><td class="paramname">linhas</td><td>Número de linhas. </td></tr>
+    <tr><td class="paramname">colunas</td><td>Número de colunas. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>200 em caso de sucesso. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>200. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00085">85</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="apresenta_8c_source.html#l00067">67</a> of file <a class="el" href="apresenta_8c_source.html">apresenta.c</a>.</p>
 
 </div>
 </div>
