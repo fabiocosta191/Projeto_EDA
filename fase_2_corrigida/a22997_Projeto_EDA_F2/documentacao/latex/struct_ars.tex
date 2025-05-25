@@ -1,0 +1,90 @@
+\doxysection{Ars Struct Reference}
+\hypertarget{struct_ars}{}\label{struct_ars}\index{Ars@{Ars}}
+
+
+Representa uma aresta entre duas antenas, podendo conter a zona nefasta.  
+
+
+
+
+{\ttfamily \#include $<$funcoes.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_ars_a8d5799e2bf13a95a3fdbe32a08cce47b}{origem\+Antena}}
+\item 
+struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}{destino\+Antena}}
+\item 
+struct \mbox{\hyperlink{struct_ars}{Ars}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_ars_af91f148395a813238b48c0ef05d7ac27}{proxima\+Aresta}}
+\item 
+int \mbox{\hyperlink{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}{x\+Nef}}
+\item 
+int \mbox{\hyperlink{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}{y\+Nef}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma aresta entre duas antenas, podendo conter a zona nefasta. 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00042}{42}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7}\index{Ars@{Ars}!destinoAntena@{destinoAntena}}
+\index{destinoAntena@{destinoAntena}!Ars@{Ars}}
+\doxysubsubsection{\texorpdfstring{destinoAntena}{destinoAntena}}
+{\footnotesize\ttfamily \label{struct_ars_a40f610f5ae06c2dec1b908f9851d95d7} 
+struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} destino\+Antena}
+
+Ponteiro para a antena de destino da ligação. 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00044}{44}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+\Hypertarget{struct_ars_a8d5799e2bf13a95a3fdbe32a08cce47b}\index{Ars@{Ars}!origemAntena@{origemAntena}}
+\index{origemAntena@{origemAntena}!Ars@{Ars}}
+\doxysubsubsection{\texorpdfstring{origemAntena}{origemAntena}}
+{\footnotesize\ttfamily \label{struct_ars_a8d5799e2bf13a95a3fdbe32a08cce47b} 
+struct \mbox{\hyperlink{struct_ant}{Ant}} \texorpdfstring{$\ast$}{*} origem\+Antena}
+
+Ponteiro para a antena de origem da ligação. 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00043}{43}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+\Hypertarget{struct_ars_af91f148395a813238b48c0ef05d7ac27}\index{Ars@{Ars}!proximaAresta@{proximaAresta}}
+\index{proximaAresta@{proximaAresta}!Ars@{Ars}}
+\doxysubsubsection{\texorpdfstring{proximaAresta}{proximaAresta}}
+{\footnotesize\ttfamily \label{struct_ars_af91f148395a813238b48c0ef05d7ac27} 
+struct \mbox{\hyperlink{struct_ars}{Ars}} \texorpdfstring{$\ast$}{*} proxima\+Aresta}
+
+Ponteiro para a próxima aresta na lista ligada. 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00045}{45}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+\Hypertarget{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a}\index{Ars@{Ars}!xNef@{xNef}}
+\index{xNef@{xNef}!Ars@{Ars}}
+\doxysubsubsection{\texorpdfstring{xNef}{xNef}}
+{\footnotesize\ttfamily \label{struct_ars_a2a93eace6913dac11a9b72a8e9f07a7a} 
+int x\+Nef}
+
+Coordenada X da zona nefasta (se existir). 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00046}{46}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+\Hypertarget{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8}\index{Ars@{Ars}!yNef@{yNef}}
+\index{yNef@{yNef}!Ars@{Ars}}
+\doxysubsubsection{\texorpdfstring{yNef}{yNef}}
+{\footnotesize\ttfamily \label{struct_ars_aefd6c1aef7d920f8faef59fa85f2d7c8} 
+int y\+Nef}
+
+Coordenada Y da zona nefasta (se existir). 
+
+Definition at line \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source_l00047}{47}} of file \mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h_source}{funcoes.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+projeto\+EDA\+\_\+\+F2/\mbox{\hyperlink{projeto_e_d_a___f2_2funcoes_8h}{funcoes.\+h}}\item 
+projeto\+EDA\+\_\+\+F2\+\_\+\+Exe/\mbox{\hyperlink{projeto_e_d_a___f2___exe_2funcoes_8h}{funcoes.\+h}}\end{DoxyCompactItemize}

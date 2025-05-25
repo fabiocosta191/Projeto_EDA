@@ -30,29 +30,25 @@
   * @param grafo Ponteiro para o grafo onde as antenas serão registadas
   * @return Ponteiro para o início da lista ligada de antenas
   */
-Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas, Grafo* grafo) {
+Grafo* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, int* colunas) {
     FILE* ficheiro;
     char nomeCompleto[256];  // Buffer para o nome do arquivo
     snprintf(nomeCompleto, sizeof(nomeCompleto), "%s%s", nomeFicheiro, tipoFicheiro);
     if (strcmp(tipoFicheiro, ".txt") == 0) {
         errno_t err = fopen_s(&ficheiro, nomeCompleto, "r");
         if (err != 0) {
-            perror("Erro ao abrir o ficheiro");
             return NULL;
         }
     }
     else {
         errno_t err = fopen_s(&ficheiro, nomeCompleto, "rb");
         if (err != 0) {
-            perror("Erro ao abrir o ficheiro");
             return NULL;
         }
     }
 
-    // Já recebido como argumento
-    memset(grafo->Antena, 0, sizeof(grafo->Antena)); // Limpa ponteiros
-    //grafo->Antena[0] = NULL; // Inicializa o primeiro elemento como NULL caso id comece a 1, o [0] deve ser null
 
+    Grafo* grafo = NULL;
     Ant* lista = NULL;
     char linha[MAX_COLUNAS];//100
     int y = 0;
@@ -70,41 +66,42 @@ Ant* LerLista(const char* nomeFicheiro, const char* tipoFicheiro, int* linhas, i
         }
         for (int x = 0; x < tamLinha; x++) {
             if (linha[x] != '.') {
-                lista = InserirAntena(lista, grafo, linha[x], x, y, id);
+                lista = CriarAntena(lista, linha[x], x, y, id);
+				grafo = InserirAntena(grafo, lista);
                 id++; // Incrementa o ID da antena
             }
         }
         y++;
     }
 
+
     *linhas = y;
     *colunas = maxColunas;
 
-    int verificaArestas = CriarListaArestas(lista, y, maxColunas);
-    if (verificaArestas == 0) {
-        perror("Erro ao criar lista de arestas");
-        fclose(ficheiro);
-        return NULL;
-    }
+    int verificaArestas = CriarListaArestas(grafo, y, maxColunas);
+	if (verificaArestas != 200) {
+		fclose(ficheiro);
+		return NULL;
+	}
+
+
     fclose(ficheiro);
-    return lista;
+    return grafo;
 }
 
 /**
- * @brief Insere uma nova antena na lista ligada e atualiza o grafo com o seu endereço.
+ * @brief Insere uma nova antena na lista ligada
  *
  * @param lista Lista ligada atual de antenas
- * @param grafo Grafo onde a antena será registada pelo seu ID
  * @param freq Carácter representativo da frequência da antena
  * @param x Coordenada X (coluna) da antena
  * @param y Coordenada Y (linha) da antena
  * @param id Identificador único da antena
  * @return Ponteiro para a nova cabeça da lista ligada
  */
-Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id) {
+Ant* CriarAntena(Ant* lista, char freq, int x, int y, int id) {
     Ant* novaAntena = (Ant*)malloc(sizeof(Ant));
     if (novaAntena == NULL) {
-        perror("Erro ao alocar memória para antena");
         return lista;
     }
 
@@ -115,11 +112,26 @@ Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id) {
     novaAntena->proxAntena = lista;
     novaAntena->listaAresta = NULL;
 
-    if (grafo != NULL && id < MAX_VERTICES) {
-        grafo->Antena[id] = novaAntena;
-    }
-
     return novaAntena;
+}
+
+/**
+ * @brief Insere uma nova antena no grafo.
+ *
+ * @param grafo Grafo atual
+ * @param lista Lista ligada de antenas
+ * @return Ponteiro para o novo grafo
+ */
+Grafo* InserirAntena(Grafo* grafo, Ant* lista) {
+	Grafo* novoGrafo = (Grafo*)malloc(sizeof(Grafo));
+	if (novoGrafo == NULL) {
+		return NULL;
+	}
+
+	novoGrafo->Antena = lista;
+	novoGrafo->listaGrafo = grafo;
+
+	return novoGrafo;
 }
 
 /**
@@ -133,21 +145,20 @@ Ant* InserirAntena(Ant* lista, Grafo* grafo, char freq, int x, int y, int id) {
  * @param colunas Número total de colunas da matriz
  * @return 200 se bem-sucedido, ou 500 em caso de erro de alocação
  */
-int CriarListaArestas(Ant* lista, int linhas, int colunas) {
+int CriarListaArestas(Grafo* grafo, int linhas, int colunas) {
     int menorx, menory, maiorx, maiory, difx, dify, idant1, idant2;
-    Ant* listaAnt1 = lista;
+
+    Ant* listaAnt1 = grafo->Antena;
     while (listaAnt1 != NULL) {
-        Ant* listaAnt2 = lista;
+        Ant* listaAnt2 = grafo->Antena;
 
         while (listaAnt2 != NULL) {
 
             if (listaAnt1->freqAntena == listaAnt2->freqAntena && (listaAnt1->y != listaAnt2->y || listaAnt1->x != listaAnt2->x)) {
                 Ars* novaAresta = (Ars*)malloc(sizeof(Ars));
                 if (novaAresta == NULL) {
-                    perror("Erro ao alocar memoria para a aresta");
-                    return 500;
+                    return 501;
                 }
-                novaAresta->origemAntena = listaAnt1;
                 novaAresta->destinoAntena = listaAnt2;
                 novaAresta->proximaAresta = listaAnt1->listaAresta;
                 listaAnt1->listaAresta = novaAresta;
@@ -221,14 +232,12 @@ int CriarListaArestas(Ant* lista, int linhas, int colunas) {
             }
             listaAnt2 = listaAnt2->proxAntena;
         }
+
         listaAnt1 = listaAnt1->proxAntena;
     }
     return 200;
-
 }
-
 #pragma endregion
-
 
 #pragma region DFS
 /**
@@ -248,7 +257,7 @@ int DFS(Ant* atual, int visitado[], int idOrigem) {
 
     visitado[atual->id] = 1;
 
-    if (idOrigem == -1) {
+    if (idOrigem == -1) { // Se idOrigem for -1, significa que é a raiz 
         printf("Antena %d (%c) em [%d, %d] (Origem)\n",
             atual->id, atual->freqAntena, atual->x, atual->y);
     }
@@ -275,14 +284,28 @@ int DFS(Ant* atual, int visitado[], int idOrigem) {
  * @return 200 em caso de sucesso, 500 se o ID for inválido
  */
 int IniciarDFS(Grafo* grafo, int idOrigem) {
-    if (idOrigem < 0 || idOrigem >= MAX_VERTICES || grafo->Antena[idOrigem] == NULL) {
+	Grafo* grafoAtual = grafo;
+	Ant* antena = NULL;
+
+    if (idOrigem < 0 || idOrigem >= MAX_VERTICES) {
         fprintf(stderr, "Antena com ID %d não existe.\n", idOrigem);
         return 500;
     }
+	while (grafoAtual != NULL)
+	{
+        if (grafoAtual->Antena->id == idOrigem)
+        {
+             antena = grafoAtual->Antena;
+        }
+		grafoAtual = grafoAtual->listaGrafo;
+	}
+	if (antena == NULL) {
+		return 500;
+	}
 
     int visitado[MAX_VERTICES] = { 0 };
     printf("DFS a partir da antena %d:\n", idOrigem);
-    DFS(grafo->Antena[idOrigem], visitado, -1);  // -1 = raiz
+    DFS(antena, visitado, -1);  // -1 = raiz
     printf("\n\n");
     return 200;
 }
@@ -300,29 +323,42 @@ int IniciarDFS(Grafo* grafo, int idOrigem) {
  * @return 200 em caso de sucesso, ou se a antena for inválida
  */
 int BFS(Grafo* grafo, int idOrigem) {
-    if (grafo->Antena[idOrigem] == NULL) {
+    // Procurar a antena com o ID de origem
+    Ant* origemAntena = NULL;
+    Grafo* aux = grafo;
+    while (aux != NULL) {
+        if (aux->Antena->id == idOrigem) {
+            origemAntena = aux->Antena;
+            break;
+        }
+        aux = aux->listaGrafo;
+    }
+    if (origemAntena == NULL) {
         printf("Antena com ID %d não existe.\n", idOrigem);
         return 200;
     }
-
     int visitado[MAX_VERTICES] = { 0 };
     int fila[MAX_VERTICES];
-    int origem[MAX_VERTICES];  // Guarda de onde veio cada antena
-
+    int origem[MAX_VERTICES];
     int frente = 0, tras = 0;
-    fila[tras] = idOrigem;
+    fila[tras] = origemAntena->id;
     origem[tras] = -1;
-    visitado[idOrigem] = 1;
-
-    printf("BFS a partir da antena %d:\n", idOrigem);
-
+    visitado[origemAntena->id] = 1;
+    printf("BFS a partir da antena %d:\n", origemAntena->id);
     while (frente <= tras) {
         int atualID = fila[frente];
         int origemID = origem[frente];
         frente++;
-
-        Ant* atual = grafo->Antena[atualID];
-
+        Ant* atual = NULL;
+        Grafo* busca = grafo;
+        while (busca != NULL) {
+            if (busca->Antena->id == atualID) {
+                atual = busca->Antena;
+                break;
+            }
+            busca = busca->listaGrafo;
+        }
+        if (atual == NULL) continue;
         if (origemID == -1) {
             printf("Antena %d (%c) em [%d, %d] (Origem)\n",
                 atual->id, atual->freqAntena, atual->x, atual->y);
@@ -331,14 +367,13 @@ int BFS(Grafo* grafo, int idOrigem) {
             printf("Antena %d (%c) em [%d, %d] (Aresta: origem %d -> destino %d)\n",
                 atual->id, atual->freqAntena, atual->x, atual->y, origemID, atualID);
         }
-
         Ars* aresta = atual->listaAresta;
         while (aresta != NULL) {
             int vizinhoID = aresta->destinoAntena->id;
             if (!visitado[vizinhoID]) {
                 tras++;
                 fila[tras] = vizinhoID;
-                origem[tras] = atualID;
+                origem[tras] = atual->id;
                 visitado[vizinhoID] = 1;
             }
             aresta = aresta->proximaAresta;
@@ -347,7 +382,25 @@ int BFS(Grafo* grafo, int idOrigem) {
     printf("\n\n");
     return 200;
 }
+
 #pragma endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma region Todos_Caminhos
@@ -365,6 +418,7 @@ int BFS(Grafo* grafo, int idOrigem) {
  */
 int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], int posicao) {
     if (atual == NULL) return 200;
+    int verificacao;
 
     visitado[atual->id] = 1;
     caminho[posicao++] = atual->id;
@@ -381,15 +435,16 @@ int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], 
         while (aresta != NULL) {
             int vizinhoID = aresta->destinoAntena->id;
             if (!visitado[vizinhoID]) {
-                EncontrarCaminhos(aresta->destinoAntena, idDestino, visitado, caminho, posicao);
+                verificacao = EncontrarCaminhos(aresta->destinoAntena, idDestino, visitado, caminho, posicao);
             }
             aresta = aresta->proximaAresta;
         }
     }
-
     visitado[atual->id] = 0; // backtracking
-	return 200;
+	verificacao = 200;
+    return verificacao;
 }
+
 /**
  * @brief Função principal para listar todos os caminhos entre duas antenas.
  *
@@ -401,27 +456,104 @@ int EncontrarCaminhos(Ant* atual, int idDestino, int visitado[], int caminho[], 
  * @return 200 em caso de sucesso, ou se os IDs forem inválidos
  */
 int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
-    if (grafo->Antena[idOrigem] == NULL || grafo->Antena[idDestino] == NULL) {
-        printf("Antena(s) inválida(s)\n");
-        return 200;
-    }
 
     int visitado[MAX_VERTICES] = { 0 };
     int caminho[MAX_VERTICES];
+    Grafo* grafoAtual = grafo;
+    Ant* antenaOrigem = NULL;
+	Ant* antenaDestino = NULL;
+
+    if (idOrigem < 0 || idOrigem >= MAX_VERTICES) {
+        fprintf(stderr, "Antena com ID %d não existe.\n", idOrigem);
+        return 500;
+    }
+    while (grafoAtual != NULL)
+    {
+        if (grafoAtual->Antena->id == idOrigem)
+        {
+            antenaOrigem = grafoAtual->Antena;
+        }
+		if (grafoAtual->Antena->id == idDestino)
+		{
+			antenaDestino = grafoAtual->Antena;
+		}
+        grafoAtual = grafoAtual->listaGrafo;
+    }
+    if (antenaOrigem == NULL || antenaDestino == NULL) {
+        return 500;
+    }
+
+
     printf("Todos os caminhos de %d para %d:\n", idOrigem, idDestino);
     //compara a frequencia da antena origem e destino
-    if (grafo->Antena[idOrigem]->freqAntena != grafo->Antena[idDestino]->freqAntena) {
+    if (antenaOrigem->freqAntena != antenaDestino->freqAntena) {
         printf("As antenas de origem e destino nao tem a mesma frequencia.\n\n\n");
         return 200;
     }
-    EncontrarCaminhos(grafo->Antena[idOrigem], idDestino, visitado, caminho, 0);
+    int verificacao = EncontrarCaminhos(antenaOrigem, idDestino, visitado, caminho, 0);
     printf("\n\n");
-    return 200;
-
+    return verificacao;
 }
 #pragma endregion
 
+#pragma region Exportar_Dados
+/**
+ * @brief Exporta a matriz de antenas para um ficheiro de texto.
+ *
+ * Percorre a matriz lógica de tamanho [linhas x colunas] e escreve:
+ * - A frequência da antena (se existir uma antena na posição);
+ * - Um ponto '.' caso a posição esteja vazia.
+ *
+ * @param grafo Ponteiro para o grafo contendo as antenas.
+ * @param linhas Número de linhas da matriz.
+ * @param colunas Número de colunas da matriz.
+ * @param nomeFicheiro Nome do ficheiro a ser criado.
+ * @param tipoFicheiro Extensão do ficheiro (por ex., ".txt").
+ * @return int 200 em caso de sucesso, 500 em caso de erro.
+ */
+int ExportarMatriz(Grafo* grafoOriginal, int linhas, int colunas, const char* nomeFicheiro, const char* tipoFicheiro) {
+    char caminhoCompleto[256];
+    snprintf(caminhoCompleto, sizeof(caminhoCompleto), "%s%s", nomeFicheiro, tipoFicheiro);
 
+    FILE* ficheiro = NULL;
+    const char* modo = (strcmp(tipoFicheiro, ".bin") == 0) ? "wb" : "w";
+    errno_t erro = fopen_s(&ficheiro, caminhoCompleto, modo);
+    if (erro != 0 || ficheiro == NULL) {
+        perror("Erro ao abrir o ficheiro para escrita");
+        return 500;
+    }
+
+    for (int y = 0; y < linhas; y++) {
+        for (int x = 0; x < colunas; x++) {
+            char simbolo = '.';
+            Grafo* grafo = grafoOriginal; // cópia do grafo original
+
+            while (grafo != NULL) {
+                Ant* ant = grafo->Antena;
+                if (ant != NULL && ant->x == x && ant->y == y) {
+                    simbolo = ant->freqAntena;
+                    break;
+                }
+                grafo = grafo->listaGrafo;
+            }
+
+            if (strcmp(tipoFicheiro, ".bin") == 0) {
+                fwrite(&simbolo, sizeof(char), 1, ficheiro);
+            }
+            else {
+                fprintf(ficheiro, "%c", simbolo);
+            }
+        }
+
+        if (strcmp(tipoFicheiro, ".txt") == 0) {
+            fprintf(ficheiro, "\n");
+        }
+    }
+
+    fclose(ficheiro);
+    return 200;
+}
+#pragma endregion
 
 #pragma region Libertacao_Memoria
 /**
@@ -434,30 +566,23 @@ int TodosCaminhos(Grafo* grafo, int idOrigem, int idDestino) {
  * @param grafo Grafo onde as antenas estão registadas
  * @return 200 em caso de sucesso
  */
-int FreeListaAntenas(Ant* lista, Grafo* grafo) {
-    Ant* atual = lista;
+int FreeListaAntenas(Grafo* grafo) {
+    Grafo* atual = grafo;
     while (atual != NULL) {
-        Ars* aresta = atual->listaAresta;
+		Ant* antena = atual->Antena;
+        Ars* aresta = antena->listaAresta;
         // Liberta todas as arestas desta antena
         while (aresta != NULL) {
             Ars* tempAresta = aresta;
             aresta = aresta->proximaAresta;
             free(tempAresta);
         }
-
-        Ant* tempAntena = atual;
-        atual = atual->proxAntena;
-        free(tempAntena);
+        free(antena);
+        Grafo* temp = atual;
+        atual = atual->listaGrafo;
+        free(temp);
     }
-    for (int i = 0; i < MAX_VERTICES; i++) {
-        grafo->Antena[i] = NULL;
-    }
-
     return 200;
 }
 
 #pragma endregion
-
-
-
-
